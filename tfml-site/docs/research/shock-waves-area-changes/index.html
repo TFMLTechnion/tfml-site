@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Shock waves through abrupt area changes | Transient Fluid Mechanics Laboratory</title>
+<meta name="description" content="How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.">
+<link rel="canonical" href="https://www.tfmltechnion.com/research/shock-waves-area-changes/">
+<meta property="og:site_name" content="Transient Fluid Mechanics Laboratory">
+<meta property="og:title" content="Shock waves through abrupt area changes">
+<meta property="og:description" content="How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://www.tfmltechnion.com/research/shock-waves-area-changes/">
+<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/shock-area-changes.jpg">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/site.css">
+</head>
+<body class="page-project">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/">
+      <img class="brand-logo" src="/assets/img/logo.png" alt="" width="180" height="53">
+      <span class="brand-text"><span class="brand-name">Transient Fluid Mechanics Laboratory</span><span class="brand-sub">Technion – Israel Institute of Technology</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav id="nav" class="nav">
+      <a href="/research/" aria-current="page">Research</a><a href="/people/">People</a><a href="/facilities/">Facilities</a><a href="/publications/">Publications</a><a href="/news/">News</a><a href="/join/">Join us</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+
+<article class="article wrap">
+  <p class="crumbs"><a href="/research/">Research</a> <span aria-hidden="true">/</span> Compressible flows and shock waves</p>
+  <h1>Shock waves through abrupt area changes</h1>
+  <p class="lede">How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.</p>
+  <figure class="lead-figure"><img src="/assets/img/research/shock-area-changes.jpg" alt="Schlieren image of a shock wave passing an abrupt area expansion" width="1200" height="700"></figure>
+  <div class="prose"><h2>Evolution of a shock wave moving through an expansion</h2>
+<p>When a normal shock passes over a step change in the cross-section of a duct, it experiences strong reflections, vortex formation and pressure fluctuations. Over time the shock front recovers into a uniform normal shock, but the transient path to that state is complex and was poorly understood. We combine experiments, large-eddy simulations (LES) and geometrical shock dynamics (GSD) to uncover the mechanisms that drive this evolution.</p>
+<p>Experiments are performed in a 40 × 40 mm shock tube fitted with a 2 m long test section, long enough to capture the far-downstream development. The duct includes back-facing steps of varying heights (expansion ratios 1.75–3.25). High-speed schlieren imaging at up to 140 kHz and 26 pressure transducers resolve both the near-step transient and the far-downstream recovery.</p>
+<p>The experiments are complemented by three-dimensional LES of the compressible Navier–Stokes equations with high-order schemes, validated against the measurements, and by geometrical shock dynamics adapted with corrections for expanding geometries, which gives a simplified predictive model for the shock propagation velocity. Together these methods cover Mach numbers 1.1–1.8 and expansion ratios up to 5.</p>
+<p><strong>What we found.</strong> Immediately after the expansion the shock slows down and becomes curved, producing strong reflections and vortices near the corner. A triple point forms and reverberates between the duct walls, creating a train of reflected shocks that extends downstream and induces large pressure fluctuations long after the initial shock has passed. Further downstream the front gradually straightens and approaches a pseudo-steady velocity. Scaling laws show that this velocity depends on the expansion ratio and the far-downstream shock speed, so the final outcome of a very complex transient can be predicted with a simple relation. These findings are relevant to the design of jet engines, pressure-relief devices and protective ducts.</p>
+<h2>Evolution of a shock wave moving through a contraction</h2>
+<p>The companion study asks how shock waves behave when they meet sudden contractions of different shapes. Although shock reflection is a classic subject, its dynamics in confined geometries are still not fully understood. In a custom-built shock tube, a pneumatic fast-opening valve generates controlled shocks that travel through a square duct and meet one of four contraction geometries: a forward-facing step (90°), a 15° wedge, a 45° wedge and a quadrant profile. High-speed schlieren imaging captures the density gradients that evolve within microseconds of the interaction.</p>
+<p>Three-dimensional LES, using a solver developed at the Technion CFDLAB with a monotonicity-preserving scheme for the inviscid fluxes, a fourth-order explicit scheme for the diffusive fluxes and Runge–Kutta time integration, extends the study to configurations that are not accessible experimentally. The simulations agree closely with the schlieren images.</p>
+<p><strong>What we found.</strong> Geometry is the key factor. In the step case the transmitted shock remains normal and produces the strongest reflection. In the sloped geometries the incoming shock undergoes complex reflection processes that lead to multiple reflections behind the contraction: the 45° wedge generates regular reflections while the 15° wedge produces Mach reflections, changing the transient flow significantly. The quadrant profile smooths the interaction, weakening the reflections and shortening the transient. Sharp steps therefore produce strong reflections and prolonged unsteadiness, while smoother profiles stabilize the flow more quickly, a practical insight for ducts, nozzles and flow passages where shock control matters.</p></div>
+  
+  <div class="figures">
+    
+    <figure><img src="/assets/img/research/shock-contraction-series.png" alt="" loading="lazy" width="800" height="500"><figcaption>Time series of experimental images showing the shock wave evolution after it impinges on four different contraction geometries, incoming Mach number 1.4.</figcaption></figure>
+    
+    <figure><img src="/assets/img/research/shock-contraction-les.png" alt="" loading="lazy" width="800" height="500"><figcaption>Experimental schlieren images (top) compared with LES (bottom) for a 15° wedge, a 45° wedge and a forward-facing step at representative times after the interaction.</figcaption></figure>
+    
+  </div>
+  
+  
+  <section class="related">
+    <h2>Publications from this project</h2>
+    <ul class="pub-list">
+      <li class="pub">
+  <span class="pub-title"><a href="https://doi.org/10.1017/jfm.2024.814">The dynamics of shock wave propagation far downstream of an abrupt area expansion</a></span>
+  <span class="pub-authors">Gichon, Y., Jose, J. T., Chandravamsi, H., Evron, Y. &amp; Ram, O.</span>
+  <span class="pub-venue"><em>Journal of Fluid Mechanics</em> 997, A30 (2024)</span>
+</li>
+    </ul>
+  </section>
+  
+</article>
+
+</main>
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <h2 class="footer-heading">Transient Fluid Mechanics Laboratory</h2>
+      <address>
+        California Energy Building, Floor -1, Suite 11<br>
+        Faculty of Mechanical Engineering, Technion, Haifa 3200003, Israel<br>
+        <a href="mailto:tfml@technion.ac.il">tfml@technion.ac.il</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="footer-heading">Omri Ram</h2>
+      <address>
+        Dan-Kahn Building, Room 402<br>
+        Faculty of Mechanical Engineering, Technion, Haifa 3200003, Israel<br>
+        <a href="mailto:omri.ram@technion.ac.il">omri.ram@technion.ac.il</a>
+      </address>
+    </div>
+    <div class="footer-aside">
+      <img src="/assets/img/technion-logo.png" alt="Technion – Israel Institute of Technology" width="160" height="72" class="footer-logo">
+      <p class="epigraph">“Nothing ever is, everything is becoming.” <span class="epigraph-source">Plato</span></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© 2026 Transient Fluid Mechanics Laboratory, Technion. <a href="https://scholar.google.com/citations?user=bxnJmGgAAAAJ">Google Scholar</a></p>
+  </div>
+</footer>
+<script src="/assets/js/site.js" defer></script>
+</body>
+</html>

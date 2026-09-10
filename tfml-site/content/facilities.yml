@@ -1,0 +1,64 @@
+# ------------------------------------------------------------------
+# Facilities. image: file name inside static/img/facilities/
+# ------------------------------------------------------------------
+- name: Shock tube facility
+  image: shock-tube.png            # Wix file: expsys.png
+  summary: >-
+    A fully automated, movable shock tube for studying how shock waves interact with
+    area changes, constrictions, rough walls and porous media.
+  specs:
+    - Test section 2000 × 130 × 40 mm; driven section 40 × 40 mm, 4080 mm long
+    - Driver pressure up to 40 bar of air; Mach numbers 1.2–1.8 in air
+    - 28 PCB Piezotronics 113B26 pressure transducers
+    - Four Teledyne LeCroy WaveSurfer 3034z oscilloscopes
+    - High-speed schlieren and shadowgraphy with two Phantom v2640 cameras
+    - Whole facility moves up to 2 m in both directions on stepper motors
+    - Fully automated with in-house LabVIEW code
+
+- name: Round pipe channel
+  image: round-pipe-channel.jpg    # Wix file: 709014_a573bf1bdece4338ab72d014cb41e0c9~mv2.jpg
+  summary: >-
+    A refractive-index-matched pipe flow loop for stereo and tomographic PIV of turbulence
+    and particle transport across area changes.
+  specs:
+    - Test section 300 mm × Ø40 mm acrylic; velocities up to 10 m/s
+    - Working fluid 63% aqueous sodium iodide (NaI), density 1800 kg/m³, refractive index 1.488
+    - Expansion area ratio 2.56
+    - Injects solid particles up to ½″ and collects them downstream
+    - High-speed tomographic PIV with four Phantom v2640 cameras
+    - Low-speed, high-resolution PIV with two Imager CX-25 cameras
+    - Two digital pressure transducers and a digital flowmeter; vacuum pump and N₂ supply
+
+- name: Octagonal tank
+  image: octagonal-tank.jpg        # Wix file: 709014_2ca5cae802e646fcb96f72cb0681a5a5~mv2.jpg
+  summary: >-
+    A quiescent index-matched tank for time-resolved tomographic PIV around freely
+    rising and falling bodies.
+  specs:
+    - Test section 250 mm per side × 700 mm, acrylic
+    - Working fluid 63% aqueous NaI, density 1800 kg/m³, refractive index 1.488
+    - Releases solid spheres up to ¾″ from the base
+    - High-speed tomographic PIV with four Phantom v2640 cameras
+    - Filtration system that can also drive a jet from the top
+    - Small pressure tank with gauge and release valve; vacuum pump and N₂ supply
+
+- name: Large water tunnel
+  image: water-tunnel.jpg          # Wix file: WhatsApp Image 2023-12-14 at 09.44.08_d618483a.jpg
+  status: Under construction
+  summary: >-
+    A large recirculating tunnel that will run on either water or index-matched NaI
+    solution, with independent filtration and cooling.
+  specs:
+    - Working fluid 63% aqueous NaI (1800 kg/m³) or water (1000 kg/m³)
+    - High-speed tomographic PIV with four Phantom v2640 cameras
+    - Independent solution filtration and cooling systems
+    - Large pressure tank; digital differential pressure transducer and flowmeter
+    - Vacuum pump and N₂ supply
+
+- name: Workshop
+  summary: In-house fabrication for models, inserts and fixtures.
+  specs:
+    - 3D printers
+    - CNC machine
+    - Laser cutter
+    - Precision drill press

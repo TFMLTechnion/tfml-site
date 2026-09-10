@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>News</h1>
+</section>
+<section class="section wrap section-tight">
+  <ul class="news-list news-list-full">
+    {% for post in posts %}
+    <li class="news-row">
+      <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
+      <div><h2 class="news-title"><a href="{{ post.url | url }}">{{ post.title }}</a></h2><p class="news-summary">{{ post.summary }}</p></div>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="article wrap article-narrow">
+  <p class="crumbs"><a href="{{ '/news/' | url }}">News</a></p>
+  <h1>{{ post.title }}</h1>
+  <p class="meta"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time></p>
+  {% if post.image_url %}<figure class="lead-figure"><img src="{{ post.image_url }}" alt="" width="1200" height="700"></figure>{% endif %}
+  <div class="prose">{{ post.body }}</div>
+  {% if post.figure_list %}
+  <div class="figures">
+    {% for f in post.figure_list %}
+    <figure>{% if f.url %}<img src="{{ f.url }}" alt="" loading="lazy" width="800" height="500">{% else %}<div class="ph ph-wide"></div>{% endif %}<figcaption>{{ f.caption }}</figcaption></figure>
+    {% endfor %}
+  </div>
+  {% endif %}
+  {% if prev or next %}
+  <nav class="post-nav">
+    {% if next %}<a href="{{ next.url | url }}"><span>Newer</span>{{ next.title }}</a>{% endif %}
+    {% if prev %}<a href="{{ prev.url | url }}"><span>Older</span>{{ prev.title }}</a>{% endif %}
+  </nav>
+  {% endif %}
+</article>
+{% endblock %}

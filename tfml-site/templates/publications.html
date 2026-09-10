@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>Publications</h1>
+  <p class="lede">Journal articles from the lab and from Omri Ram's earlier work, followed by book chapters and conference proceedings. The <a href="{{ site.scholar_url }}">Google Scholar profile</a> has citation counts and papers that cite ours.</p>
+</section>
+{% for year, pubs in journal_by_year %}
+<section class="section wrap section-tight">
+  <h2 class="section-title year">{{ year }}</h2>
+  <ul class="pub-list">
+    {% for pub in pubs %}{% include "pub_item.html" %}{% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% if chapters %}
+<section class="section wrap">
+  <h2 class="section-title">Book chapters</h2>
+  <ul class="pub-list">
+    {% for pub in chapters %}{% include "pub_item.html" %}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% if proceedings %}
+<section class="section wrap">
+  <h2 class="section-title">Conference proceedings</h2>
+  <ul class="pub-list">
+    {% for pub in proceedings %}{% include "pub_item.html" %}{% endfor %}
+  </ul>
+</section>
+{% endif %}
+{% endblock %}

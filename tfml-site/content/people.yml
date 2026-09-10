@@ -1,0 +1,166 @@
+# ------------------------------------------------------------------
+# People. One entry per person. Groups appear in this order:
+#   pi, staff, postdoc, phd, msc, undergrad, alumni
+# image: file name inside static/img/people/ (leave out if no photo yet)
+# Optional fields: education (list), project, thesis, note, note_url,
+#   now (for alumni: where they went), email, linkedin, scholar, orcid
+# ------------------------------------------------------------------
+groups:
+  pi: Principal investigator
+  staff: Lab staff
+  postdoc: Postdoctoral fellows
+  phd: Ph.D. candidates
+  msc: M.Sc. students
+  undergrad: Undergraduate research assistants
+  alumni: Alumni
+
+people:
+  - name: Omri Ram
+    group: pi
+    role: Assistant Professor, Faculty of Mechanical Engineering
+    image: omri-ram.jpg
+    education:
+      - Postdoctoral fellow (Fulbright), Johns Hopkins University, 2018–2021
+      - Ph.D. Mechanical Engineering, Ben-Gurion University, 2017
+      - M.Sc. Mechanical Engineering, Ben-Gurion University, 2013, magna cum laude
+      - B.Sc. Mechanical Engineering, Ben-Gurion University, 2011, cum laude
+    note: Zuckerman Faculty Scholar and Career Advancement Chair, Technion (2021)
+    email: omri.ram@technion.ac.il
+    scholar: https://scholar.google.com/citations?user=bxnJmGgAAAAJ
+    orcid: https://orcid.org/0000-0002-2398-9822
+
+  - name: Yigal Evron
+    group: staff
+    role: Lab manager
+    image: yigal-evron.jpg
+    education:
+      - Ph.D. Mechanical Engineering, Technion
+      - M.Sc. Mechanical Engineering, Technion
+      - B.Sc. Mechanical Engineering, Technion
+    email: shmigal@me.technion.ac.il
+
+  - name: Rami Yanai
+    group: staff
+    role: Lab engineer
+    # image: rami-yanai.jpg          # no photo yet; add the file and remove the # at the start of this line
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    email: rami.ya@me.technion.ac.il
+
+  - name: Jibu Tom Jose
+    group: postdoc
+    role: Postdoctoral fellow, since 2022
+    image: jibu-tom-jose.jpg
+    education:
+      - Ph.D. and MSE, Mechanical Engineering, Johns Hopkins University
+      - M.Tech Aerospace Engineering, Indian Institute of Technology Kanpur
+      - B.Tech Aerospace Engineering, Amrita Vishwa Vidyapeetham, Coimbatore
+    project: Turbulent pipe flows and buoyancy-driven particle dynamics
+    email: jibu.jose@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/jibu-tom-jose-08192343
+
+  # ------------------------- Ph.D. candidates -------------------------
+  - name: Yoav Gichon
+    group: phd
+    role: Ph.D. candidate, since 2023
+    image: yoav-gichon.jpg
+    education:
+      - M.Sc. Mechanical Engineering, Technion, 2023
+      - B.Sc. Mechanical Engineering, Ben-Gurion University
+    project: Evolution of the flow field and reflection patterns forming when a shock wave propagates downstream of an abrupt area change
+    email: gichon@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/yoav-gichon-mechanical-engineering
+
+  - name: Avital Reizman
+    group: phd
+    role: Ph.D. candidate, since 2024
+    image: avital-reizman.jpg
+    education:
+      - M.Sc. Chemical Engineering, Technion
+      - B.Sc. Chemical Engineering, Technion
+    project: Spontaneously assembled networks through interfacial forces
+    note: "Co-advised with Prof. Amir Gat"
+    note_url: https://gat.net.technion.ac.il/
+    email: reizmana@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/avital-reizman-b9b72b94
+
+  - name: Sahar Zuckerman
+    group: phd
+    role: Ph.D. candidate, since 2025
+    image: sahar-zuckerman.jpg
+    education:
+      - M.Sc. Mechanical Engineering, Technion, 2025
+      - B.Sc. Mechanical Engineering, ORT Braude College
+    project: Separated flow over surface irregularities and its role in cavitation inception
+    linkedin: https://www.linkedin.com/in/shahar-zuckerman-13b99b223
+
+  - name: Raz Heppner
+    group: phd
+    role: Ph.D. candidate, since 2026
+    image: raz-heppner.jpg
+    education:
+      - M.Sc. Mechanical Engineering, Technion, 2026
+      - B.Sc. Earth Sciences and Physics, Hebrew University of Jerusalem
+    project: Micro-bubble transport in rough-wall boundary layers and its role in cavitation inception
+    linkedin: https://www.linkedin.com/in/raz-heppner-228b38248/
+
+  # --------------------------- M.Sc. students --------------------------
+  - name: Omri Ben-Haim
+    group: msc
+    role: M.Sc. student, since 2025
+    image: omri-ben-haim.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    project: The influence of the internal structure of porous media on the propagation and attenuation of shock waves
+    email: omri.benhaim@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/omri-ben-haim-mech
+
+  - name: Gal Hafota
+    group: msc
+    role: M.Sc. student, since 2025
+    image: gal-hafota.jpg
+    project: Effects of heater geometry on micro-bubble boiling emission
+
+  - name: Neta Kahane
+    group: msc
+    role: M.Sc. student, since 2026
+    image: neta-kahane.jpg
+    project: Natural-convection-driven mixing in a cell
+
+  - name: Omri Gurfinkel
+    group: msc
+    role: M.Sc. student, since 2026
+    image: omri-gurfinkel.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    project: Boiling in regions of separated flow in a water tunnel
+    linkedin: https://www.linkedin.com/in/omri-gurfinkel
+
+  # ------------------------------ Alumni -------------------------------
+  - name: Dvir Feld
+    group: alumni
+    role: M.Sc., 2026
+    image: dvir-feld.jpg
+    thesis: The dynamics of solid particles transported in a flow, the developing flow field in their vicinity, and their interaction
+    now: Rafael
+
+  - name: Gal Friedmann
+    group: alumni
+    role: M.Sc., 2025
+    image: gal-friedmann.jpg
+    thesis: An experimental investigation of solids transport through a local pipe contraction in a horizontal pipeline
+    now: PTC Israel
+
+  - name: Aviel Ben-Harosh
+    group: alumni
+    role: M.Sc., 2025
+    image: aviel-ben-harosh.jpg
+    thesis: Tomographic imaging of the transient flow field around bodies rising in water
+    now: Rafael
+
+  - name: Tal Marder
+    group: alumni
+    role: Undergraduate research assistant
+    image: tal-marder.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
