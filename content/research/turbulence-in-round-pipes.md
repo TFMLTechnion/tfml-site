@@ -9,6 +9,7 @@ image: turbulence-round-pipes.png       # Wix file: Picture5.png
 image_alt: Stereo PIV measurement of turbulent flow across a pipe expansion
 related:
   - Effect of expansion geometry on turbulence
+  - Coherent structure transport in turbulent axisymmetric pipe expansions
 figures:
   - image: turbulence-fields.png        # Wix file: 709014_904fa293...png
     caption: Mean and turbulent flow fields measured across the area change.

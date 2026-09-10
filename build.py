@@ -66,7 +66,8 @@ def load_content():
     pubs = yaml.safe_load((CONTENT / "publications.yml").read_text(encoding="utf-8"))
     facilities = yaml.safe_load((CONTENT / "facilities.yml").read_text(encoding="utf-8"))
 
-    pubs.sort(key=lambda p: (-int(p["year"]), p["authors"]))
+    rank = {"submitted": 0, "accepted": 1}
+    pubs.sort(key=lambda p: (-int(p["year"]), rank.get(p.get("status"), 2), p["authors"]))
     for p in pubs:
         p["year"] = int(p["year"])
 
@@ -181,17 +182,22 @@ def build(out_dir, preview=False):
         render("project.html", p["url"], page_id="project", section="research", page_title=p["title"],
                page_description=p.get("summary"), project=_with_urls([p], url)[0],
                theme=themes.get(p.get("theme"), {}), og_image=p.get("image_url"))
+    current["path"] = "/people/"
     render("people.html", "/people/", page_id="people", section="people", page_title="People",
            groups=[(g, l, _with_urls(m, url)) for g, l, m in groups],
            page_description="The people of the Transient Fluid Mechanics Laboratory at the Technion.")
+    current["path"] = "/facilities/"
     render("facilities.html", "/facilities/", page_id="facilities", section="facilities", page_title="Facilities",
            facilities=_with_urls(facilities, url),
            page_description="Shock tube, index-matched pipe channel, octagonal tank and water tunnel at TFML, Technion.")
     by_year = {}
     for p in pubs:
-        by_year.setdefault(p["year"], []).append(p)
+        if p.get("section", "journal") == "journal":
+            by_year.setdefault(p["year"], []).append(p)
     render("publications.html", "/publications/", page_id="publications", section="publications",
-           page_title="Publications", pubs_by_year=sorted(by_year.items(), reverse=True),
+           page_title="Publications", journal_by_year=sorted(by_year.items(), reverse=True),
+           chapters=[p for p in pubs if p.get("section") == "chapter"],
+           proceedings=[p for p in pubs if p.get("section") == "proceedings"],
            page_description="Journal articles and preprints from the Transient Fluid Mechanics Laboratory, Technion.")
     render("news.html", "/news/", page_id="news", section="news", page_title="News")
     for i, post in enumerate(posts):

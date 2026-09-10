@@ -7,6 +7,8 @@ summary: >-
   move through high Reynolds number flow and area changes.
 image: solids-in-pipe-flow.png         # Wix file: Screenshot 2023-12-13 164356.png
 image_alt: Tomographic PIV measurement of flow around a sphere in a pipe
+related:
+  - Dynamic masking for boundary-aware velocity reconstruction
 figures:
   - image: tomographic-setup.jpg       # Wix file: expsys.jpg
     caption: The four-camera tomographic PIV setup around the round pipe channel.

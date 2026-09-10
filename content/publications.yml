@@ -1,178 +1,298 @@
 # ------------------------------------------------------------------
-# Publications. Newest first is not required: the site sorts by year.
-# Fields: authors, title, venue, year, (volume, pages, url, note)
-# To add a paper, copy one block and edit it.
+# Publications, taken from Omri Ram's CV (September 2026).
+# Fields: authors, title, venue, year  +  optional volume, pages, url, status, section, note
+#   status:  accepted | submitted   (shown as a small tag; leave out for published papers)
+#   section: journal (default) | chapter | proceedings
+# Papers are sorted by year automatically. To add one, copy a block and edit it.
 # ------------------------------------------------------------------
-- authors: Heppner, R., Chandravamsi, H., Gichon, Y., Frankel, S. H. & Ram, O.
-  title: Shock propagation through a local constriction
-  venue: arXiv preprint
-  year: 2026
-  url: https://arxiv.org/abs/2603.03489
-  note: preprint
 
-- authors: Jose, J. T., Ben-Harush, A. & Ram, O.
-  title: On the application of refractive index matching to study the buoyancy-driven motion of spheres
+# ---------------------------- Submitted ------------------------------
+- authors: Jose, J. T., Friedmann, G. & Ram, O.
+  title: "Coherent structure transport in turbulent axisymmetric pipe expansions"
+  venue: Physical Review Fluids
+  year: 2026
+  status: submitted
+  url: https://arxiv.org/abs/2603.19457
+  note: arXiv:2603.19457
+
+- authors: Xiao, D., Jose, J. T., Parizat, A., Orange Kedem, R., Sznitman, J., Ram, O. & Shechtman, Y.
+  title: "Compact 3D flow reconstruction via wavefront shaping with deep learning"
+  venue: Optica
+  year: 2026
+  status: submitted
+
+- authors: Ben-Abu, E., Zavodnik, J., Zigelman, A., Ram, O., Brojan, M. & Gat, A. D.
+  title: "Programming multistability in thin shells inspired by natural buckling modes"
+  venue: Advanced Functional Materials
+  year: 2026
+  status: submitted
+
+# ---------------------------- Accepted -------------------------------
+- authors: Heppner, R., Chandravamsi, H., Gichon, Y., Frankel, S. H. & Ram, O.
+  title: "Shock propagation through a local constriction"
+  venue: Journal of Fluid Mechanics
+  year: 2026
+  status: accepted
+  url: https://arxiv.org/abs/2603.03489
+  note: arXiv:2603.03489
+
+- authors: Jose, J. T., Jacobson, A., Shenoy, D. V., Frankel, S. H. & Ram, O.
+  title: "Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids"
+  venue: Measurement Science and Technology
+  year: 2026
+  status: accepted
+
+# ---------------------------- Published ------------------------------
+- authors: Jose, J. T., Friedmann, G., Feld, D. & Ram, O.
+  title: "Effect of expansion geometry on turbulence in axisymmetric pipe flows"
+  venue: Physical Review Fluids
+  year: 2026
+  volume: 11(3)
+  pages: "034607"
+  url: https://doi.org/10.1103/572s-84gk
+
+- authors: Gupta, S., Ram, O., Lu, Y., Sharma, D., Rickett-Halama, S. A. C., DiPinto, L. M., Stratton, E. M., Rowles, T. K., Hazelkorn, R. A. & Katz, J.
+  title: "On the dynamics of the aerosol plume in common bottlenose dolphin respiratory events"
+  venue: Frontiers in Marine Science
+  year: 2026
+  volume: "13"
+  url: https://doi.org/10.3389/fmars.2026.1748534
+
+- authors: Jose, J. T., Ben-Harosh, A. & Ram, O.
+  title: "On the application of refractive index matching to study the buoyancy-driven motion of spheres"
   venue: International Journal of Multiphase Flow
   year: 2026
   pages: "105597"
   url: https://doi.org/10.1016/j.ijmultiphaseflow.2025.105597
 
-- authors: Jose, J. T., Friedmann, G., Feld, D. & Ram, O.
-  title: Effect of expansion geometry on turbulence in axisymmetric pipe flows
-  venue: Preprint
+- authors: Reizman Einhorn, A., Jose, J. T., Zigelman, A., Gat, A. D. & Ram, O.
+  title: "Interface shape surrounding anisotropic particles held at the liquid–gas interface"
+  venue: Journal of Fluid Mechanics
   year: 2025
-  url: https://www.researchgate.net/publication/395943800_Effect_of_Expansion_Geometry_on_Turbulence_in_Axisymmetric_Pipe_Flows
-  note: preprint
+  volume: "1021"
+  pages: A22
+  url: https://doi.org/10.1017/jfm.2025.10727
 
-- authors: Majji, G. P., Anil, S. V., Ram, O., Chandrala, L. D. et al.
+- authors: Majji, G. P., Anil, S. V., Ram, O. & Chandrala, L. D.
   title: "Attenuation of blast waves using rigid porous plate arrays: insights from experiments and simulations"
   venue: Physics of Fluids
   year: 2025
   volume: 37(7)
+  url: https://doi.org/10.1063/5.0273908
+
+- authors: Ben-Abu, E., Abramov, Y., Fine, A., Elbaz, S., Zemah, N., Zigelman, A., Ram, O. & Gat, A. D.
+  title: "Directed instability as a mechanism for fabricating multistable twisting microstructure"
+  venue: Advanced Engineering Materials
+  year: 2024
+  volume: 26(12)
+  pages: "2400070"
+  url: https://doi.org/10.1002/adem.202400070
 
 - authors: Majji, G. P., Vootla, S., Ram, O., Chandrala, L. D. et al.
   title: "Predicting pressure buildup behind perforated plates under blast wave impact: a simplified approach"
   venue: Physics of Fluids
   year: 2024
   volume: 36(11)
+  url: https://doi.org/10.1063/5.0234451
 
 - authors: Gichon, Y., Jose, J. T., Chandravamsi, H., Evron, Y. & Ram, O.
-  title: The dynamics of shock wave propagation far downstream of an abrupt area expansion
+  title: "The dynamics of shock wave propagation far downstream of an abrupt area expansion"
   venue: Journal of Fluid Mechanics
   year: 2024
   volume: "997"
   pages: A30
+  url: https://doi.org/10.1017/jfm.2024.814
+
+- authors: Agarwal, K., Ram, O., Lu, Y. & Katz, J.
+  title: "On the pressure field, nuclei dynamics and their relation to cavitation inception in a turbulent shear layer"
+  venue: Journal of Fluid Mechanics
+  year: 2023
+  volume: "966"
+  pages: A31
+  url: https://doi.org/10.1017/jfm.2023.368
 
 - authors: Agarwal, K., Ram, O., Wang, J., Lu, Y. & Katz, J.
-  title: Reconstructing velocity and pressure from noisy sparse particle tracks using constrained cost minimization
+  title: "Reconstructing velocity and pressure from noisy sparse particle tracks using constrained cost minimization"
   venue: Experiments in Fluids
   year: 2021
   volume: 62(4)
   pages: 1–20
+  url: https://doi.org/10.1007/s00348-021-03172-0
 
 - authors: Ram, O., Agarwal, K. & Katz, J.
-  title: On the mechanisms that sustain the inception of attached cavitation
+  title: "On the mechanisms that sustain the inception of attached cavitation"
   venue: Journal of Fluid Mechanics
   year: 2020
   volume: "901"
   pages: R4
-  url: https://www.cambridge.org/core/journals/journal-of-fluid-mechanics/article/on-the-mechanisms-that-sustain-the-inception-of-attached-cavitation/D9D8F293587FD3D3F6D8BCCB98D74BD7
-
-- authors: Ram, O. & Katz, J.
-  title: Persistent thin water films encapsulate oil droplets crossing an oil–water interface
-  venue: Chemical Engineering Journal
-  year: 2020
-  volume: "387"
-  pages: "124075"
-  url: https://www.sciencedirect.com/science/article/pii/S1385894720300668
+  url: https://doi.org/10.1017/jfm.2020.646
 
 - authors: Hoffman, J. R., Zuckerman, A., Ram, O., Sadot, O. & Cohen, H.
-  title: Changes in hippocampal androgen receptor density and behavior in Sprague-Dawley male rats exposed to a low-pressure blast wave
+  title: "Changes in hippocampal androgen receptor density and behavior in Sprague-Dawley male rats exposed to a low-pressure blast wave"
   venue: Brain Plasticity
   year: 2020
   volume: 5(2)
   pages: 1–11
+  url: https://doi.org/10.3233/bpl-200107
+
+- authors: Ram, O. & Katz, J.
+  title: "Persistent thin water films encapsulate oil droplets crossing an oil–water interface"
+  venue: Chemical Engineering Journal
+  year: 2020
+  volume: "387"
+  pages: "124075"
+  url: https://doi.org/10.1016/j.cej.2020.124075
 
 - authors: Zuckerman, A., Ram, O., Ifergane, G., Matar, M. A., Kaplan, Z., Hoffman, J. R., Sadot, O. & Cohen, H.
-  title: Role of endogenous and exogenous corticosterone on behavioral and cognitive responses to low-pressure blast wave exposure
+  title: "Role of endogenous and exogenous corticosterone on behavioral and cognitive responses to low-pressure blast wave exposure"
   venue: Journal of Neurotrauma
-  year: 2018
+  year: 2019
   volume: 36(2)
   pages: 380–394
   url: https://doi.org/10.1089/neu.2018.5672
 
-- authors: Ram, O., Ben-Dor, G. & Sadot, O.
-  title: On the pressure buildup behind an array of perforated plates impinged by a normal shock wave
-  venue: Experimental Thermal and Fluid Science
-  year: 2018
-  volume: "92"
-  pages: 211–221
-  url: https://www.sciencedirect.com/science/article/pii/S0894177717303679
-
 - authors: Geva, M., Ram, O. & Sadot, O.
-  title: Geometrical dependence of transition from regular reflection to Mach reflection and Mach stem growth over convex surfaces
+  title: "The regular reflection → Mach reflection transition in unsteady flow over convex surfaces"
   venue: Journal of Fluid Mechanics
   year: 2018
   volume: "837"
   pages: 48–79
   url: https://doi.org/10.1017/jfm.2017.835
 
+- authors: Ram, O., Ben-Dor, G. & Sadot, O.
+  title: "On the pressure buildup behind an array of perforated plates impinged by a normal shock wave"
+  venue: Experimental Thermal and Fluid Science
+  year: 2018
+  volume: "92"
+  pages: 211–221
+  url: https://doi.org/10.1016/j.expthermflusci.2017.11.014
+
+- authors: Sadot, O., Ram, O., Nof, E., Kochavi, E. & Ben-Dor, G.
+  title: "Small-scale blast wave experiments by means of an exploding wire"
+  venue: "Blast Effects, Springer"
+  year: 2018
+  pages: 141–170
+  url: https://doi.org/10.1007/978-3-319-70831-7_9
+  section: chapter
+
 - authors: Hoffman, J. R., Zuckerman, A., Ram, O., Sadot, O., Stout, J. R., Ostfeld, I. & Cohen, H.
-  title: Behavioral and inflammatory response in animals exposed to a low-pressure blast wave and supplemented with β-alanine
+  title: "Behavioral and inflammatory response in animals exposed to a low-pressure blast wave and supplemented with β-alanine"
   venue: Amino Acids
   year: 2017
   volume: 49(5)
   pages: 871–886
-  url: https://link.springer.com/article/10.1007/s00726-017-2383-8
+  url: https://doi.org/10.1007/s00726-017-2383-8
 
 - authors: Zuckerman, A., Ram, O., Ifergane, G., Matar, M. A., Sagi, R., Ostfeld, I., Hoffman, J. R., Kaplan, Z., Sadot, O. & Cohen, H.
-  title: Controlled low-pressure blast-wave exposure causes distinct behavioral and morphological responses modelling mTBI, PTSD and comorbid mTBI-PTSD
+  title: "Controlled low-pressure blast-wave exposure causes distinct behavioral and morphological responses modelling mild traumatic brain injury, post-traumatic stress disorder, and comorbid mild traumatic brain injury–post-traumatic stress disorder"
   venue: Journal of Neurotrauma
-  year: 2016
+  year: 2017
   volume: 34(1)
   pages: 145–164
   url: https://doi.org/10.1089/neu.2015.4310
 
+- authors: Soni, V., Geva, M., Ram, O., Hadjadj, A., Chaudhuri, A., Sadot, O. & Ben-Dor, G.
+  title: "Studying shock wave reflections over double cylindrical concave wedge reflectors"
+  venue: "30th International Symposium on Shock Waves 1, Springer"
+  year: 2017
+  pages: 587–591
+  section: proceedings
+
+- authors: Nof, E., Ram, O., Kochavi, E., Ben-Dor, G. & Sadot, O.
+  title: "Exploration of methods in the exploding wire technique for simulating large blasts"
+  venue: "30th International Symposium on Shock Waves 2, Springer"
+  year: 2017
+  pages: 1327–1331
+  section: proceedings
+
+- authors: Sadot, O., Anteby, I., Gruntman, S., Ram, O. & Ben-Dor, G.
+  title: "The collapsing mechanism of aluminum foams"
+  venue: "30th International Symposium on Shock Waves 1, Springer"
+  year: 2017
+  pages: 737–742
+  section: proceedings
+
+- authors: Geva, M., Ram, O., Sadot, O. & Ben-Dor, G.
+  title: "High resolution experimental investigation of the reflection over a convex-concave cylindrical model"
+  venue: "30th International Symposium on Shock Waves 1, Springer"
+  year: 2017
+  pages: 593–598
+  section: proceedings
+
 - authors: Ram, O., Nof, E. & Sadot, O.
-  title: Dependence of the load penetrating into a structure on initial conditions and internal geometry
+  title: "Dependence of the blast load penetrating into a structure on initial conditions and internal geometry"
   venue: Experimental Thermal and Fluid Science
   year: 2016
   volume: "78"
   pages: 65–74
-  url: https://www.sciencedirect.com/science/article/pii/S0894177716301285
+  url: https://doi.org/10.1016/j.expthermflusci.2016.05.012
 
 - authors: Sadot, O., Ram, O., Anteby, I., Gruntman, S. & Ben-Dor, G.
-  title: The trapped gas effect on the dynamic compressive strength of light aluminum foams
-  venue: Materials Science and Engineering A
+  title: "The trapped gas effect on the dynamic compressive strength of light aluminum foams"
+  venue: "Materials Science and Engineering: A"
   year: 2016
   volume: "659"
   pages: 278–286
-  url: https://www.sciencedirect.com/science/article/pii/S0921509316301472
+  url: https://doi.org/10.1016/j.msea.2016.02.031
 
 - authors: Ram, O. & Sadot, O.
-  title: Analysis of the pressure buildup behind rigid porous media impinged by shock waves in time and frequency domains
+  title: "Analysis of the pressure buildup behind rigid porous media impinged by shock waves in time and frequency domains"
   venue: Journal of Fluid Mechanics
   year: 2015
   volume: "779"
   pages: 842–858
-  url: http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9923483&fulltextType=RA&fileId=S0022112015004632
-
-- authors: Liverts, M., Ram, O., Sadot, O., Apazidis, N. & Ben-Dor, G.
-  title: Mitigation of exploding-wire-generated blast-waves by aqueous foam
-  venue: Physics of Fluids
-  year: 2015
-  volume: "27"
-  pages: "076103"
-  url: https://doi.org/10.1063/1.4924600
+  url: https://doi.org/10.1017/jfm.2015.463
 
 - authors: Ram, O., Geva, M. & Sadot, O.
-  title: High spatial and temporal resolutions study of shock wave reflection over a coupled convex–concave cylindrical surface
+  title: "High spatial and temporal resolution study of shock wave reflection over a coupled convex–concave cylindrical surface"
   venue: Journal of Fluid Mechanics
   year: 2015
   volume: "768"
   pages: 219–239
-  url: http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=9590984&fileId=S0022112015000804
+  url: https://doi.org/10.1017/jfm.2015.80
+
+- authors: Liverts, M., Ram, O., Sadot, O., Apazidis, N. & Ben-Dor, G.
+  title: "Mitigation of exploding-wire-generated blast-waves by aqueous foam"
+  venue: Physics of Fluids
+  year: 2015
+  volume: 27(7)
+  pages: "076103"
+  url: https://doi.org/10.1063/1.4924600
 
 - authors: Geva, M., Ram, O. & Sadot, O.
-  title: The non-stationary hysteresis phenomenon in shock wave reflections
+  title: "The non-stationary hysteresis phenomenon in shock wave reflections"
   venue: Journal of Fluid Mechanics
   year: 2013
   volume: "732"
   pages: R1
-  url: http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=8994219&fileId=S0022112013004230
+  url: https://doi.org/10.1017/jfm.2013.423
 
 - authors: Ram, O. & Sadot, O.
-  title: A simple constitutive model for predicting the pressure histories developed behind rigid porous media impinged by shock waves
+  title: "A simple constitutive model for predicting the pressure histories developed behind rigid porous media impinged by shock waves"
   venue: Journal of Fluid Mechanics
   year: 2013
   volume: "718"
   pages: 507–523
-  url: http://journals.cambridge.org/action/displayAbstract?fromPage=online&aid=8830047&fileId=S0022112012006271
+  url: https://doi.org/10.1017/jfm.2012.627
+
+- authors: Sadot, O., Ram, O., Ben-Dor, G., Levy, A., Golan, G., Ran, E. & Aizik, F.
+  title: "A simple constitutive model for predicting the pressure histories developed behind rigid porous samples impinged by shock waves"
+  venue: "29th International Symposium on Shock Waves, Springer"
+  year: 2013
+  pages: 1541–1546
+  section: proceedings
 
 - authors: Ram, O. & Sadot, O.
-  title: Implementation of exploding wires technique to blast wave–structure interaction
+  title: "Implementation of the exploding wire technique to study blast-wave–structure interaction"
   venue: Experiments in Fluids
   year: 2012
   volume: 53(5)
   pages: 1335–1345
-  url: https://link.springer.com/article/10.1007/s00348-012-1339-8
+  url: https://doi.org/10.1007/s00348-012-1339-8
+
+- authors: Ram, O., Ostraich, B. & Sadot, O.
+  title: "A novel experimental system for blast structure interaction research"
+  venue: "28th International Symposium on Shock Waves, Springer"
+  year: 2012
+  pages: 105–110
+  section: proceedings

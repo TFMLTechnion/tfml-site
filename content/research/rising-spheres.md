@@ -9,6 +9,7 @@ image: rising-spheres.png               # Wix file: Picture6.png
 image_alt: Tomographic PIV of the wake behind a rising sphere
 related:
   - On the application of refractive index matching to study the buoyancy-driven motion of spheres
+  - Dynamic masking for boundary-aware velocity reconstruction
 figures:
   - image: rising-sphere-1.jpg          # Wix file: 1673512152867.jpg
     caption: A sphere released at the base of the octagonal tank.

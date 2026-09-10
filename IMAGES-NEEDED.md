@@ -24,17 +24,16 @@ over the online address.
 
 ## Still missing
 
-Two things the old site never had, and which nothing online can replace:
+- **Rami Yanai's photo.** Add a portrait as `static/img/people/rami-yanai.jpg` and remove the
+  `#` in front of the `image:` line in `content/people.yml`. Until then his card shows his initials.
+- **Yoav Gichon** still uses the photo from the old site. To match the others, replace
+  `static/img/people/yoav-gichon.jpg` with a new square portrait.
+- **A workshop photo** (3D printers, CNC, laser cutter) for the Facilities page: save it as
+  `static/img/facilities/workshop.jpg` and add `image: workshop.jpg` to the Workshop block in
+  `content/facilities.yml`.
 
-- **Rami Yanai's photo.** The old site used a stock flower picture. Add a real portrait
-  as `static/img/people/rami-yanai.jpg` and uncomment the `image:` line in
-  `content/people.yml`. Until then his card shows his initials.
-- **A workshop photo** (3D printers, CNC, laser cutter) for the Facilities page. Any
-  phone photo of the machines works: save it as `static/img/facilities/workshop.jpg` and
-  add `image: workshop.jpg` to the Workshop block in `content/facilities.yml`.
-
-Three older news posts (Yoav joining, Jibu joining, the Zuckerman grant) have no image
-because the originals didn't either; that's fine, the news list doesn't need one.
+All other portraits were replaced in September 2026 with the square studio photos; new
+portraits should follow the same format (square, at least 800 × 800 px, JPEG).
 
 ## Videos
 

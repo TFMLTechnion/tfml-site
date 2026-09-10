@@ -12,35 +12,8 @@ home-hero.jpg:
   crop: [203, 633, 2116, 2172]
 
 # People
-people/omri-ram.jpg:
-  url: https://static.wixstatic.com/media/709014_6490852ef3a54aa7ad2073a01ce46714~mv2.jpg
-people/yigal-evron.jpg:
-  url: https://static.wixstatic.com/media/709014_f95120a8036f4adc8fb4735f1d9a1dce~mv2.webp
-people/jibu-tom-jose.jpg:
-  url: https://static.wixstatic.com/media/3af44e_5f396093d4a446de86a02d1bb39e9372~mv2.jpg
-  crop: [130, 0, 1209, 1517]
 people/yoav-gichon.jpg:
   url: https://static.wixstatic.com/media/709014_8918768c24e84acd9fcef9b7cc87be2e~mv2.jpg
-people/avital-reizman.jpg:
-  url: https://static.wixstatic.com/media/709014_4b429bc2e6384a1294384fe658e62481~mv2.jpeg
-people/sahar-zuckerman.jpg:
-  url: https://static.wixstatic.com/media/709014_8479ad71de2245e4a0e5b07347e13fd9~mv2.jpg
-  crop: [187, 138, 318, 403]
-people/aviel-ben-harush.jpg:
-  url: https://static.wixstatic.com/media/709014_94bbc30280b148eba9c0e0897bf05d79~mv2.jpg
-people/dvir-feld.jpg:
-  url: https://static.wixstatic.com/media/709014_33abdbeb329d4a0c96bc885d8059caf1~mv2.jpg
-people/omri-ben-haim.jpg:
-  url: https://static.wixstatic.com/media/709014_34a7d5b1d40b4961a20002becf6b8d74~mv2.jpg
-people/raz-heppner.jpg:
-  url: https://static.wixstatic.com/media/f0480c_8da3f015ed8e419c930e009a3c84ca4e~mv2.jpg
-  crop: [0, 121, 900, 1130]
-people/omri-gurfinkel.jpg:
-  url: https://static.wixstatic.com/media/f0480c_a76c68bdcec34992987070e8da588dc7~mv2.jpg
-people/gal-friedmann.jpg:
-  url: https://static.wixstatic.com/media/709014_32b9e5ab2d4d41598041b5c09ead4a08~mv2.jpg
-people/tal-marder.jpg:
-  url: https://static.wixstatic.com/media/709014_11dc88561303492dbf5c66274662d980~mv2.png
 
 # Research
 research/research-header.jpg:

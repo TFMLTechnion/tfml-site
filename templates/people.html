@@ -17,7 +17,8 @@
       {% if person.project %}<p class="person-project">Project: {{ person.project }}</p>{% endif %}
       {% if person.thesis %}<p class="person-project">M.Sc. thesis: {{ person.thesis }}</p>{% endif %}
       {% if person.note %}<p class="person-note">{% if person.note_url %}<a href="{{ person.note_url }}">{{ person.note }}</a>{% else %}{{ person.note }}{% endif %}</p>{% endif %}
-      <p class="person-links">{% if person.email %}<a href="mailto:{{ person.email }}">Email</a>{% endif %}{% if person.linkedin %}<a href="{{ person.linkedin }}">LinkedIn</a>{% endif %}</p>
+      {% if person.now %}<p class="person-now">Now at {{ person.now }}</p>{% endif %}
+      {% if person.email or person.linkedin or person.scholar or person.orcid %}<p class="person-links">{% if person.email %}<a href="mailto:{{ person.email }}">Email</a>{% endif %}{% if person.linkedin %}<a href="{{ person.linkedin }}">LinkedIn</a>{% endif %}{% if person.scholar %}<a href="{{ person.scholar }}">Google Scholar</a>{% endif %}{% if person.orcid %}<a href="{{ person.orcid }}">ORCID</a>{% endif %}</p>{% endif %}
     </li>
     {% endfor %}
   </ul>

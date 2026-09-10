@@ -9,6 +9,7 @@ image: cavitation-inception.jpg         # Wix file: cavexample.JPG
 image_alt: High-speed image of attached cavitation inception on a curved surface
 related:
   - On the mechanisms that sustain the inception of attached cavitation
+  - On the pressure field, nuclei dynamics and their relation to cavitation inception
 ---
 This experimental study addresses a long-standing question: why is the inception of attached cavitation on curved surfaces, or on hydrofoils at incidence, relatively insensitive to the concentration of free-stream nuclei? High-speed imaging and high-resolution PIV examine cavitation inception on three curved surfaces with different pressure minima followed by regions of adverse pressure gradient.
 
