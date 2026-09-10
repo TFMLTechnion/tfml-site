@@ -311,8 +311,13 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .feature-hero-media img { width: 100%; }
 .feature figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); margin-top: .6rem; line-height: 1.45; }
 
-.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 2rem; padding-block: 1.75rem; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); font-family: var(--sans); }
-.stats strong { display: block; font-family: var(--serif); font-weight: 400; font-size: 2.5rem; line-height: 1; letter-spacing: -0.02em; color: var(--accent); margin-bottom: .4rem; font-variant-numeric: tabular-nums; }
+/* The numbers band: the strongest hook on the page, so it gets a tinted full-width
+   band, a label of its own and figures large enough to carry the page. */
+.stats-band { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.stats-eyebrow { font-family: var(--sans); font-size: var(--step--1); font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint); margin: 0; padding-top: clamp(1.5rem, 3vw, 2.25rem); }
+.stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); padding-block: clamp(1.25rem, 2.5vw, 1.75rem) clamp(1.75rem, 3.5vw, 2.5rem); font-family: var(--sans); }
+.stats > div { border-top: 1px solid var(--line); padding-top: 1.1rem; }
+.stats strong { display: block; font-family: var(--serif); font-weight: 400; font-size: clamp(2.5rem, 1.6rem + 2.6vw, 3.5rem); line-height: 1; letter-spacing: -0.03em; color: var(--accent); margin-bottom: .45rem; font-variant-numeric: tabular-nums; }
 .stats span { font-size: var(--step--1); color: var(--ink-soft); line-height: 1.45; }
 
 .f-section { padding-block: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--line); }
@@ -324,24 +329,66 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .f-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: clamp(2rem, 5vw, 4.5rem); align-items: start; }
 .f-grid + .f-grid, .f-grid + .f-trio, .f-strip + .f-grid, .f-wide + .f-grid, .f-grid + .f-wide { margin-top: clamp(2rem, 4vw, 3rem); }
 .f-grid-reverse > .f-text { order: 2; }
+/* Figures. Every image renders at its natural pixel size or smaller, never larger, so
+   the small originals stay sharp instead of being stretched by width: 100%. The width
+   and height attributes in the markup reserve the right box before the file loads,
+   which is what stops the page reflowing as the figures arrive. */
 .f-figure { margin: 0; }
-.f-figure img { width: 100%; }
+.feature figure img { display: block; width: auto; max-width: 100%; height: auto; margin-inline: auto; }
+.f-figure-center { width: fit-content; max-width: 100%; margin-inline: auto; }
+.f-figure-center figcaption { max-width: 52ch; }
+.f-figure-narrow { max-width: 300px; }
+
+/* A wash panel behind an image: gives the small originals a deliberate frame instead of
+   leaving them adrift in a wide column, and lets a row of differently shaped images sit
+   on a shared background. */
+.f-frame { display: grid; place-items: center; background: var(--wash); border: 1px solid var(--line); padding: clamp(.75rem, 1.5vw, 1.25rem); }
+
 .f-pair { display: grid; gap: 1.5rem; }
 .f-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
 .f-before-after figcaption { grid-column: 1 / -1; margin-top: 0; }
 .f-stack { display: grid; gap: 1.5rem; }
+
+/* Three panels whose originals are 1.24, 0.92 and 0.74 wide-to-tall. No forced aspect
+   ratio, which letterboxed them unevenly; matched heights on a shared panel instead. */
 .f-trio { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
-.f-trio img { width: 100%; aspect-ratio: 4 / 3; object-fit: contain; background: var(--wash); }
+.f-trio .f-frame { min-height: 16rem; }
+.feature .f-trio .f-frame img { max-height: 14rem; }
+
+/* The wake strips run up to 8.8:1. Inside a text column they collapse to slivers, so
+   they break out wider than the text and, when the viewport is still narrower than the
+   file itself, scroll sideways at full resolution rather than shrinking further. */
+.f-bleed { position: relative; left: 50%; transform: translateX(-50%); width: min(1440px, calc(100vw - 2 * var(--gutter))); max-width: none; }
+.f-scroll { overflow-x: auto; overscroll-behavior-x: contain; background: var(--wash); border: 1px solid var(--line); padding: clamp(.75rem, 1.5vw, 1.25rem); }
+.feature .f-scroll img { width: auto; max-width: none; height: auto; margin-inline: 0; }
+.feature .f-scroll img + img { margin-top: .75rem; }
+.f-bleed figcaption, .f-bleed .f-hint { max-width: 76ch; margin-inline: auto; padding-inline: var(--gutter); }
+.f-hint { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-faint); margin: .4rem 0 0; }
 .f-strip { margin: 0; }
-.f-text + .f-strip, .f-strip + .f-strip { margin-top: 2rem; }
+.f-text + .f-strip, .f-strip + .f-strip { margin-top: clamp(2rem, 4vw, 3rem); }
+.f-trio + .f-figure, .f-figure + .f-figure, .f-strip + .f-figure, .f-figure + .f-strip,
+.f-wide + .f-wide, .f-diagram-wide + .f-trio { margin-top: clamp(2rem, 4vw, 3rem); }
+
 .f-text-wide p, .f-text-wide .expert { max-width: 68ch; }
-.f-figure-narrow { max-width: 300px; }
-.f-strip img { width: 100%; display: block; }
-.f-strip img + img { margin-top: .5rem; }
 .f-wide { margin: 0; }
 .f-diagram { align-self: center; }
 .f-diagram-wide { max-width: 860px; margin: 2rem 0 2.5rem; }
 .f-plot { max-width: 900px; }
+
+/* One-sentence takeaway under a section heading, so the page can be skimmed. */
+.f-takeaway { font-family: var(--serif); font-size: var(--step-1); line-height: 1.4; color: var(--ink); background: var(--accent-wash); border-left: 3px solid var(--accent); padding: clamp(.9rem, 2vw, 1.2rem) clamp(1rem, 2.5vw, 1.5rem); margin: -0.75rem 0 clamp(1.75rem, 3vw, 2.5rem); max-width: 64ch; }
+
+/* "Why this matters": three real settings, set like the .specs lists elsewhere. */
+.f-why { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); }
+.f-why > div { border-top: 1px solid var(--line); padding-top: 1rem; }
+.f-why h3 { font-family: var(--serif); font-size: var(--step-0); font-weight: 600; margin-bottom: .4rem; }
+.f-why p { font-family: var(--sans); font-size: var(--step--1); line-height: 1.55; color: var(--ink-soft); margin: 0; }
+
+/* Closing invitation. */
+.f-invite { background: var(--accent-wash); border-top: 3px solid var(--accent); padding: clamp(1.5rem, 4vw, 2.5rem); }
+.f-invite h2 { font-size: var(--step-2); font-weight: 400; letter-spacing: -0.02em; margin-bottom: .75rem; }
+.f-invite p { max-width: 62ch; margin: 0; }
+.f-invite-links { list-style: none; margin: clamp(1.25rem, 3vw, 1.75rem) 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.75rem; font-family: var(--sans); font-size: 0.9375rem; }
 
 .expert { margin-top: 1.5rem; border-left: 3px solid var(--accent); padding: .1rem 0 .1rem 1.1rem; max-width: 58ch; }
 .expert summary { font-family: var(--sans); font-size: var(--step--1); font-weight: 500; color: var(--accent); cursor: pointer; list-style: none; }
@@ -381,4 +428,8 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
   .f-grid { grid-template-columns: 1fr; }
   .f-grid-reverse > .f-text { order: 0; }
   .f-trio { grid-template-columns: 1fr; }
+  .f-trio .f-frame { min-height: 0; }
+  .feature .f-trio .f-frame img { max-height: 20rem; }
+  .f-why { grid-template-columns: 1fr; }
+  .f-bleed { width: calc(100vw - 2 * var(--gutter)); }
 }
