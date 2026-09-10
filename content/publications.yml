@@ -1,31 +1,33 @@
 # ------------------------------------------------------------------
 # Publications, taken from Omri Ram's CV (September 2026).
 # Fields: authors, title, venue, year  +  optional volume, pages, url, status, section, note
-#   status:  accepted | submitted   (shown as a small tag; leave out for published papers)
+#   status:  accepted | under review   (shown as a small tag; leave out for published papers)
 #   section: journal (default) | chapter | proceedings
 # Papers are sorted by year automatically. To add one, copy a block and edit it.
 # ------------------------------------------------------------------
 
-# ---------------------------- Submitted ------------------------------
+# --------------------------- Under review ----------------------------
 - authors: Jose, J. T., Friedmann, G. & Ram, O.
   title: "Coherent structure transport in turbulent axisymmetric pipe expansions"
   venue: Physical Review Fluids
   year: 2026
-  status: submitted
+  status: under review
   url: https://arxiv.org/abs/2603.19457
   note: arXiv:2603.19457
 
 - authors: Xiao, D., Jose, J. T., Parizat, A., Orange Kedem, R., Sznitman, J., Ram, O. & Shechtman, Y.
-  title: "Compact 3D flow reconstruction via wavefront shaping with deep learning"
+  title: "High-density monocular 3D particle image velocimetry by wavefront shaping and deep learning"
   venue: Optica
   year: 2026
-  status: submitted
+  status: under review
+  url: https://arxiv.org/abs/2607.29163
+  note: arXiv:2607.29163
 
 - authors: Ben-Abu, E., Zavodnik, J., Zigelman, A., Ram, O., Brojan, M. & Gat, A. D.
   title: "Programming multistability in thin shells inspired by natural buckling modes"
   venue: Advanced Functional Materials
   year: 2026
-  status: submitted
+  status: under review
 
 # ---------------------------- Accepted -------------------------------
 - authors: Heppner, R., Chandravamsi, H., Gichon, Y., Frankel, S. H. & Ram, O.

@@ -66,7 +66,7 @@ def load_content():
     pubs = yaml.safe_load((CONTENT / "publications.yml").read_text(encoding="utf-8"))
     facilities = yaml.safe_load((CONTENT / "facilities.yml").read_text(encoding="utf-8"))
 
-    rank = {"submitted": 0, "accepted": 1}
+    rank = {"under review": 0, "submitted": 0, "accepted": 1}
     pubs.sort(key=lambda p: (-int(p["year"]), rank.get(p.get("status"), 2), p["authors"]))
     for p in pubs:
         p["year"] = int(p["year"])
