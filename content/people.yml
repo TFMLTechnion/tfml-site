@@ -84,10 +84,10 @@ people:
     email: reizmana@campus.technion.ac.il
     linkedin: https://www.linkedin.com/in/avital-reizman-b9b72b94
 
-  - name: Sahar Zuckerman
+  - name: Shahar Zuckerman
     group: phd
     role: Ph.D. candidate, since 2025
-    image: sahar-zuckerman.jpg
+    image: shahar-zuckerman.jpg
     education:
       - M.Sc. Mechanical Engineering, Technion, 2025
       - B.Sc. Mechanical Engineering, ORT Braude College
@@ -115,10 +115,10 @@ people:
     email: omri.benhaim@campus.technion.ac.il
     linkedin: https://www.linkedin.com/in/omri-ben-haim-mech
 
-  - name: Gal Hafota
+  - name: Gal Afota
     group: msc
     role: M.Sc. student, since 2025
-    image: gal-hafota.jpg
+    image: gal-afota.jpg
     project: Effects of heater geometry on micro-bubble boiling emission
 
   - name: Neta Kahane

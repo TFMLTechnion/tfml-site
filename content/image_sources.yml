@@ -12,8 +12,6 @@ home-hero.jpg:
   crop: [203, 633, 2116, 2172]
 
 # People
-people/yoav-gichon.jpg:
-  url: https://static.wixstatic.com/media/709014_8918768c24e84acd9fcef9b7cc87be2e~mv2.jpg
 
 # Research
 research/research-header.jpg:
