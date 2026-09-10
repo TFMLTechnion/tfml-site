@@ -52,7 +52,8 @@ IMAGES-NEEDED.md    <- which image files to add, and where
 6. When GitHub's DNS check turns green, tick **Enforce HTTPS** on the same Pages
    settings page. Done: `https://www.tfmltechnion.com` shows the new site, and
    `tfmltechnion.com` without www redirects to it.
-7. Only now cancel the Wix **site** plan. Keep the domain registration at Wix (or
+7. Check the *Actions* tab of the repository: the first build downloads all the images
+   from Wix into the site (about a minute). Only now cancel the Wix **site** plan. Keep the domain registration at Wix (or
    transfer it elsewhere later), and keep paying its yearly renewal.
 
 Old addresses from the Wix site (for example `/copy-of-current-members-1` or
@@ -96,8 +97,11 @@ title); the rest is the page text.
 
 **Contact details, navigation, research theme text.** `content/site.yml`.
 
-**Images.** Any image referred to in the content files that doesn't exist yet is shown
-as a placeholder, so you can add them gradually. See `IMAGES-NEEDED.md`.
+**Images.** Put files in `static/img/people/`, `static/img/research/`,
+`static/img/facilities/` or `static/img/news/` and refer to them by file name. An image
+that doesn't exist yet is shown as a placeholder, or, for the pictures from the old
+site, loaded from its Wix address until the automatic download has run. See
+`IMAGES-NEEDED.md`.
 
 ## 3. Rebuild and preview on your own computer (optional)
 

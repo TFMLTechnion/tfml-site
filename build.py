@@ -27,9 +27,15 @@ def read_front_matter(path):
     body = Markup(markdown.markdown(m.group(2), extensions=["smarty"]))
     return meta, body
 
+_sources_path = CONTENT / "image_sources.yml"
+IMAGE_SOURCES = yaml.safe_load(_sources_path.read_text(encoding="utf-8")) if _sources_path.exists() else {}
+REMOTE_USED = []
+
 def find_image(folder, name):
-    """Return the site path of an image if the file exists, otherwise None.
-    Accepts a name with any extension; tries the others too (e.g. .webp -> .jpg)."""
+    """Return the site path of an image if the file exists in static/img/<folder>/.
+    Accepts a name with any extension and tries the others too (e.g. .webp -> .jpg).
+    If the file is missing but content/image_sources.yml knows where it lives online,
+    that address is used instead (tools/fetch_images.py downloads it into place)."""
     if not name:
         return None
     base = STATIC / "img" / folder if folder else STATIC / "img"
@@ -38,6 +44,11 @@ def find_image(folder, name):
         if c.exists():
             rel = c.relative_to(STATIC).as_posix()
             return "/assets/" + rel
+    key = f"{folder}/{name}" if folder else name
+    spec = IMAGE_SOURCES.get(key)
+    if spec:
+        REMOTE_USED.append(key)
+        return spec["url"] if isinstance(spec, dict) else spec
     return None
 
 def initials(name):
@@ -142,6 +153,8 @@ def build(out_dir, preview=False):
         html = env.get_template(template).render(
             site=site, projects=_with_urls(projects, url), posts=_with_urls(posts, url),
             img=img, year=datetime.date.today().year, **ctx)
+        if preview:  # links written inside Markdown content are root-relative; make them relative too
+            html = re.sub(r'(href|src)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', html)
         dest = out / path.lstrip("/")
         if path.endswith("/"):
             dest = dest / "index.html"
@@ -218,7 +231,11 @@ def build(out_dir, preview=False):
         (out / "sitemap.xml").write_text("\n".join(sm) + "\n")
 
     n = sum(1 for _ in out.rglob("*.html"))
+    remote = sorted(set(REMOTE_USED))
     print(f"Built {n} HTML pages into {out_dir}/")
+    if remote:
+        print(f"  {len(remote)} images are not in static/img yet and are loaded from their online address;"
+              f" run tools/fetch_images.py to download them.")
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()

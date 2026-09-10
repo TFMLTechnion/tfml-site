@@ -3,6 +3,9 @@ title: "TFML in the USA: 76th APS DFD Annual Meeting, Washington DC"
 date: 2023-12-08
 image: aps-dfd-2023.png                 # Wix file: 709014_8ad7dff1...png
 summary: Two talks from the lab at the APS Division of Fluid Dynamics meeting.
+figures:
+  - image: aps-dfd-2023-2.png           # Wix file: 709014_638c6d94...png
+    caption: From the second talk, on turbulence in axisymmetric pipe flow across a change in cross-section.
 ---
 Dr. Jibu Tom Jose presented our work "Experimental examination of shock wave phenomena in ducts with abrupt area expansions" at the 76th Annual Meeting of the Division of Fluid Dynamics of the American Physical Society, held in Washington DC on 19–21 November 2023.
 

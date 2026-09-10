@@ -1,0 +1,107 @@
+# ------------------------------------------------------------------
+# Where each image comes from. The site uses these addresses directly until the
+# file exists in static/img/...; tools/fetch_images.py downloads them (once) into
+# place, cropping where the old site cropped. Key = path inside static/img/.
+# ------------------------------------------------------------------
+logo.png:
+  url: https://static.wixstatic.com/media/f0480c_3c90cdebe1d54b85804128d993c316ae~mv2.png
+technion-logo.png:
+  url: https://static.wixstatic.com/media/709014_073a6bd8420a49a9ba6411caad4d83e5~mv2.png
+home-hero.jpg:
+  url: https://static.wixstatic.com/media/709014_be6718b0766341f5a59b101eb41a3508~mv2.jpg
+  crop: [203, 633, 2116, 2172]
+
+# People
+people/omri-ram.jpg:
+  url: https://static.wixstatic.com/media/709014_6490852ef3a54aa7ad2073a01ce46714~mv2.jpg
+people/yigal-evron.jpg:
+  url: https://static.wixstatic.com/media/709014_f95120a8036f4adc8fb4735f1d9a1dce~mv2.webp
+people/jibu-tom-jose.jpg:
+  url: https://static.wixstatic.com/media/3af44e_5f396093d4a446de86a02d1bb39e9372~mv2.jpg
+  crop: [130, 0, 1209, 1517]
+people/yoav-gichon.jpg:
+  url: https://static.wixstatic.com/media/709014_8918768c24e84acd9fcef9b7cc87be2e~mv2.jpg
+people/avital-reizman.jpg:
+  url: https://static.wixstatic.com/media/709014_4b429bc2e6384a1294384fe658e62481~mv2.jpeg
+people/sahar-zuckerman.jpg:
+  url: https://static.wixstatic.com/media/709014_8479ad71de2245e4a0e5b07347e13fd9~mv2.jpg
+  crop: [187, 138, 318, 403]
+people/aviel-ben-harush.jpg:
+  url: https://static.wixstatic.com/media/709014_94bbc30280b148eba9c0e0897bf05d79~mv2.jpg
+people/dvir-feld.jpg:
+  url: https://static.wixstatic.com/media/709014_33abdbeb329d4a0c96bc885d8059caf1~mv2.jpg
+people/omri-ben-haim.jpg:
+  url: https://static.wixstatic.com/media/709014_34a7d5b1d40b4961a20002becf6b8d74~mv2.jpg
+people/raz-heppner.jpg:
+  url: https://static.wixstatic.com/media/f0480c_8da3f015ed8e419c930e009a3c84ca4e~mv2.jpg
+  crop: [0, 121, 900, 1130]
+people/omri-gurfinkel.jpg:
+  url: https://static.wixstatic.com/media/f0480c_a76c68bdcec34992987070e8da588dc7~mv2.jpg
+people/gal-friedmann.jpg:
+  url: https://static.wixstatic.com/media/709014_32b9e5ab2d4d41598041b5c09ead4a08~mv2.jpg
+people/tal-marder.jpg:
+  url: https://static.wixstatic.com/media/709014_11dc88561303492dbf5c66274662d980~mv2.png
+
+# Research
+research/research-header.jpg:
+  url: https://static.wixstatic.com/media/f0480c_cf1b78b3b75941ac95d1de52ce158552~mv2.jpg
+research/shock-area-changes.jpg:
+  url: https://static.wixstatic.com/media/709014_91ed904d6bc24d748ddb1bb0433498fc~mv2.jpg
+research/shock-contraction-series.png:
+  url: https://static.wixstatic.com/media/709014_8ba136e9b0984de38c62efcfe2515166~mv2.png
+research/shock-contraction-les.png:
+  url: https://static.wixstatic.com/media/709014_0505d75d1da54db3bebf4b9e3a780083~mv2.png
+research/shock-constriction.jpg:
+  url: https://static.wixstatic.com/media/709014_2bf8691aff1641eb8d5be9957dce553d~mv2.jpg
+research/shock-porous-media.jpg:
+  url: https://static.wixstatic.com/media/709014_6baec47d7d804c91b7824e47f4ed9d56~mv2.jpg
+research/solids-in-pipe-flow.png:
+  url: https://static.wixstatic.com/media/709014_63709baf159e46a698f914577257aa48~mv2.png
+research/tomographic-setup.jpg:
+  url: https://static.wixstatic.com/media/709014_d4fc1dbb010241db957540f06c8ae00a~mv2.jpg
+research/turbulence-round-pipes.png:
+  url: https://static.wixstatic.com/media/709014_701c7b363f6f4c5ea4fabc4389132fbe~mv2.png
+research/turbulence-fields.png:
+  url: https://static.wixstatic.com/media/709014_904fa293bd1448e4ad8eebd204cae2f2~mv2.png
+research/turbulence-modes.png:
+  url: https://static.wixstatic.com/media/709014_0a7f6de107dc4d23a4b8a7f056ae39d9~mv2.png
+research/rising-spheres.png:
+  url: https://static.wixstatic.com/media/709014_1daa6d0654024fa988c0b50323ecf80d~mv2.png
+research/rising-sphere-1.jpg:
+  url: https://static.wixstatic.com/media/709014_bc3b63d5266c4806824f52c4671d81c5~mv2.jpg
+research/rising-sphere-2.jpg:
+  url: https://static.wixstatic.com/media/709014_08c94812bef5434c9cee280ae923b3ef~mv2.jpg
+research/rising-sphere-3.png:
+  url: https://static.wixstatic.com/media/709014_34564b66a1804ce79d954a5d3997a487~mv2.png
+research/cavitation-inception.jpg:
+  url: https://static.wixstatic.com/media/709014_129116345c2d44348f5d956b83faae80~mv2.jpg
+research/oil-water-separation.jpg:
+  url: https://static.wixstatic.com/media/709014_1169392c311b4aff9ce0062d29ad633b~mv2.jpg
+
+# Facilities
+facilities/shock-tube.png:
+  url: https://static.wixstatic.com/media/709014_419ebf299d6c494db197065fc7d9582c~mv2.png
+facilities/round-pipe-channel.jpg:
+  url: https://static.wixstatic.com/media/709014_a573bf1bdece4338ab72d014cb41e0c9~mv2.jpg
+facilities/octagonal-tank.jpg:
+  url: https://static.wixstatic.com/media/709014_2ca5cae802e646fcb96f72cb0681a5a5~mv2.jpg
+facilities/water-tunnel.jpg:
+  url: https://static.wixstatic.com/media/709014_e9316555ea464dc1be341631eaa88765~mv2.jpg
+
+# News
+news/aps-dfd-2023.png:
+  url: https://static.wixstatic.com/media/709014_8ad7dff15750414d9028d653dd4b6639~mv2.png
+news/aps-dfd-2023-2.png:
+  url: https://static.wixstatic.com/media/709014_638c6d949f1a4d24b23dfe671e8a9fd9~mv2.png
+news/etc-2023.png:
+  url: https://static.wixstatic.com/media/709014_971930f291644442b35e9e1d1a131543~mv2.png
+news/tomo-piv-system.jpg:
+  url: https://static.wixstatic.com/media/709014_5c2ebb60d24e49269245e58359e83793~mv2.jpg
+news/tomo-setup-pipe.jpg:
+  url: https://static.wixstatic.com/media/709014_322c874bb33c430a824ec2c4b344c8bf~mv2.jpg
+news/tomo-jet.jpg:
+  url: https://static.wixstatic.com/media/709014_3adfc10e903d4814ba358551d86cccc9~mv2.jpg
+news/acs-prf.jpg:
+  url: https://static.wixstatic.com/media/709014_f36a63ad5afa47b3991d26d71fa4383a~mv2.jpg
+news/shock-tube-first-test.jpg:
+  url: https://static.wixstatic.com/media/709014_91ed904d6bc24d748ddb1bb0433498fc~mv2.jpg
