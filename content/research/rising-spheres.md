@@ -1,5 +1,5 @@
 ---
-title: The sphere you cannot see
+title: Tomo-PTV of buoyancy driven spheres
 theme: multiphase
 order: 3
 template: features/rising-spheres.html   # this page has its own layout (an illustrated story)
