@@ -141,6 +141,8 @@ people:
     group: undergrad
     role: Undergraduate research assistant
     image: ori-levi.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
 
   # ------------------------------ Alumni -------------------------------
   - name: Dvir Feld
