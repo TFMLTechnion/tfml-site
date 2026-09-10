@@ -1,0 +1,196 @@
+{% extends "base.html" %}
+{% set F = 'research/rising-spheres/' %}
+{% block content %}
+<article class="feature">
+
+  <header class="feature-hero wrap">
+    <div class="feature-hero-text">
+      <p class="crumbs"><a href="{{ '/research/' | url }}">Research</a> <span aria-hidden="true">/</span> {{ theme.title }}</p>
+      <h1>The sphere you cannot see</h1>
+      <p class="feature-lede">A small acrylic ball rises through a tank of salt water. It zigzags, speeds up, slows down, and leaves a trail of vortices behind it. We wanted to measure the forces that make it do that, on a body that is completely free to move. To get there, we first had to make the sphere disappear, and then invent a way to find it again.</p>
+      <p class="feature-meta">Based on two papers from the lab, published in the <em>International Journal of Multiphase Flow</em> (2026) and <em>Measurement Science and Technology</em> (2026). Links at the end.</p>
+    </div>
+    <figure class="feature-hero-media">
+      <img src="{{ img(F ~ 'setup-photo.jpg') }}" alt="Four high-speed cameras arranged around a tall transparent octagonal tank on an optical table" width="496" height="743">
+      <figcaption>The octagonal tank, 70 cm tall, with four Phantom v2640 high-speed cameras looking in.</figcaption>
+    </figure>
+  </header>
+
+  <section class="stats wrap" aria-label="The experiment in numbers">
+    <div><strong>4</strong><span>high-speed cameras, recording 4,800 frames every second</span></div>
+    <div><strong>100,000</strong><span>fluorescent tracer particles, each smaller than a hair's width</span></div>
+    <div><strong>1.489</strong><span>refractive index of both the acrylic sphere and the salt solution</span></div>
+    <div><strong>1%</strong><span>of a diameter: how precisely we locate a sphere we cannot see</span></div>
+  </section>
+
+  <section class="f-section wrap">
+    <div class="f-grid">
+      <div class="f-text">
+        <h2>Why chase a rising ball?</h2>
+        <p>A sphere rising through a liquid is one of the oldest problems in fluid mechanics and still not a solved one. Seeds falling from a tree, bubbles in a reactor, sediment settling in a tank, oil droplets escaping from a well: all of them are bodies moving freely through a fluid, pushed around by the very wake they create.</p>
+        <p>The wake is the trouble. As the sphere moves, it sheds vortices, and each vortex tugs on the sphere. The result is a path that wobbles, zigzags or spirals. Simulations have described this dance for years, but nobody had directly measured the forces on a freely moving sphere while watching the wake that causes them. Most experiments held the sphere still or on a tether. We wanted to let it go.</p>
+      </div>
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'trajectories.png') }}" alt="Six wandering three-dimensional paths measured for rising spheres of three sizes">
+        <figcaption>Six measured paths of spheres between 7.9 and 11.1 mm across. None of them goes straight up.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Step one: make the sphere disappear</h2>
+    <div class="f-grid f-grid-reverse">
+      <div class="f-text">
+        <p>To see the flow around a moving body in three dimensions, we light up tiny tracer particles with a laser and film them from four angles at once. Light bends when it passes from water into acrylic, so a plain acrylic sphere would distort everything behind it, exactly where we want to look.</p>
+        <p>The cure is an old trick with a modern twist. A concentrated solution of sodium iodide, about 62% salt by weight, has the same refractive index as acrylic, so light travels straight through the sphere as if it were not there. We then make the tracers fluorescent and put filters on the cameras that block the laser's own colour, which removes the last faint reflections from the sphere's surface. The recordings become pristine. They also lose the sphere entirely.</p>
+        <details class="expert">
+          <summary>For the specialist</summary>
+          <p>Working fluid 62 wt% NaI, density 1820 kg/m³, kinematic viscosity 1.1 × 10⁻⁶ m²/s, refractive index 1.489. Tracers: Rhodamine-B-coated PMMA, 1–20 µm, imaged through 550 nm long-pass filters. Acrylic spheres of 6.35–12.7 mm and density ratio m* = 0.65, released from a 400 mm pipe so they reach terminal velocity before entering the 110 × 75 × 25 mm measurement volume. Re<sub>T</sub> = 1500–3500, Ga = 848–2397. Tracks from Shake-The-Box, Eulerian fields by VIC#, pressure by GPU Omni3D integration.</p>
+        </details>
+      </div>
+      <div class="f-pair">
+        <figure class="f-figure">
+          <img src="{{ img(F ~ 'sphere-air-nai.jpg') }}" alt="An acrylic sphere sitting half in air and half in salt solution: the upper half is clearly visible, the submerged half has vanished">
+          <figcaption>The same sphere, half in air, half in the solution. The submerged half is gone.</figcaption>
+        </figure>
+        <figure class="f-figure f-before-after">
+          <img src="{{ img(F ~ 'piv-visible.jpg') }}" alt="Camera image with ordinary tracers: the sphere glows as a bright disc">
+          <img src="{{ img(F ~ 'piv-invisible.jpg') }}" alt="Camera image with fluorescent tracers and a filter: only a faint dotted outline marks where the sphere is">
+          <figcaption>What the cameras see. Left, ordinary tracers: the sphere lights up. Right, fluorescent tracers and a filter: nothing but particles. The dotted circle was drawn in afterwards.</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Step two: find it anyway</h2>
+    <div class="f-text f-text-wide">
+        <p>An invisible sphere still leaves fingerprints in the flow, and three of them are enough to pin it down. There are no tracers inside it, so it shows up as a hole in the particle cloud. It shoves fluid upward just ahead of itself, and by conservation of mass the fluid a little farther out must come back down. And the fluid inside it does not spin, while the wake behind it is full of vortices.</p>
+        <p>We turn the three fingerprints into a single score for every candidate position and let an optimizer slide toward the best one, frame after frame, starting each search where the sphere was a moment ago. The result is a position known to about one percent of the sphere's diameter, without a single marker on the sphere itself, so its surface, and its physics, stay untouched.</p>
+        <details class="expert">
+          <summary>For the specialist</summary>
+          <p>The cost function J(x) = D(x) + w₁[−V<sub>inner</sub> + V<sub>outer</sub>] + w₂[Q<sub>inner</sub> − Q<sub>outer</sub>] combines normalised tracer density in a sphere of radius R, mean vertical velocity in the upper hemisphere within 1.1R against a shell between 1.5R and 2R, and mean Q-criterion inside against a shell out to 2.5R. It is minimised by Polak–Ribière conjugate gradients with a backtracking line search. Weights w₁ = 3.08 and w₂ = 4.42 were calibrated for stable, jitter-free convergence. Positional uncertainty from the Hessian of J at the minimum: mean 0.7–1.2% d, worst case below 0.08 d; robust to ±10% weight changes, 25% search-radius changes and 10% added noise.</p>
+        </details>
+    </div>
+    <div class="f-diagram f-diagram-wide">
+      {% include "features/_clues.svg" %}
+    </div>
+    <div class="f-trio">
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'particle-void.png') }}" alt="A dense cloud of reconstructed tracer positions with an empty rounded region where the sphere is">
+        <figcaption>The measured particle cloud. The sphere is the hole.</figcaption>
+      </figure>
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'velocity-planes.png') }}" alt="Stacked horizontal slices of vertical velocity showing a ring-shaped pattern around the sphere's position">
+        <figcaption>Vertical velocity on horizontal slices: a ring of rising fluid around the sphere.</figcaption>
+      </figure>
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'velocity-isosurface.png') }}" alt="Three-dimensional rendering of the flow around the rising sphere, with upward-moving fluid in grey and downwash in red">
+        <figcaption>The same flow in three dimensions, seen from the sphere: fluid pushed up (grey) and the downwash beside it (red).</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">What the sphere feels</h2>
+    <p class="f-intro">With the position known, the measured velocity field gives us the pressure everywhere, and the pressure on the sphere's surface gives us the force. For the first time, drag and lift on a freely moving sphere can be followed through time, together with the wake that produces them. Here is half an oscillation of the 11.11 mm sphere, about a fifth of a second, from A to J.</p>
+    <figure class="f-strip">
+      <img src="{{ img(F ~ 'wake-11mm-row1.png') }}" alt="Five snapshots of the sphere and its wake, labelled A to E, showing two twisted vortex threads growing behind the sphere">
+      <img src="{{ img(F ~ 'wake-11mm-row2.png') }}" alt="Five more snapshots, F to J, showing the vortex threads detaching and breaking into rings">
+      <figcaption>Vortices in the wake, drawn as surfaces of equal swirl (Q = 1800 s⁻²), at ten moments during the rise. The sphere is black.</figcaption>
+    </figure>
+    <div class="f-grid">
+      <div class="f-text">
+        <p><strong>A to C.</strong> Two twisted threads of vorticity trail behind the sphere. As long as they stay attached and coherent, they pull on its rear, the drag is high, and the sphere slows down. Because the two threads are unequal, they also push it sideways.</p>
+        <p><strong>D to G.</strong> The threads weaken and the suction eases. Drag falls to almost nothing and the sphere accelerates again, with a brief sideways wiggle as the loading becomes lopsided.</p>
+        <p><strong>H to J.</strong> The threads let go completely and roll up into two vortex rings that drift away. Released from its wake, the sphere speeds up sharply, and a new thread begins to form on the other side. That is what will make the next half-cycle swing the other way: the zigzag.</p>
+        <details class="expert">
+          <summary>For the specialist</summary>
+          <p>Forces are obtained by integrating the reconstructed surface pressure, F = −∮ p n dS, so they represent the dynamic component only (buoyancy is not included). For the 11.11 mm sphere (Re<sub>T</sub> ≈ 2880, m* = 0.65) the wake shows a primary and a secondary vortex ring per half-cycle, the asymmetric four-ring (4R) mode of Horowitz &amp; Williamson (2010), with the sphere sitting near the 2R/4R boundary. The measured drag history is phase-locked to the attachment and pinch-off of the streamwise vortex threads; the transition from thread to rings at H–I is observed here for the first time as it happens.</p>
+        </details>
+      </div>
+      <div class="f-pair">
+        <figure class="f-figure f-figure-narrow">
+          <img src="{{ img(F ~ 'pressure-spheres.png') }}" alt="The sphere drawn at seven positions along its rising path, each coloured by the pressure on its surface">
+          <figcaption>Pressure (in pascals) painted onto the sphere along its path: high on the nose, low on the wake side, and lopsided when a vortex pulls from one flank.</figcaption>
+        </figure>
+      </div>
+    </div>
+    <figure class="f-figure f-wide f-plot">
+      <img src="{{ img(F ~ 'force-plot.png') }}" alt="Time histories of the sphere's speed, drag and lift over 220 milliseconds, with the moments A to J marked">
+      <figcaption>Speed (blue, left axis), drag (dotted) and lift (dashed, right axis, in millinewtons) over the same 220 ms. Every dip in speed lines up with a peak in drag; the letters mark the snapshots above.</figcaption>
+    </figure>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Size changes everything</h2>
+    <div class="f-text f-text-wide">
+      <p>The three spheres are made of the same material in the same liquid; only their diameter differs, and with it the Reynolds number. That is enough to change the character of the motion. The 11.11 mm sphere sheds pairs of rings and wanders in three dimensions. The 9.53 and 7.93 mm spheres rise almost straight, shedding one symmetric ring at a time, and the smallest one is governed by vortices hugging its surface rather than by the larger structures in its wake.</p>
+      <p>Across all three, the pattern holds: bigger sphere, faster rise, larger swings in drag. It confirms that the invisible-sphere method produces forces that behave consistently across regimes, which is what makes it a measurement technique rather than a one-off.</p>
+      <details class="expert">
+        <summary>For the specialist</summary>
+        <p>Re<sub>T</sub> ≈ 2880, 2170 and 1760 for d = 11.11, 9.53 and 7.93 mm. The two smaller spheres show the canonical two-ring (2R) regime: symmetric, periodic, phase-locked shedding with lift alternating about zero. |V₁₁| &gt; |V₉| &gt; |V₇| and F<sub>d,11</sub> &gt; F<sub>d,9</sub> &gt; F<sub>d,7</sub>. Each recording covers roughly half a shedding cycle, a limit set by camera resolution rather than by the method.</p>
+      </details>
+    </div>
+    <figure class="f-strip">
+      <img src="{{ img(F ~ 'wake-9mm-row1.png') }}" alt="Wake snapshots for the 9.53 mm sphere: a single compact vortex ring forming beneath it">
+      <figcaption>9.53 mm: one ring at a time, and an almost straight path.</figcaption>
+    </figure>
+    <figure class="f-strip">
+      <img src="{{ img(F ~ 'wake-8mm-row1.png') }}" alt="Wake snapshots for the 7.93 mm sphere: vorticity stays close to the sphere's surface">
+      <figcaption>7.93 mm: the vorticity stays close to the body and the far wake barely tugs on it.</figcaption>
+    </figure>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Step three: teach the reconstruction about the body</h2>
+    <div class="f-grid f-grid-reverse">
+      <div class="f-text">
+        <p>Tracking particles gives velocities at scattered points. To compute pressure, vorticity or forces, those points have to be turned into a smooth field on a regular grid, and every method for doing so assumed the whole volume is fluid. Around a moving body that assumption fails precisely where it matters most: the method happily invents velocity inside the solid and ignores the fact that fluid at the surface must move with the surface.</p>
+        <p>Our second paper fixes this. At every instant, each grid point is classified by its distance to the body: inside, on the thin shell around the surface, or in open fluid. The shell is forced to move with the body, incompressibility is imposed only in the fluid, and points the body has just vacated are told to forget their past. The whole thing is one solve, works for stationary walls, translating, rotating or several bodies alike, and switches itself off wherever there is no body at all.</p>
+        <details class="expert">
+          <summary>For the specialist</summary>
+          <p>LE-DM extends constrained cost minimisation (Agarwal et al. 2021) to a time-dependent fluid–solid partition defined by a signed-distance field φ(r, t). Shell nodes (0 ≤ φ ≤ Δ/2) and interior nodes carry Dirichlet constraints u = U<sub>s</sub> + ω<sub>s</sub> × (r − X<sub>s</sub>); open-fluid nodes carry divergence constraints, with second-order one-sided stencils next to the interface. Data weights are damped near the surface according to the body-detection uncertainty σ<sub>Γ</sub>; the temporal prior is reset at newly exposed nodes; a coverage-adaptive graph Laplacian regularises data-starved wake cells. The saddle-point system is solved with MINRES (≈4.5 s per snapshot for 221,000 unknowns on one CPU core). Analytical oscillating sphere: first-cell error 14% → 3% of U₀. CFD rising sphere: 1.5–3.5% full-domain error. Tumbling prolate spheroid: 4.6% full-domain, 2.4–3.4% near-surface. Code: github.com/TFMLTechnion/LEDM.</p>
+        </details>
+      </div>
+      <div class="f-diagram">
+        {% include "features/_ledm_grid.svg" %}
+      </div>
+    </div>
+    <figure class="f-figure f-wide">
+      <img src="{{ img(F ~ 'ledm-methods.png') }}" alt="Four reconstructions of the same measurement side by side; only the second leaves the sphere's interior blank">
+      <figcaption>The same experimental snapshot reconstructed four ways. Only the masked method (second panel) knows there is a sphere; the others paint velocity inside it, and the last one leaves more than half of the wake empty.</figcaption>
+    </figure>
+    <div class="f-grid">
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'ledm-surface-speed.png') }}" alt="Reconstructed speed at the sphere's surface over time for four methods; only one follows the independently measured sphere speed">
+        <figcaption>Speed of the fluid at the sphere's surface, as reconstructed by four methods, against the sphere's own measured speed (dashed). Only the masked reconstruction agrees with it.</figcaption>
+      </figure>
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'ledm-spheroid.png') }}" alt="A tumbling elongated body rising through simulated flow, with reference and reconstructed velocity fields side by side">
+        <figcaption>The method is not tied to spheres. A simulated prolate spheroid tumbling through almost a full turn as it rises: the reference flow (top) and the reconstruction from synthetic tracks (bottom) agree to within a few percent of the body speed.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="f-section wrap f-papers">
+    <h2 class="f-title">Read the papers</h2>
+    <div class="f-grid">
+      <div class="paper">
+        <p class="paper-venue">International Journal of Multiphase Flow 197, 105597 (2026), open access</p>
+        <h3><a href="https://doi.org/10.1016/j.ijmultiphaseflow.2025.105597">On the application of refractive index matching to study the buoyancy-driven motion of spheres</a></h3>
+        <p class="paper-authors">Jibu Tom Jose, Aviel Ben-Harosh and Omri Ram</p>
+        <p>The invisible-sphere detection method, the wake regimes, and the first direct drag and lift histories on a freely rising sphere.</p>
+      </div>
+      <div class="paper">
+        <p class="paper-venue">Measurement Science and Technology (2026), accepted</p>
+        <h3><a href="https://github.com/TFMLTechnion/LEDM">Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids</a></h3>
+        <p class="paper-authors">Jibu Tom Jose, Arieh Jacobson, Dhanush Vittal Shenoy, Steven H. Frankel and Omri Ram</p>
+        <p>The LE-DM reconstruction. Source code and examples are on GitHub; synthetic validation data are on <a href="https://doi.org/10.5281/zenodo.21965844">Zenodo</a>.</p>
+      </div>
+    </div>
+    <p class="f-funding">This work was partially funded by the American Chemical Society Petroleum Research Fund (grant 65901-ND9). Jibu Tom Jose was supported by a Technion postdoctoral fellowship.</p>
+  </section>
+
+</article>
+{% endblock %}

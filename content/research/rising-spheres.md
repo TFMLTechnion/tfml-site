@@ -1,11 +1,13 @@
 ---
-title: Buoyancy-driven spheres rising in quiescent fluid
+title: The sphere you cannot see
 theme: multiphase
 order: 3
+template: features/rising-spheres.html   # this page has its own layout (an illustrated story)
 summary: >-
-  Time-resolved tomographic PIV around freely rising spheres resolves the wake, the pressure
-  field and the transient loads that make the sphere oscillate.
-image: rising-spheres.png               # Wix file: Picture6.png
+  How we measure the forces on a freely rising sphere that is optically invisible: index
+  matching, a detection method built on the flow's fingerprints, and a reconstruction that
+  respects the moving body.
+image: rising-spheres/velocity-isosurface.png
 image_alt: Tomographic PIV of the wake behind a rising sphere
 related:
   - On the application of refractive index matching to study the buoyancy-driven motion of spheres

@@ -179,7 +179,7 @@ def build(out_dir, preview=False):
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:
         current["path"] = p["url"]
-        render("project.html", p["url"], page_id="project", section="research", page_title=p["title"],
+        render(p.get("template") or "project.html", p["url"], page_id="project", section="research", page_title=p["title"],
                page_description=p.get("summary"), project=_with_urls([p], url)[0],
                theme=themes.get(p.get("theme"), {}), og_image=p.get("image_url"))
     current["path"] = "/people/"
