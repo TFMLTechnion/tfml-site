@@ -136,6 +136,12 @@ people:
     project: Boiling in regions of separated flow in a water tunnel
     linkedin: https://www.linkedin.com/in/omri-gurfinkel
 
+  # ------------------- Undergraduate research assistants ------------------
+  - name: Ori Levi
+    group: undergrad
+    role: Undergraduate research assistant
+    image: ori-levi.jpg
+
   # ------------------------------ Alumni -------------------------------
   - name: Dvir Feld
     group: alumni
