@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ page_description or site.description }}">
+<link rel="canonical" href="{{ site.url }}{{ canonical }}">
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ page_title or site.name }}">
+<meta property="og:description" content="{{ page_description or site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ canonical }}">
+{% if og_image %}<meta property="og:image" content="{{ site.url }}{{ og_image }}">{% endif %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+</head>
+<body class="page-{{ page_id }}">
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ '/' | url }}">
+      {% if img('logo.png') %}<img class="brand-logo" src="{{ img('logo.png') }}" alt="" width="180" height="53">{% endif %}
+      <span class="brand-text"><span class="brand-name">{{ site.name }}</span><span class="brand-sub">Technion – Israel Institute of Technology</span></span>
+    </a>
+    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
+      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
+      <span class="visually-hidden">Menu</span>
+    </button>
+    <nav id="nav" class="nav">
+      {% for item in site.nav %}<a href="{{ item.url | url }}"{% if item.url.strip('/') == section %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+    </nav>
+  </div>
+</header>
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer" id="contact">
+  <div class="wrap footer-grid">
+    <div>
+      <h2 class="footer-heading">{{ site.name }}</h2>
+      <address>
+        {{ site.contact.lab_address }}<br>
+        {{ site.contact.postal }}<br>
+        <a href="mailto:{{ site.contact.lab_email }}">{{ site.contact.lab_email }}</a>
+      </address>
+    </div>
+    <div>
+      <h2 class="footer-heading">{{ site.contact.pi_name }}</h2>
+      <address>
+        {{ site.contact.pi_address }}<br>
+        {{ site.contact.postal }}<br>
+        <a href="mailto:{{ site.contact.pi_email }}">{{ site.contact.pi_email }}</a>
+      </address>
+    </div>
+    <div class="footer-aside">
+      {% if img('technion-logo.png') %}<img src="{{ img('technion-logo.png') }}" alt="Technion – Israel Institute of Technology" width="160" height="72" class="footer-logo">{% else %}<p class="footer-affiliation">{{ site.affiliation }}</p>{% endif %}
+      <p class="epigraph">“{{ site.epigraph.text }}” <span class="epigraph-source">{{ site.epigraph.source }}</span></p>
+    </div>
+  </div>
+  <div class="wrap footer-bottom">
+    <p>© {{ year }} {{ site.name }}, Technion. <a href="{{ site.scholar_url }}">Google Scholar</a></p>
+  </div>
+</footer>
+<script src="{{ '/assets/js/site.js' | url }}" defer></script>
+</body>
+</html>

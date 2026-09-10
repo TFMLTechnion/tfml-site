@@ -1,0 +1,148 @@
+# ------------------------------------------------------------------
+# People. One entry per person. Groups appear in this order:
+#   pi, staff, postdoc, phd, msc, undergrad, alumni
+# image: file name inside static/img/people/ (leave out if no photo yet)
+# ------------------------------------------------------------------
+groups:
+  pi: Principal investigator
+  staff: Lab staff
+  postdoc: Postdoctoral fellows
+  phd: Ph.D. candidates
+  msc: M.Sc. students
+  undergrad: Undergraduate research assistants
+  alumni: Alumni
+
+people:
+  - name: Omri Ram
+    group: pi
+    role: Assistant Professor, Faculty of Mechanical Engineering
+    image: omri-ram.jpg          # Wix file: omri.jpg (the PI photo)
+    education:
+      - Postdoctoral fellow, Johns Hopkins University
+      - Ph.D. Mechanical Engineering, Ben-Gurion University
+      - M.Sc. Mechanical Engineering, Ben-Gurion University
+      - B.Sc. Mechanical Engineering, Ben-Gurion University
+    email: omri.ram@me.technion.ac.il
+
+  - name: Yigal Evron
+    group: staff
+    role: Lab manager
+    image: yigal-evron.jpg       # Wix file: Yigal.webp
+    education:
+      - Ph.D. Mechanical Engineering, Technion
+      - M.Sc. Mechanical Engineering, Technion
+      - B.Sc. Mechanical Engineering, Technion
+    email: shmigal@me.technion.ac.il
+
+  - name: Rami Yanai
+    group: staff
+    role: Lab engineer
+    # image: rami-yanai.jpg      # old site used a stock photo; add a real one here
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    email: rami.ya@me.technion.ac.il
+
+  - name: Jibu Tom Jose
+    group: postdoc
+    role: Postdoctoral fellow
+    image: jibu-tom-jose.jpg     # Wix file: WhatsApp Image 2024-11-05 at 16.38.26_abcdb974.jpg
+    education:
+      - Ph.D. and MSE, Mechanical Engineering, Johns Hopkins University
+      - M.Tech Aerospace Engineering, Indian Institute of Technology Kanpur
+      - B.Tech Aerospace Engineering, Amrita Vishwa Vidyapeetham, Coimbatore
+    email: jibu.jose@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/jibu-tom-jose-08192343
+
+  - name: Yoav Gichon
+    group: phd
+    role: Ph.D. candidate (direct track from M.Sc.)
+    image: yoav-gichon.jpg       # Wix file: DSC_0194.jpg
+    education:
+      - M.Sc. Mechanical Engineering, Technion
+      - B.Sc. Mechanical Engineering, Ben-Gurion University
+    project: Shock wave propagation through abrupt area changes
+    email: gichon@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/yoav-gichon-mechanical-engineering
+
+  - name: Avital Reizman
+    group: phd
+    role: Ph.D. candidate
+    image: avital-reizman.jpg    # Wix file: Avital_Picture.jpeg
+    education:
+      - M.Sc. Chemical Engineering, Technion
+      - B.Sc. Chemical Engineering, Technion
+    project: Creating mechanical neural networks through self-assembly
+    note: "Main advisor: Prof. Amir Gat"
+    note_url: https://gat.net.technion.ac.il/
+    email: reizmana@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/avital-reizman-b9b72b94
+
+  - name: Sahar Zuckerman
+    group: phd
+    role: Ph.D. candidate (direct track from M.Sc.)
+    image: sahar-zuckerman.jpg   # Wix file: WhatsApp Image 2023-08-31 at 18.04.59.jpg
+    education:
+      - B.Sc. Mechanical Engineering, ORT Braude College
+    project: Solid convection in pipes – smooth pipes with a disturbance
+    linkedin: https://www.linkedin.com/in/shahar-zuckerman-13b99b223
+
+  - name: Aviel Ben-Harush
+    group: msc
+    role: M.Sc. student
+    image: aviel-ben-harush.jpg  # Wix file: DSC_0174-2.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Ben-Gurion University
+    project: Index-matched experiments for multiphase flow
+    email: aviel.ben@campus.technion.ac.il
+
+  - name: Dvir Feld
+    group: msc
+    role: M.Sc. student
+    image: dvir-feld.jpg         # Wix file: Untitled_edited.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    project: Solid convection in pipes – smooth pipes
+    email: dvirfeld@campus.technion.ac.il
+
+  - name: Omri Ben Haim
+    group: msc
+    role: M.Sc. student
+    image: omri-ben-haim.jpg     # Wix file: omri.jpg (the second one, media id 709014_34a7d5b1...)
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    project: Shock wave interaction with porous media
+    email: omri.benhaim@campus.technion.ac.il
+    linkedin: https://www.linkedin.com/in/omri-ben-haim-mech
+
+  - name: Raz Heppner
+    group: msc
+    role: M.Sc. student
+    image: raz-heppner.jpg       # Wix file: RAZ.jpg
+    education:
+      - B.Sc. Earth Sciences and Physics, Hebrew University of Jerusalem
+    project: Shock wave interaction with rough walls
+    # email:                     # the old site had the wrong address here; add the right one
+    linkedin: https://www.linkedin.com/in/raz-heppner-228b38248/
+
+  - name: Omri Gurfinkel
+    group: undergrad
+    role: Undergraduate research assistant
+    image: omri-gurfinkel.jpg    # Wix file: Gurfi.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
+    # email:                     # the old site had the wrong address here; add the right one
+    linkedin: https://www.linkedin.com/in/omri-gurfinkel
+
+  # ---------------------------- Alumni ----------------------------
+  - name: Gal Friedmann
+    group: alumni
+    role: M.Sc.
+    image: gal-friedmann.jpg     # Wix file: gal.jpg
+    thesis: Turbulent flow across axisymmetric expansion in round pipe and its relevance to transport of inertial solids
+
+  - name: Tal Marder
+    group: alumni
+    role: Undergraduate research assistant
+    image: tal-marder.jpg        # Wix file: tal.png
+    education:
+      - B.Sc. Mechanical Engineering, Technion

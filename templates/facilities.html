@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>Facilities</h1>
+  <p class="lede">Our experiments run in the California Energy Building at the Technion. Most of the facilities were designed and built in-house, and all of them are instrumented for high-speed imaging.</p>
+</section>
+{% for f in facilities %}
+<section class="section wrap facility">
+  <h2 class="section-title">{{ f.name }}{% if f.status %}<span class="status">{{ f.status }}</span>{% endif %}</h2>
+  <div class="facility-body">
+    {% if f.image_url %}<img class="facility-img" src="{{ f.image_url }}" alt="{{ f.name }}" loading="lazy" width="800" height="560">{% elif f.image %}<div class="ph ph-wide"></div>{% endif %}
+    <p class="facility-summary">{{ f.summary }}</p>
+    <ul class="specs">{% for s in f.specs %}<li>{{ s }}</li>{% endfor %}</ul>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

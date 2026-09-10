@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>People</h1>
+  <p class="lede">The lab was founded in 2021 and has grown into a group of engineers and students who build and run experiments together. Interested in joining? See <a href="{{ '/join/' | url }}">how to apply</a>.</p>
+</section>
+{% for group_id, label, members in groups %}
+<section class="section wrap section-tight">
+  <h2 class="section-title">{{ label }}</h2>
+  <ul class="people-grid{% if group_id == 'alumni' %} people-grid-compact{% endif %}">
+    {% for person in members %}
+    <li class="person">
+      {% if person.image_url %}<img class="portrait" src="{{ person.image_url }}" alt="{{ person.name }}" loading="lazy" width="400" height="500">{% else %}<div class="portrait portrait-ph" aria-hidden="true"><span>{{ person.initials }}</span></div>{% endif %}
+      <h3 class="person-name">{{ person.name }}</h3>
+      <p class="person-role">{{ person.role }}</p>
+      {% if person.education %}<ul class="person-edu">{% for e in person.education %}<li>{{ e }}</li>{% endfor %}</ul>{% endif %}
+      {% if person.project %}<p class="person-project">Project: {{ person.project }}</p>{% endif %}
+      {% if person.thesis %}<p class="person-project">M.Sc. thesis: {{ person.thesis }}</p>{% endif %}
+      {% if person.note %}<p class="person-note">{% if person.note_url %}<a href="{{ person.note_url }}">{{ person.note }}</a>{% else %}{{ person.note }}{% endif %}</p>{% endif %}
+      <p class="person-links">{% if person.email %}<a href="mailto:{{ person.email }}">Email</a>{% endif %}{% if person.linkedin %}<a href="{{ person.linkedin }}">LinkedIn</a>{% endif %}</p>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% endblock %}

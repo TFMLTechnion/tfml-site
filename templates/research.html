@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>Research</h1>
+  <p class="lede">Two threads run through everything we do: shock waves and compressible flow on one side, multiphase flows made visible by refractive index matching on the other. Both depend on time-resolved measurements of fast events, and on building the experiments that make those measurements possible.</p>
+</section>
+{% for theme in site.themes %}
+<section class="section wrap">
+  <h2 class="section-title">{{ theme.title }}</h2>
+  <div>
+    <p class="theme-blurb">{{ theme.blurb }}</p>
+    <ul class="project-list">
+      {% for p in projects if p.theme == theme.id %}
+      <li class="project-row">
+        <a class="project-thumb" href="{{ p.url | url }}" tabindex="-1" aria-hidden="true">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" loading="lazy" width="240" height="160">{% else %}<span class="ph ph-thumb"></span>{% endif %}</a>
+        <div>
+          <h3 class="project-title"><a href="{{ p.url | url }}">{{ p.title }}</a></h3>
+          <p class="project-summary">{{ p.summary }}</p>
+        </div>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>
+{% endfor %}
+{% endblock %}

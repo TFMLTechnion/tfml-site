@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<section class="page-head wrap">
+  <h1>Publications</h1>
+  <p class="lede">Journal articles and preprints from the lab and from Omri Ram's earlier work. The <a href="{{ site.scholar_url }}">Google Scholar profile</a> has citation counts and papers that cite ours.</p>
+</section>
+{% for year, pubs in pubs_by_year %}
+<section class="section wrap section-tight">
+  <h2 class="section-title year">{{ year }}</h2>
+  <ul class="pub-list">
+    {% for pub in pubs %}{% include "pub_item.html" %}{% endfor %}
+  </ul>
+</section>
+{% endfor %}
+{% endblock %}
