@@ -1,30 +1,23 @@
-<svg class="timeline" viewBox="0 0 1100 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tlTitle">
-<title id="tlTitle">Time scales studied in the lab, from a few microseconds for a shock wave to about an hour for a water film around an oil droplet.</title>
-<line class="axis" x1="50" y1="190" x2="1060" y2="190"/>
-<line class="range" x1="652.0" y1="190" x2="997.0" y2="190"/>
-<line class="tick" x1="70.0" y1="185" x2="70.0" y2="195"/><text class="tick-label" x="70.0" y="216" text-anchor="middle">1 µs</text>
-<line class="tick" x1="167.0" y1="185" x2="167.0" y2="195"/><text class="tick-label" x="167.0" y="216" text-anchor="middle">10 µs</text>
-<line class="tick" x1="264.0" y1="185" x2="264.0" y2="195"/><text class="tick-label" x="264.0" y="216" text-anchor="middle">100 µs</text>
-<line class="tick" x1="361.0" y1="185" x2="361.0" y2="195"/><text class="tick-label" x="361.0" y="216" text-anchor="middle">1 ms</text>
-<line class="tick" x1="458.0" y1="185" x2="458.0" y2="195"/><text class="tick-label" x="458.0" y="216" text-anchor="middle">10 ms</text>
-<line class="tick" x1="555.0" y1="185" x2="555.0" y2="195"/><text class="tick-label" x="555.0" y="216" text-anchor="middle">100 ms</text>
-<line class="tick" x1="652.0" y1="185" x2="652.0" y2="195"/><text class="tick-label" x="652.0" y="216" text-anchor="middle">1 s</text>
-<line class="tick" x1="749.0" y1="185" x2="749.0" y2="195"/><text class="tick-label" x="749.0" y="216" text-anchor="middle">10 s</text>
-<line class="tick" x1="846.0" y1="185" x2="846.0" y2="195"/><text class="tick-label" x="846.0" y="216" text-anchor="middle">100 s</text>
-<line class="tick" x1="943.0" y1="185" x2="943.0" y2="195"/><text class="tick-label" x="943.0" y="216" text-anchor="middle">1000 s</text>
-<line class="tick" x1="997.0" y1="185" x2="997.0" y2="195"/><text class="tick-label" x="997.0" y="216" text-anchor="middle">1 hour</text>
-<line class="stem" x1="152.0" y1="182" x2="152.0" y2="80"/>
-<line class="stem" x1="196.2" y1="198" x2="196.2" y2="232"/>
-<line class="stem" x1="294.9" y1="182" x2="294.9" y2="140"/>
-<line class="stem" x1="342.9" y1="198" x2="342.9" y2="292"/>
-<line class="stem" x1="407.3" y1="182" x2="407.3" y2="80"/>
-<line class="stem" x1="588.2" y1="198" x2="588.2" y2="232"/>
-<line class="stem" x1="997.0" y1="182" x2="997.0" y2="140"/>
-<a href="/research/shock-waves-area-changes/"><g class="event"><circle class="dot" cx="152.0" cy="190" r="5"/><text class="ev" x="160.0" y="72" text-anchor="start">One schlieren frame</text><text class="ev-sub" x="160.0" y="90" text-anchor="start">140,000 frames per second</text></g></a>
-<a href="/research/shock-local-constriction/"><g class="event"><circle class="dot" cx="196.2" cy="190" r="5"/><text class="ev" x="204.2" y="264" text-anchor="start">A shock crosses a narrowing</text><text class="ev-sub" x="204.2" y="282" text-anchor="start">Mach 1.4 through 10 mm</text></g></a>
-<a href="/research/solids-in-pipe-flow/"><g class="event"><circle class="dot" cx="294.9" cy="190" r="5"/><text class="ev" x="302.9" y="132" text-anchor="start">One tomographic frame</text><text class="ev-sub" x="302.9" y="150" text-anchor="start">four cameras at 4,800 frames per second</text></g></a>
-<a href="/research/shock-local-constriction/"><g class="event"><circle class="dot" cx="342.9" cy="190" r="5"/><text class="ev" x="350.9" y="324" text-anchor="start">The flow settles behind a shock</text><text class="ev-sub" x="350.9" y="342" text-anchor="start">start-up transient in a constriction</text></g></a>
-<a href="/research/cavitation-inception/"><g class="event"><circle class="dot" cx="407.3" cy="190" r="5"/><text class="ev" x="415.3" y="72" text-anchor="start">Microbubbles creep upstream</text><text class="ev-sub" x="415.3" y="90" text-anchor="start">and seed the next cavitation event</text></g></a>
-<a href="/research/rising-spheres/"><g class="event"><circle class="dot" cx="588.2" cy="190" r="5"/><text class="ev" x="596.2" y="264" text-anchor="start">Half a swing of a rising sphere</text><text class="ev-sub" x="596.2" y="282" text-anchor="start">wake caught frame by frame</text></g></a>
-<a href="/research/oil-water-separation/"><g class="event"><circle class="dot" cx="997.0" cy="190" r="5"/><text class="ev" x="989.0" y="132" text-anchor="end">A water film shields an oil droplet</text><text class="ev-sub" x="989.0" y="150" text-anchor="end">seconds for thin oil, an hour for thick</text></g></a>
+<svg class="timeline" viewBox="0 0 1100 340" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="tlTitle">
+<title id="tlTitle">Time scales studied in the lab, from a few microseconds for a shock wave to a fifth of a second for half a swing of a rising sphere.</title>
+<line class="axis" x1="50" y1="180" x2="1060" y2="180"/>
+<line class="tick" x1="70.0" y1="175" x2="70.0" y2="185"/><text class="tick-label" x="70.0" y="206" text-anchor="middle">1 µs</text>
+<line class="tick" x1="231.7" y1="175" x2="231.7" y2="185"/><text class="tick-label" x="231.7" y="206" text-anchor="middle">10 µs</text>
+<line class="tick" x1="393.3" y1="175" x2="393.3" y2="185"/><text class="tick-label" x="393.3" y="206" text-anchor="middle">100 µs</text>
+<line class="tick" x1="555.0" y1="175" x2="555.0" y2="185"/><text class="tick-label" x="555.0" y="206" text-anchor="middle">1 ms</text>
+<line class="tick" x1="716.7" y1="175" x2="716.7" y2="185"/><text class="tick-label" x="716.7" y="206" text-anchor="middle">10 ms</text>
+<line class="tick" x1="878.3" y1="175" x2="878.3" y2="185"/><text class="tick-label" x="878.3" y="206" text-anchor="middle">100 ms</text>
+<line class="tick" x1="1040.0" y1="175" x2="1040.0" y2="185"/><text class="tick-label" x="1040.0" y="206" text-anchor="middle">1 s</text>
+<line class="stem" x1="206.6" y1="172" x2="206.6" y2="130"/>
+<line class="stem" x1="280.3" y1="188" x2="280.3" y2="222"/>
+<line class="stem" x1="444.8" y1="172" x2="444.8" y2="70"/>
+<line class="stem" x1="524.8" y1="188" x2="524.8" y2="282"/>
+<line class="stem" x1="632.1" y1="172" x2="632.1" y2="130"/>
+<line class="stem" x1="933.7" y1="188" x2="933.7" y2="222"/>
+<a href="/research/shock-waves-area-changes/"><g class="event"><circle class="dot" cx="206.6" cy="180" r="5"/><text class="ev" x="214.6" y="122" text-anchor="start">One schlieren frame</text><text class="ev-sub" x="214.6" y="140" text-anchor="start">140,000 frames per second</text></g></a>
+<a href="/research/shock-local-constriction/"><g class="event"><circle class="dot" cx="280.3" cy="180" r="5"/><text class="ev" x="288.3" y="254" text-anchor="start">A shock crosses a narrowing</text><text class="ev-sub" x="288.3" y="272" text-anchor="start">Mach 1.4 through 10 mm</text></g></a>
+<a href="/research/solids-in-pipe-flow/"><g class="event"><circle class="dot" cx="444.8" cy="180" r="5"/><text class="ev" x="452.8" y="62" text-anchor="start">One tomographic frame</text><text class="ev-sub" x="452.8" y="80" text-anchor="start">four cameras at 4,800 frames per second</text></g></a>
+<a href="/research/shock-local-constriction/"><g class="event"><circle class="dot" cx="524.8" cy="180" r="5"/><text class="ev" x="532.8" y="314" text-anchor="start">The flow settles behind a shock</text><text class="ev-sub" x="532.8" y="332" text-anchor="start">start-up transient in a constriction</text></g></a>
+<a href="/research/cavitation-inception/"><g class="event"><circle class="dot" cx="632.1" cy="180" r="5"/><text class="ev" x="640.1" y="122" text-anchor="start">Microbubbles creep upstream</text><text class="ev-sub" x="640.1" y="140" text-anchor="start">and seed the next cavitation event</text></g></a>
+<a href="/research/rising-spheres/"><g class="event"><circle class="dot" cx="933.7" cy="180" r="5"/><text class="ev" x="925.7" y="254" text-anchor="end">Half a swing of a rising sphere</text><text class="ev-sub" x="925.7" y="272" text-anchor="end">its wake caught frame by frame</text></g></a>
 </svg>
