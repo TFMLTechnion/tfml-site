@@ -17,7 +17,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ css_v }}">
 </head>
 <body class="page-{{ page_id }}{% if hero_dark %} hero-dark{% endif %}">
 <a class="skip" href="#main">Skip to content</a>
@@ -66,6 +66,6 @@
     <p>© {{ year }} {{ site.name }}, Technion. <a href="{{ site.scholar_url }}">Google Scholar</a></p>
   </div>
 </footer>
-<script src="{{ '/assets/js/site.js' | url }}" defer></script>
+<script src="{{ '/assets/js/site.js' | url }}?v={{ js_v }}" defer></script>
 </body>
 </html>

@@ -126,6 +126,10 @@ def build(out_dir, preview=False):
     out.mkdir(parents=True)
 
     env = Environment(loader=FileSystemLoader(str(TEMPLATES)), autoescape=select_autoescape(["html"]))
+    # short fingerprints of the stylesheet and script, appended to their URLs so browsers
+    # never keep an outdated copy after a change
+    import hashlib
+    asset_v = {name: hashlib.md5((STATIC / name).read_bytes()).hexdigest()[:8] for name in ("css/site.css", "js/site.js")}
     env.filters["date"] = fmt_date
 
     current = {"path": "/"}
@@ -155,7 +159,7 @@ def build(out_dir, preview=False):
         ctx.setdefault("canonical", path)
         html = env.get_template(template).render(
             site=site, projects=_with_urls(projects, url), posts=_with_urls(posts, url),
-            img=img, year=datetime.date.today().year, **ctx)
+            img=img, year=datetime.date.today().year, css_v=asset_v["css/site.css"], js_v=asset_v["js/site.js"], **ctx)
         if preview:  # links written inside Markdown content are root-relative; make them relative too
             html = re.sub(r'(href|src)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', html)
         dest = out / path.lstrip("/")
