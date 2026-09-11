@@ -182,14 +182,15 @@ def build(out_dir, preview=False):
     themes = {t["id"]: t for t in site["themes"]}
 
     team = [p for p in people if p.get("group") != "alumni"]
-    featured_pubs = _with_urls([p for p in pubs if p.get("image_url")][:3], url)
+    featured_raw = [p for p in pubs if p.get("image_url")][:3]
+    current["path"] = "/"
     render("index.html", "/", page_id="home", section="",
-           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=featured_pubs)
+           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=_with_urls(featured_raw, url))
     # Preview of the redesigned landing page at /new/ (not indexed). To make it the real home page,
     # rename templates/home-new.html to templates/index.html and remove these two lines.
     current["path"] = "/new/"
     render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True, hero_dark=True,
-           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=featured_pubs)
+           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=_with_urls(featured_raw, url))
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:
         current["path"] = p["url"]
