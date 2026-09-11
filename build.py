@@ -69,6 +69,8 @@ def load_content():
     rank = {"under review": 0, "submitted": 0, "accepted": 1}
     pubs.sort(key=lambda p: (-int(p["year"]), rank.get(p.get("status"), 2), p["authors"]))
     for p in pubs:
+        p["image_url"] = find_image("", p["image"]) if p.get("image") else None
+    for p in pubs:
         p["year"] = int(p["year"])
 
     people = people_doc["people"]
@@ -175,7 +177,15 @@ def build(out_dir, preview=False):
 
     themes = {t["id"]: t for t in site["themes"]}
 
-    render("index.html", "/", page_id="home", section="")
+    team = [p for p in people if p.get("group") != "alumni"]
+    featured_pubs = _with_urls([p for p in pubs if p.get("image_url")][:3], url)
+    render("index.html", "/", page_id="home", section="",
+           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=featured_pubs)
+    # Preview of the redesigned landing page at /new/ (not indexed). To make it the real home page,
+    # rename templates/home-new.html to templates/index.html and remove these two lines.
+    current["path"] = "/new/"
+    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True,
+           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=featured_pubs)
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:
         current["path"] = p["url"]

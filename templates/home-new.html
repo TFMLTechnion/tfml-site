@@ -1,0 +1,128 @@
+{% extends "base.html" %}
+{% block content %}
+
+<section class="home-hero">
+  <img class="home-hero-img" src="{{ img('home/hero-tank.jpg') }}" alt="The octagonal tank lit by green laser light, surrounded by high-speed cameras" width="1880" height="1536">
+  <div class="home-hero-inner wrap">
+    <p class="home-epigraph">“{{ site.epigraph.text }}”<span>{{ site.epigraph.source }}</span></p>
+    <h1>Transient Fluid Mechanics Laboratory</h1>
+    <p class="home-institution">Technion – Israel Institute of Technology</p>
+    <p class="home-lede">Shock waves, cavitation, bubbles and bodies moving through their own wakes: we build experiments that catch fluids in the act, at the moment things change.</p>
+    <p class="home-actions"><a class="button button-light" href="{{ '/research/' | url }}">Our research</a><a class="button button-ghost" href="{{ '/join/' | url }}">Join the lab</a></p>
+  </div>
+</section>
+
+<section class="home-section wrap">
+  <div class="home-section-head home-section-head-center">
+    <h2>Our research</h2>
+    <p>Two threads, one habit: measuring very fast events in three dimensions and at high speed.</p>
+  </div>
+  <ul class="strip-gallery">
+    <li><a href="{{ '/research/shock-waves-area-changes/' | url }}"><img src="{{ img('home/strip-shock.jpg') }}" alt="" loading="lazy"><span><strong>Shock waves</strong>through ducts with sudden area changes</span></a></li>
+    <li><a href="{{ '/research/shock-porous-media/' | url }}"><img src="{{ img('home/strip-porous.jpg') }}" alt="" loading="lazy"><span><strong>Porous barriers</strong>that soften a blast</span></a></li>
+    <li><a href="{{ '/research/rising-spheres/' | url }}"><img src="{{ img('home/strip-tomo.jpg') }}" alt="" loading="lazy"><span><strong>Tomographic imaging</strong>of flows around invisible bodies</span></a></li>
+    <li><a href="{{ '/research/cavitation-inception/' | url }}"><img src="{{ img('home/strip-cavitation.jpg') }}" alt="" loading="lazy"><span><strong>Cavitation</strong>and where a bubble decides to form</span></a></li>
+    <li><a href="{{ '/research/turbulence-in-round-pipes/' | url }}"><img src="{{ img('home/strip-turbulence.jpg') }}" alt="" loading="lazy"><span><strong>Turbulent pipe flow</strong>and the solids it carries</span></a></li>
+  </ul>
+  <p class="home-center-link"><a href="{{ '/research/' | url }}">All projects</a></p>
+</section>
+
+<section class="home-section wrap">
+  <div class="home-section-head home-section-head-center">
+    <h2>What “transient” means to us</h2>
+    <p>Everything we study is over quickly, but “quickly” spans nine orders of magnitude. Each mark is a real event from our experiments; follow it to the project.</p>
+  </div>
+  <div class="timeline-scroll">{% include "_timeline.svg" %}</div>
+</section>
+
+<section class="home-section home-feature">
+  <div class="wrap home-feature-grid">
+    <figure class="flipbook" aria-label="Animated sequence of a rising sphere's wake, ten frames spanning 8 to 217 milliseconds">
+      <div class="flipbook-frames" style="background-image: url('{{ img('home/sphere-flipbook.png') }}')"></div>
+      <figcaption>Half a swing of an 11 mm sphere rising through salt water, 8 to 217 ms, its wake drawn as surfaces of equal swirl.</figcaption>
+    </figure>
+    <div class="home-feature-text">
+      <p class="home-kicker">Featured story</p>
+      <h2><a href="{{ '/research/rising-spheres/' | url }}">The sphere you cannot see</a></h2>
+      <p>To measure the forces on a freely rising sphere, we first had to make it optically vanish, then find it again from the fingerprints it leaves in the surrounding fluid. Two papers, told as one illustrated story.</p>
+      <p><a href="{{ '/research/rising-spheres/' | url }}">Read the story</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section wrap">
+  <div class="home-section-head home-section-head-center">
+    <h2>Recent publications</h2>
+  </div>
+  <ul class="pub-cards">
+    {% for pub in featured_pubs %}
+    <li>
+      <a class="pub-card-img" href="{{ pub.url or ('/publications/' | url) }}" tabindex="-1" aria-hidden="true"><img src="{{ pub.image_url }}" alt="" loading="lazy"></a>
+      <p class="pub-card-venue">{{ pub.venue }}, {{ pub.year }}{% if pub.status %}, {{ pub.status }}{% endif %}</p>
+      <h3><a href="{{ pub.url or ('/publications/' | url) }}">{{ pub.title }}</a></h3>
+      <p class="pub-card-blurb">{{ pub.blurb }}</p>
+    </li>
+    {% endfor %}
+  </ul>
+  <p class="home-center-link"><a href="{{ '/publications/' | url }}">All publications</a></p>
+</section>
+
+<section class="home-section home-pi">
+  <div class="wrap home-pi-grid">
+    <img class="home-pi-photo" src="{{ img('people/omri-ram.jpg') }}" alt="Omri Ram" loading="lazy" width="1000" height="1000">
+    <div>
+      <p class="home-kicker">About</p>
+      <h2>Omri Ram</h2>
+      <p>Omri Ram is an assistant professor in the Faculty of Mechanical Engineering at the Technion, where he founded the Transient Fluid Mechanics Laboratory in 2021. He trained in shock-wave physics at Ben-Gurion University and, as a Fulbright postdoctoral fellow at Johns Hopkins University, studied how cavitation begins and how oil and water separate after a spill. He is a Zuckerman Faculty Scholar and holds a Career Advancement Chair at the Technion, which has twice recognised his teaching with a commendation for excellence.</p>
+      <p class="home-pi-links"><a href="mailto:{{ site.contact.pi_email }}">Email</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="{{ site.scholar_url }}">Google Scholar</a><a href="https://orcid.org/0000-0002-2398-9822">ORCID</a></p>
+      <p><a class="button" href="{{ '/join/' | url }}">Join our team</a></p>
+    </div>
+  </div>
+</section>
+
+<section class="home-section wrap home-people">
+  <div class="home-section-head home-section-head-center">
+    <h2>The people who make it work</h2>
+    <p>{{ team|length }} of us at the moment: a professor, two engineers who keep the facilities running, a postdoc, and graduate and undergraduate students. <a href="{{ '/people/' | url }}">Meet everyone.</a></p>
+  </div>
+  <ul class="portrait-row">
+    {% for person in team if person.image_url %}
+    <li><a href="{{ '/people/' | url }}" title="{{ person.name }}"><img src="{{ person.image_url }}" alt="{{ person.name }}" loading="lazy"></a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="home-section wrap home-funding">
+  <h2>Our funding</h2>
+  <ul>
+    <li>Israel Science Foundation</li>
+    <li>American Chemical Society Petroleum Research Fund</li>
+    <li>Zuckerman STEM Leadership Program</li>
+    <li>Pazy Memorial Research Institute</li>
+    <li>MAFAT</li>
+  </ul>
+</section>
+
+<section class="home-section wrap home-news">
+  <div class="home-news-grid">
+    <div>
+      <h2>Lately</h2>
+      <ul class="news-list">
+        {% for post in posts[:3] %}
+        <li class="news-row">
+          <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
+          <div><h3 class="news-title"><a href="{{ post.url | url }}">{{ post.title }}</a></h3><p class="news-summary">{{ post.summary }}</p></div>
+        </li>
+        {% endfor %}
+      </ul>
+      <p class="more"><a href="{{ '/news/' | url }}">All news</a></p>
+    </div>
+    <div class="home-join">
+      <h2>Visit us</h2>
+      <p>{{ site.contact.lab_address }}<br>{{ site.contact.postal }}<br><a href="mailto:{{ site.contact.lab_email }}">{{ site.contact.lab_email }}</a></p>
+      <p>Come for a tour of the shock tube or the water tunnel, or write to ask about a project.</p>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

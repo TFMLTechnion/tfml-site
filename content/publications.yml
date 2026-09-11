@@ -37,12 +37,16 @@
   status: accepted
   url: https://arxiv.org/abs/2603.03489
   note: arXiv:2603.03489
+  image: home/pub-constriction.jpg
+  blurb: How a shock wave splits into reflected and transmitted waves at a short narrowing, and simple models that predict both.
 
 - authors: Jose, J. T., Jacobson, A., Shenoy, D. V., Frankel, S. H. & Ram, O.
   title: "Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids"
   venue: Measurement Science and Technology
   year: 2026
   status: accepted
+  image: home/pub-ledm.jpg
+  blurb: A reconstruction method that knows where the moving body is, so the measured flow obeys the surface it touches.
 
 # ---------------------------- Published ------------------------------
 - authors: Jose, J. T., Friedmann, G., Feld, D. & Ram, O.
@@ -52,6 +56,8 @@
   volume: 11(3)
   pages: "034607"
   url: https://doi.org/10.1103/572s-84gk
+  image: home/pub-expansion.jpg
+  blurb: Abrupt and gradual pipe expansions produce nearly the same mean flow but organise their turbulence very differently.
 
 - authors: Gupta, S., Ram, O., Lu, Y., Sharma, D., Rickett-Halama, S. A. C., DiPinto, L. M., Stratton, E. M., Rowles, T. K., Hazelkorn, R. A. & Katz, J.
   title: "On the dynamics of the aerosol plume in common bottlenose dolphin respiratory events"
