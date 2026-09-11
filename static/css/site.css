@@ -439,14 +439,14 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
    ========================================================================== */
 
 /* transparent header floating over the full-screen hero */
-.page-home .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 5; background: transparent; border-bottom: 0; }
-.page-home .brand, .page-home .brand-sub { color: #fff; }
-.page-home .brand-logo { filter: brightness(0) invert(1); }
-.page-home .nav-toggle { border-color: rgba(255,255,255,.5); }
-.page-home .nav-toggle-bar { background: #fff; }
+.hero-dark .site-header { position: absolute; top: 0; left: 0; right: 0; z-index: 5; background: transparent; border-bottom: 0; }
+.hero-dark .brand, .hero-dark .brand-sub { color: #fff; }
+.hero-dark .brand-logo { filter: brightness(0) invert(1); }
+.hero-dark .nav-toggle { border-color: rgba(255,255,255,.5); }
+.hero-dark .nav-toggle-bar { background: #fff; }
 @media (min-width: 721px) {
-  .page-home .nav a { color: #fff; }
-  .page-home .nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,.6); }
+  .hero-dark .nav a { color: #fff; }
+  .hero-dark .nav a:hover { color: #fff; border-bottom-color: rgba(255,255,255,.6); }
 }
 
 .home-hero { position: relative; min-height: 100vh; min-height: 100svh; display: flex; align-items: center; background: var(--ink); color: #fff; overflow: hidden; }

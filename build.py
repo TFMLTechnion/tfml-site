@@ -184,7 +184,7 @@ def build(out_dir, preview=False):
     # Preview of the redesigned landing page at /new/ (not indexed). To make it the real home page,
     # rename templates/home-new.html to templates/index.html and remove these two lines.
     current["path"] = "/new/"
-    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True,
+    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True, hero_dark=True,
            facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=featured_pubs)
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:
