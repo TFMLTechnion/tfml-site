@@ -346,6 +346,12 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .f-mask .diagram { background: var(--wash); border: 1px solid var(--line); padding: clamp(.5rem, 1.5vw, 1rem); }
 .diagram .mask-key text { font-size: 12.5px; fill: var(--ink-soft); dominant-baseline: middle; }
 
+/* A single-column feature reads as a narrower page: text, figures and banners then
+   share one measure instead of leaving a wide empty margin down the right. */
+.feature-reading .wrap { max-width: 880px; }
+.feature-reading .feature-hero h1 { font-size: var(--step-3); max-width: 18ch; }
+.feature-reading .f-title { max-width: 28ch; }
+
 /* Slide rhythm, borrowed from the lab's conference deck: a small uppercase eyebrow, a
    serif headline that states a claim, a one-line subtitle, the figure, one short block
    of text or bullets, and a single tinted takeaway banner closing the section. */
@@ -377,7 +383,7 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 
 /* The blessing/curse pair. */
 .f-duo { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(1.25rem, 3vw, 2rem); margin-top: clamp(1.75rem, 3.5vw, 2.5rem); }
-.f-callout { background: var(--accent-wash); border-left: 4px solid var(--accent); padding: clamp(1rem, 2vw, 1.35rem); }
+.f-callout { background: var(--wash); border-left: 3px solid var(--accent); padding: clamp(1rem, 2vw, 1.35rem); }
 .f-callout h3 { font-family: var(--sans); font-size: var(--step-0); font-weight: 600; color: var(--accent); margin-bottom: .35rem; }
 .f-callout p { font-family: var(--sans); font-size: var(--step--1); line-height: 1.55; color: var(--ink-soft); margin: 0; }
 .f-callout-cool { border-left-color: var(--accent); }
@@ -405,7 +411,7 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
    wider than the text column. Sources are cropped to the content, so the spheres fill
    the frame instead of floating in white space. */
 .f-videos { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); }
-.f-video video { display: block; width: 100%; height: auto; background: var(--wash); border: 1px solid var(--line); }
+.f-video video { display: block; width: 100%; height: auto; }
 .f-videos figcaption { max-width: 42ch; }
 
 /* Looping vortex motion is exactly what provokes motion sickness, so when the visitor
@@ -414,6 +420,14 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 @media (prefers-reduced-motion: reduce) {
   .f-video video { border-color: var(--ink-faint); }
 }
+
+/* Closing invitation, and the row of links under it. */
+.f-invite { background: var(--wash); border-top: 1px solid var(--line); padding: clamp(1.5rem, 4vw, 2.5rem); }
+.f-invite h2 { font-size: var(--step-2); font-weight: 400; letter-spacing: -0.02em; margin-bottom: .75rem; }
+.f-invite p { max-width: 62ch; margin: 0; }
+.f-invite-links { list-style: none; margin: clamp(1.25rem, 3vw, 1.75rem) 0 0; padding: 0; display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.75rem; font-family: var(--sans); font-size: 0.9375rem; }
+.f-invite-links li { margin: 0; }
+.f-papers .f-invite-links { margin-top: clamp(1.25rem, 3vw, 1.75rem); }
 
 .expert { margin-top: 1.5rem; border-left: 3px solid var(--accent); padding: .1rem 0 .1rem 1.1rem; max-width: 58ch; }
 .expert summary { font-family: var(--sans); font-size: var(--step--1); font-weight: 500; color: var(--accent); cursor: pointer; list-style: none; }
