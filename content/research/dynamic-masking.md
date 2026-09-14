@@ -8,11 +8,10 @@ summary: >-
   points into a smooth picture goes wrong exactly where a solid body sits. We built a
   reconstruction that is told where the body is in every frame, so the flow it reports
   next to a moving surface is one you can trust.
-image: rising-spheres/ledm-overview.png
+image: rising-spheres/ledm-thumb.png
 image_alt: >-
-  Three panels: tracer particles around a moving sphere, the same region with every grid
-  point sorted into inside the body, a shell at its surface, or open fluid, and the
-  reconstructed flow field wrapping around the body
+  Reconstructed flow wrapping around a moving sphere, with the thin shell of points at its
+  surface picked out in orange and carried along with the body
 related:
   - Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids
 ---
