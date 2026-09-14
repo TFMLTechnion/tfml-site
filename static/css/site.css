@@ -610,3 +610,14 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 @media (max-width: 900px) {
   .project-cards, .news-cards { grid-template-columns: 1fr; }
 }
+
+/* --------------------------------------------------------------------------
+   Large monitors: scale the whole page up so it does not sit in a narrow
+   column with small type. (Equivalent to the browser's own 112% / 125% zoom.)
+   -------------------------------------------------------------------------- */
+@media (min-width: 1600px) { html { zoom: 1.12; } }
+@media (min-width: 2000px) { html { zoom: 1.25; } }
+@supports not (zoom: 1) {
+  @media (min-width: 1600px) { html { font-size: 112%; } }
+  @media (min-width: 2000px) { html { font-size: 125%; } }
+}
