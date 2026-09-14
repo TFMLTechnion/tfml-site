@@ -325,6 +325,27 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .f-section { padding-block: clamp(3rem, 6vw, 5rem); border-top: 1px solid var(--line); }
 .f-section:first-of-type { border-top: 0; }
 
+/* A feature hero with the figure on the left. The text stays first in the markup, so
+   the heading is still what a screen reader meets first; only the painting order flips. */
+.feature-hero-flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: center; }
+.feature-hero-flip .feature-hero-media { order: -1; }
+.feature-hero-flip .feature-lede { max-width: 46ch; }
+.feature-hero-flip .feature-meta { max-width: 52ch; }
+
+/* Short prose block inside a slide-rhythm section. */
+.f-prose { max-width: 68ch; }
+.f-prose p { margin-bottom: 1em; }
+.f-prose p:last-child { margin-bottom: 0; }
+
+/* A figure allowed past the shared cap but still inside the text column. */
+.f-figure-wide { max-width: min(100%, 1100px); }
+
+/* The animated node-classification diagram sits on a wash panel so the pale blue grid
+   reads against the page. Its own legend names the three colours. */
+.f-mask { width: 100%; max-width: 380px; margin-inline: auto; }
+.f-mask .diagram { background: var(--wash); border: 1px solid var(--line); padding: clamp(.5rem, 1.5vw, 1rem); }
+.diagram .mask-key text { font-size: 12.5px; fill: var(--ink-soft); dominant-baseline: middle; }
+
 /* Slide rhythm, borrowed from the lab's conference deck: a small uppercase eyebrow, a
    serif headline that states a claim, a one-line subtitle, the figure, one short block
    of text or bullets, and a single tinted takeaway banner closing the section. */
@@ -349,8 +370,7 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .f-before-after { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; align-items: start; }
 .f-before-after figcaption { grid-column: 1 / -1; margin-top: 0; }
 
-/* Breaks out wider than the text column. */
-.f-bleed { position: relative; left: 50%; transform: translateX(-50%); width: min(1440px, calc(100vw - 2 * var(--gutter))); max-width: none; }
+/* Nothing breaks out of the text column: every figure and clip is bounded by the page. */
 
 /* Index matching: the demonstration photograph beside the two camera frames. */
 .f-rim { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.6fr); gap: clamp(1.5rem, 4vw, 3rem); align-items: start; }
@@ -434,7 +454,8 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
   .f-rim { grid-template-columns: 1fr; }
   .f-duo { grid-template-columns: 1fr; }
   .f-clues { grid-template-columns: 1fr; gap: 2rem; }
-  .f-bleed { width: calc(100vw - 2 * var(--gutter)); }
+  .feature-hero-flip { grid-template-columns: 1fr; }
+  .feature-hero-flip .feature-hero-media { order: 0; max-width: 340px; }
 }
 
 /* Below this the three clips become thumbnails, so stack them instead. */
