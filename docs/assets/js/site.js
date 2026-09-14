@@ -1,4 +1,4 @@
-// Mobile navigation toggle. Nothing else on the site needs JavaScript.
+// Mobile navigation toggle.
 (function () {
   var toggle = document.querySelector('.nav-toggle');
   var nav = document.getElementById('nav');
@@ -14,4 +14,19 @@
       toggle.focus();
     }
   });
+})();
+
+// Looping figure clips honour "reduce motion". CSS cannot cancel autoplay, so when the
+// visitor has asked for less movement we stop the clips and give them controls instead;
+// they see the poster frame until they choose to play.
+(function () {
+  var quiet = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
+  if (!quiet || !quiet.matches) return;
+  var clips = document.querySelectorAll('video[autoplay]');
+  for (var i = 0; i < clips.length; i++) {
+    clips[i].autoplay = false;
+    clips[i].removeAttribute('autoplay');
+    clips[i].controls = true;
+    clips[i].pause();
+  }
 })();
