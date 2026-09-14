@@ -189,14 +189,10 @@ def build(out_dir, preview=False):
     team = [p for p in people if p.get("group") != "alumni"]
     featured_raw = [p for p in pubs if p.get("image_url")][:3]
     current["path"] = "/"
-    render("index.html", "/", page_id="home", section="",
+    render("index.html", "/", page_id="home", section="", og_image="/assets/img/home/hero-tank.jpg",
+           page_description="Shock waves, cavitation and invisible spheres: the Transient Fluid Mechanics Laboratory, led by Omri Ram at the Technion, resolves fluid motion lasting microseconds and measures the forces at work.",
            facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=_with_urls(featured_raw, url))
-    # Preview of the redesigned landing page at /new/ (not indexed). To make it the real home page,
-    # rename templates/home-new.html to templates/index.html and remove these two lines.
-    current["path"] = "/new/"
-    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True,
-           page_description="Fast flows. Big questions. Shock waves, cavitation and invisible spheres at the Transient Fluid Mechanics Laboratory, led by Omri Ram at the Technion.",
-           facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=_with_urls(featured_raw, url))
+    # The previous home page is kept as templates/home-classic.html in case it is ever wanted back.
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:
         current["path"] = p["url"]
