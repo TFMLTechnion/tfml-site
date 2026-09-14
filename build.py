@@ -76,6 +76,7 @@ def load_content():
     people = people_doc["people"]
     for person in people:
         person["image_url"] = find_image("people", person.get("image"))
+        person["thumb_url"] = find_image("people/thumbs", person.get("image")) or person["image_url"]
         person["initials"] = initials(person["name"])
     groups = []
     for gid, label in people_doc["groups"].items():
@@ -129,7 +130,8 @@ def build(out_dir, preview=False):
     # short fingerprints of the stylesheet and script, appended to their URLs so browsers
     # never keep an outdated copy after a change
     import hashlib
-    asset_v = {name: hashlib.md5((STATIC / name).read_bytes()).hexdigest()[:8] for name in ("css/site.css", "js/site.js")}
+    asset_v = {name: hashlib.md5((STATIC / name).read_bytes()).hexdigest()[:8]
+               for name in ("css/site.css", "js/site.js", "css/landing.css", "js/landing.js")}
     env.filters["date"] = fmt_date
 
     current = {"path": "/"}
@@ -159,7 +161,8 @@ def build(out_dir, preview=False):
         ctx.setdefault("canonical", path)
         html = env.get_template(template).render(
             site=site, projects=_with_urls(projects, url), posts=_with_urls(posts, url),
-            img=img, year=datetime.date.today().year, css_v=asset_v["css/site.css"], js_v=asset_v["js/site.js"], **ctx)
+            img=img, year=datetime.date.today().year, css_v=asset_v["css/site.css"], js_v=asset_v["js/site.js"],
+            landing_css_v=asset_v["css/landing.css"], landing_js_v=asset_v["js/landing.js"], **ctx)
         if preview:  # links written inside Markdown content are root-relative; make them relative too
             html = re.sub(r'(href|src)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', html)
         dest = out / path.lstrip("/")
@@ -174,6 +177,8 @@ def build(out_dir, preview=False):
             copy = dict(it)
             if copy.get("image_url"):
                 copy["image_url"] = url(copy["image_url"])
+            if copy.get("thumb_url"):
+                copy["thumb_url"] = url(copy["thumb_url"])
             if copy.get("figure_list"):
                 copy["figure_list"] = [dict(f, url=url(f["url"]) if f.get("url") else None) for f in copy["figure_list"]]
             result.append(copy)
@@ -189,7 +194,8 @@ def build(out_dir, preview=False):
     # Preview of the redesigned landing page at /new/ (not indexed). To make it the real home page,
     # rename templates/home-new.html to templates/index.html and remove these two lines.
     current["path"] = "/new/"
-    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True, hero_dark=True,
+    render("home-new.html", "/new/", page_id="home", section="", page_title="New landing page (preview)", noindex=True,
+           page_description="Fast flows. Big questions. Shock waves, cavitation and invisible spheres at the Transient Fluid Mechanics Laboratory, led by Omri Ram at the Technion.",
            facilities=_with_urls(facilities, url), team=_with_urls(team, url), featured_pubs=_with_urls(featured_raw, url))
     render("research.html", "/research/", page_id="research", section="research", page_title="Research")
     for p in projects:

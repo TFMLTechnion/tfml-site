@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% if page_title %}{{ page_title }} | {% endif %}{{ site.name }}</title>
+<meta name="description" content="{{ page_description or site.description }}">
+<link rel="canonical" href="{{ site.url }}{{ canonical }}">
+{% if noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+<meta property="og:site_name" content="{{ site.name }}">
+<meta property="og:title" content="{{ page_title or site.name }}">
+<meta property="og:description" content="{{ page_description or site.description }}">
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ canonical }}">
+{% if og_image %}<meta property="og:image" content="{{ site.url }}{{ og_image }}">{% endif %}
+<link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ css_v }}">
+<link rel="stylesheet" href="{{ '/assets/css/landing.css' | url }}?v={{ landing_css_v }}">
+</head>
+<body class="landing">
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="lp-header">
+  <div class="lp-shell lp-header-inner">
+    <a class="lp-brand" href="{{ '/' | url }}" aria-label="TFML, Transient Fluid Mechanics Laboratory home">
+      <img src="{{ img('logo.png') }}" alt="TFML" width="2048" height="604">
+    </a>
+    <button class="lp-menu-toggle" type="button" aria-expanded="false" aria-controls="lp-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
+    <nav class="lp-nav" id="lp-nav" aria-label="Main navigation">
+      {% for item in site.nav %}{% if loop.last %}<a class="lp-nav-join" href="{{ item.url | url }}">{{ item.label }}<span aria-hidden="true">↗</span></a>{% else %}<a href="{{ item.url | url }}">{{ item.label }}</a>{% endif %}{% endfor %}
+    </nav>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="lp-footer" id="contact">
+  <div class="lp-shell">
+    <div class="lp-footer-grid">
+      <div><p class="lp-footer-wordmark">TFML<span aria-hidden="true">.</span></p><p class="lp-footer-name">{{ site.name }}<br>Technion – Israel Institute of Technology</p></div>
+      <div><h2>Find us</h2><address>{{ site.contact.lab_address }}<br>{{ site.contact.postal }}</address><a href="mailto:{{ site.contact.lab_email }}">{{ site.contact.lab_email }}</a></div>
+      <div><h2>Say hello</h2><p>For research, collaboration,<br>and good questions.</p><a href="mailto:{{ site.contact.pi_email }}">{{ site.contact.pi_email }}</a><p class="lp-footer-social"><a href="{{ site.scholar_url }}">Google Scholar</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="https://github.com/TFMLTechnion">GitHub</a></p></div>
+    </div>
+    <div class="lp-footer-bottom"><p>© {{ year }} TFML, Technion</p><a href="#main">Back to the top <span aria-hidden="true">↑</span></a></div>
+  </div>
+</footer>
+<script src="{{ '/assets/js/landing.js' | url }}?v={{ landing_js_v }}" defer></script>
+</body>
+</html>

@@ -1,130 +1,135 @@
-{% extends "base.html" %}
+{% extends "base-landing.html" %}
 {% block content %}
 
-<section class="home-hero">
-  <img class="home-hero-img" src="{{ img('home/hero-tank.jpg') }}" alt="The octagonal tank lit by green laser light, surrounded by high-speed cameras" width="1880" height="1536">
-  <div class="home-hero-inner wrap">
-    <p class="home-epigraph">“{{ site.epigraph.text }}”<span>{{ site.epigraph.source }}</span></p>
-    <h1>Transient Fluid Mechanics Laboratory</h1>
-    <p class="home-institution">Technion – Israel Institute of Technology</p>
-    <p class="home-actions"><a class="button button-light" href="#manifesto">Enter the lab</a></p>
+<section class="lp-hero lp-shell" aria-labelledby="lp-title">
+  <div class="lp-hero-copy">
+    <p class="lp-eyebrow">Transient Fluid Mechanics Laboratory</p>
+    <h1 id="lp-title">Blink.<br>You missed <em>it.</em></h1>
+    <p class="lp-hero-lede">A shock wave turns a corner. A sphere vanishes. A bubble is born. We slow down fast fluid physics to find out what happens next.</p>
+    <a class="lp-button lp-button-dark" href="#research">Explore the experiments <span aria-hidden="true">↗</span></a>
+    <p class="lp-hero-affiliation">Omri Ram’s lab <span aria-hidden="true">/</span> Technion, Haifa <span aria-hidden="true">/</span> Est. 2021</p>
   </div>
+  <figure class="lp-hero-figure">
+    <img class="lp-hero-photo" src="{{ img('home/hero-tank.jpg') }}" alt="Green laser light illuminates an octagonal tank surrounded by high-speed cameras in the TFML laboratory" width="1880" height="1536" fetchpriority="high">
+    <div class="lp-photo-tag" aria-hidden="true"><span>LOOK CLOSER</span><span>01 / TFML</span></div>
+    <figcaption class="lp-hero-caption"><span class="lp-label">Inside the experiment</span><strong>Making the invisible<br>measurable.</strong><a href="{{ '/facilities/' | url }}" aria-label="Explore our experimental facilities">↗</a></figcaption>
+    <p class="lp-hero-sticker">Curiosity,<br><em>in motion.</em></p>
+  </figure>
 </section>
 
-<section class="home-section wrap manifesto" id="manifesto">
-  <h2>Fluid mechanics at the speed of change</h2>
-  <p class="manifesto-lede">We are a group of experimentalists who study what fluids do in the instants when everything changes: when a shock wave sweeps through a duct, when a bubble is born on a hot wall, when a body tears free of its own wake.</p>
-  <p class="manifesto-text">These moments last microseconds to milliseconds and decide how engines breathe, how blasts are softened, how particles travel through pipelines and how oil spills spread. We build the instruments that can see them, cameras that look a hundred thousand times a second and tanks in which solid bodies become invisible, and we measure the forces at work.</p>
-  <p class="home-actions"><a class="button" href="{{ '/research/' | url }}">Our research</a><a class="link-quiet" href="{{ '/people/' | url }}">Meet the team</a></p>
-</section>
+<div class="lp-index-band">
+  <nav class="lp-shell lp-index" aria-label="Explore research areas">
+    <a href="{{ '/research/shock-waves-area-changes/' | url }}"><span>01</span> Shock waves <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/research/rising-spheres/' | url }}"><span>02</span> Multiphase flows <span aria-hidden="true">↗</span></a>
+    <a href="{{ '/research/cavitation-inception/' | url }}"><span>03</span> Cavitation &amp; interfaces <span aria-hidden="true">↗</span></a>
+  </nav>
+</div>
 
-<section class="home-section wrap">
-  <div class="home-section-head home-section-head-center">
-    <h2>Explore our projects</h2>
+<section class="lp-section lp-shell" id="research" aria-labelledby="lp-research-title">
+  <div class="lp-section-top"><p class="lp-eyebrow">01 / Follow a question</p><a class="lp-text-link" href="{{ '/research/' | url }}">All research <span aria-hidden="true">↗</span></a></div>
+  <div class="lp-section-heading">
+    <h2 id="lp-research-title">Small moments.<br><em>Big questions.</em></h2>
+    <p>We build experiments to catch flows in the act: changing direction, changing phase, and changing the world around them.</p>
   </div>
-  <ul class="project-cards">
-    <li>
-      <a href="{{ '/research/rising-spheres/' | url }}">
-        <img src="{{ img('home/card-sphere.jpg') }}" alt="" loading="lazy">
-        <h3>The sphere you cannot see</h3>
-        <p>Finding a body from the hole it leaves in the flow, and measuring the forces on it as it rises.</p>
-        <span class="read-more">Read the story</span>
-      </a>
-    </li>
-    <li>
+  <ul class="lp-research-grid">
+    <li class="lp-research-card lp-card-shock">
       <a href="{{ '/research/shock-waves-area-changes/' | url }}">
-        <img src="{{ img('home/card-shock.jpg') }}" alt="" loading="lazy">
-        <h3>A shock meets a sudden change</h3>
-        <p>What a shock wave does after the duct it travels in abruptly widens or narrows, and how to predict it.</p>
-        <span class="read-more">Read more</span>
+        <div class="lp-card-image"><img src="{{ img('home/hero-schlieren.jpg') }}" alt="Curved shock fronts captured by high-speed schlieren imaging" width="1956" height="641" loading="lazy" decoding="async"><span class="lp-card-number">01</span></div>
+        <p class="lp-label">Compressible flows</p><h3>What happens when a shock turns a corner?</h3>
+        <p>Reflections, diffraction, and the surprising afterlife of an abrupt area change.</p>
+        <span class="lp-card-action">Follow the shock <span aria-hidden="true">↗</span></span>
       </a>
     </li>
-    <li>
-      <a href="{{ '/research/shock-porous-media/' | url }}">
-        <img src="{{ img('home/card-porous.jpg') }}" alt="" loading="lazy">
-        <h3>A wall of holes against a blast</h3>
-        <p>Why a stiff porous barrier behaves like a low-pass filter, and how much it softens the load behind it.</p>
-        <span class="read-more">Read more</span>
+    <li class="lp-research-card lp-card-sphere">
+      <a href="{{ '/research/rising-spheres/' | url }}">
+        <div class="lp-card-image"><img src="{{ img('research/rising-spheres/velocity-isosurface.png') }}" alt="Measured three-dimensional flow around a freely rising sphere" width="473" height="413" loading="lazy" decoding="async"><span class="lp-card-number">02</span></div>
+        <p class="lp-label">Multiphase flows</p><h3>Can you track something you can’t see?</h3>
+        <p>Make a sphere disappear. Find it in the flow. Measure the forces that steer it.</p>
+        <span class="lp-card-action">Find the invisible sphere <span aria-hidden="true">↗</span></span>
+      </a>
+    </li>
+    <li class="lp-research-card lp-card-bubble">
+      <a href="{{ '/research/cavitation-inception/' | url }}">
+        <div class="lp-card-image"><img src="{{ img('research/cavitation-inception.jpg') }}" alt="Experimental view of cavitation developing on a curved surface" width="1651" height="834" loading="lazy" decoding="async"><span class="lp-card-number">03</span></div>
+        <p class="lp-label">Cavitation &amp; interfaces</p><h3>Where does the first bubble come from?</h3>
+        <p>Tiny bubbles, near-wall flow, and the chain of events that keeps cavitation going.</p>
+        <span class="lp-card-action">Meet the bubbles <span aria-hidden="true">↗</span></span>
       </a>
     </li>
   </ul>
-  <p class="home-center-link"><a href="{{ '/research/' | url }}">All projects</a></p>
 </section>
 
-<section class="home-section wrap">
-  <div class="home-section-head home-section-head-center">
-    <h2>What “transient” means to us</h2>
-    <p>Everything we study is over in well under a second, yet “quickly” still spans more than four orders of magnitude. Each mark is a real event from our experiments; follow it to the project.</p>
-  </div>
-  <div class="timeline-scroll">{% include "_timeline.svg" %}</div>
-</section>
-
-<section class="home-section home-feature">
-  <div class="wrap home-feature-grid">
-    <figure class="flipbook" aria-label="Animated sequence of a rising sphere's wake, ten frames spanning 8 to 217 milliseconds">
-      <div class="flipbook-frames" style="background-image: url('{{ img('home/sphere-flipbook.png') }}')"></div>
-      <figcaption>Half a swing of an 11 mm sphere rising through salt water, 8 to 217 ms, its wake drawn as surfaces of equal swirl.</figcaption>
+<section class="lp-wake-section" id="a-moment" aria-labelledby="lp-wake-title">
+  <div class="lp-shell lp-wake-grid">
+    <div class="lp-wake-copy">
+      <p class="lp-eyebrow">02 / A moment, under the microscope</p>
+      <h2 id="lp-wake-title">A sphere.<br>A wake.<br><em>A plot twist.</em></h2>
+      <p>A rising sphere doesn’t just go up. It leaves a wake that pushes back, sending it on a wandering path through the liquid.</p>
+      <p>These ten experimental snapshots show vortex threads growing, changing shape, and breaking into rings. A whole story in about a fifth of a second.</p>
+      <a class="lp-text-link" href="{{ '/research/rising-spheres/' | url }}">The physics behind the motion <span aria-hidden="true">↗</span></a>
+      <dl class="lp-wake-facts"><div><dt>4,800</dt><dd>frames per second</dd></div><div><dt>4</dt><dd>camera views</dd></div><div><dt>11.11 <span>mm</span></dt><dd>sphere diameter</dd></div></dl>
+    </div>
+    <figure class="lp-wake-player" data-wake-player data-times="8.33,29.17,66.67,79.17,91.67,100,112.50,125,175,216.67">
+      <div class="lp-player-heading"><span class="lp-label">A freely rising sphere</span><span class="lp-frame-label" data-frame-label>Frame A / J</span></div>
+      <div class="lp-wake-stage">
+        <div class="lp-wake-frame" data-wake-frame style="background-image: url('{{ img('home/sphere-flipbook.png') }}')" role="img" aria-label="Frame A: a black sphere with a compact red vortical wake"></div>
+        <span class="lp-wake-legend"><span class="lp-key lp-key-black"></span> Sphere <span class="lp-key lp-key-red"></span> Vortices</span>
+      </div>
+      <div class="lp-player-controls" data-player-controls hidden>
+        <div class="lp-player-control-top"><button class="lp-play" data-play type="button" aria-label="Play wake sequence in slow motion">Play sequence <span aria-hidden="true">▶</span></button><output data-time for="wake-frame">t = 8.33 ms</output></div>
+        <label class="lp-slider-label" for="wake-frame">Drag to explore the ten snapshots</label>
+        <input id="wake-frame" data-frame-slider type="range" min="0" max="9" step="1" value="0" aria-valuetext="Frame A, 8.33 milliseconds">
+        <div class="lp-player-scale" aria-hidden="true"><span>8.33 ms</span><span>216.67 ms</span></div>
+      </div>
+      <figcaption>Experimental flow reconstruction. Black: the sphere. Red: surfaces of equal swirl. Playback is slowed down; timestamps are from the experiment.</figcaption>
+      <noscript><p class="lp-player-noscript"><a href="{{ '/research/rising-spheres/' | url }}">See all ten snapshots in the research story.</a></p></noscript>
     </figure>
-    <div class="home-feature-text">
-      <p class="home-kicker">Featured</p>
-      <h2>Two hundred milliseconds, frame by frame</h2>
-      <p>Our cameras record four thousand eight hundred pictures a second from four directions at once. Stacked together they show, for the first time, how the vortices a rising sphere leaves behind push it off course, and how it speeds up the moment they let go.</p>
-      <p><a href="{{ '/research/rising-spheres/' | url }}">How we did it</a></p>
+  </div>
+</section>
+
+<section class="lp-clocks-section" aria-labelledby="lp-clocks-title">
+  <div class="lp-shell lp-clocks-grid">
+    <div><p class="lp-eyebrow">The transient in TFML</p><h2 id="lp-clocks-title">One lab.<br>Many clocks.</h2></div>
+    <dl class="lp-clocks">
+      <div><dt>Microseconds</dt><dd>A shock crosses a narrowing.<a href="{{ '/research/shock-local-constriction/' | url }}" aria-label="Research on shock propagation through a local constriction">↗</a></dd></div>
+      <div><dt>Milliseconds</dt><dd>Microbubbles creep upstream and seed the next cavitation event.<a href="{{ '/research/cavitation-inception/' | url }}" aria-label="Research on the inception of attached cavitation">↗</a></dd></div>
+      <div><dt>A fifth of a second</dt><dd>A wake changes a sphere’s course.<a href="{{ '/research/rising-spheres/' | url }}" aria-label="Research on the wakes of rising spheres">↗</a></dd></div>
+    </dl>
+  </div>
+</section>
+
+<section class="lp-section lp-shell" aria-labelledby="lp-news-title">
+  <div class="lp-section-top"><p class="lp-eyebrow">03 / The latest</p><a class="lp-text-link" href="{{ '/news/' | url }}">All news <span aria-hidden="true">↗</span></a></div>
+  <div class="lp-news-grid">
+    <div><h2 id="lp-news-title">Fresh from<br><em>the lab.</em></h2><p class="lp-section-intro">New papers, new experiments,<br>and the people behind them.</p><a class="lp-text-link" href="{{ '/publications/' | url }}">Browse our publications <span aria-hidden="true">↗</span></a></div>
+    <ol class="lp-news-list">
+      {% for post in posts[:3] %}
+      <li><a href="{{ post.url | url }}"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time><h3>{{ post.title }}</h3><span class="lp-news-arrow" aria-hidden="true">↗</span></a></li>
+      {% endfor %}
+    </ol>
+  </div>
+</section>
+
+<section class="lp-people-section" aria-labelledby="lp-people-title">
+  <div class="lp-shell lp-people-grid">
+    <figure class="lp-pi-photo"><img src="{{ img('people/omri-ram.jpg') }}" alt="Omri Ram, head of the Transient Fluid Mechanics Laboratory" width="1000" height="1000" loading="lazy" decoding="async"><figcaption><strong>Omri Ram</strong><span>Principal investigator</span></figcaption></figure>
+    <div class="lp-people-copy">
+      <p class="lp-eyebrow">04 / Meet the experimentalists</p><h2 id="lp-people-title">Serious science.<br><em>Curious people.</em></h2>
+      <p>We’re a group of engineers and researchers who like our physics hands-on. We design the setup, align the cameras, run the experiment, and ask what we missed.</p>
+      <p>The lab is led by <a href="{{ '/people/' | url }}">Omri Ram</a>, an assistant professor of mechanical engineering at the Technion, with a background in shock-wave physics at Ben-Gurion University and experimental fluid mechanics at Johns Hopkins.</p>
+      <ul class="lp-portraits" aria-label="Our current team members">
+        {% for person in team if person.image_url and person.group != 'pi' %}<li><img src="{{ person.thumb_url }}" alt="{{ person.name }}" title="{{ person.name }}" width="80" height="80" decoding="async"></li>{% endfor %}
+      </ul>
+      <a class="lp-button lp-button-dark" href="{{ '/people/' | url }}">Meet the team <span aria-hidden="true">↗</span></a>
+      <p class="lp-pi-links"><a href="{{ site.scholar_url }}">Google Scholar</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="mailto:{{ site.contact.pi_email }}">Email Omri</a></p>
     </div>
   </div>
 </section>
 
-<section class="home-section wrap">
-  <div class="home-section-head home-section-head-center">
-    <h2>Latest from the lab</h2>
-  </div>
-  <ul class="news-cards">
-    {% for post in posts[:3] %}
-    <li>
-      <a href="{{ post.url | url }}">
-        {% if post.image_url %}<img src="{{ post.image_url }}" alt="" loading="lazy">{% endif %}
-        <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
-        <h3>{{ post.title }}</h3>
-        <p>{{ post.summary }}</p>
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
-  <p class="home-center-link"><a href="{{ '/news/' | url }}">All news</a></p>
-</section>
-
-<section class="home-section home-pi">
-  <div class="wrap home-pi-grid">
-    <img class="home-pi-photo" src="{{ img('people/omri-ram.jpg') }}" alt="Omri Ram" loading="lazy" width="1000" height="1000">
-    <div>
-      <p class="home-kicker">Principal investigator</p>
-      <h2>Omri Ram</h2>
-      <p>Omri Ram is an assistant professor in the Faculty of Mechanical Engineering at the Technion, where he founded the Transient Fluid Mechanics Laboratory in 2021. He trained in shock-wave physics at Ben-Gurion University and, as a Fulbright postdoctoral fellow at Johns Hopkins University, studied how cavitation begins and how oil and water separate after a spill. He is a Zuckerman Faculty Scholar and holds a Career Advancement Chair at the Technion, which has twice recognised his teaching with a commendation for excellence.</p>
-      <p class="home-pi-links"><a href="mailto:{{ site.contact.pi_email }}">Email</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="{{ site.scholar_url }}">Google Scholar</a><a href="https://orcid.org/0000-0002-2398-9822">ORCID</a></p>
-    </div>
-  </div>
-</section>
-
-<section class="home-section wrap home-people">
-  <div class="home-section-head home-section-head-center">
-    <h2>The people who make it work</h2>
-    <p>{{ team|length }} of us at the moment: a professor, two engineers who keep the facilities running, a postdoc, and graduate and undergraduate students. <a href="{{ '/people/' | url }}">Meet everyone.</a></p>
-  </div>
-  <ul class="portrait-row">
-    {% for person in team if person.image_url %}
-    <li><a href="{{ '/people/' | url }}" title="{{ person.name }}"><img src="{{ person.image_url }}" alt="{{ person.name }}" loading="lazy"></a></li>
-    {% endfor %}
-  </ul>
-  <p class="home-funding-line">Supported by the Israel Science Foundation, the American Chemical Society Petroleum Research Fund, the Zuckerman STEM Leadership Program, the Pazy Memorial Research Institute and MAFAT.</p>
-</section>
-
-<section class="join-band">
-  <img class="join-band-img" src="{{ img('home/join-band.jpg') }}" alt="" loading="lazy">
-  <div class="wrap join-band-inner">
-    <p class="home-kicker home-kicker-light">Open positions</p>
-    <h2>Join the team</h2>
-    <p>We are looking for curious people who like their physics hands-on, from undergraduates to postdocs: designing an experiment, aligning four cameras and a laser, and making sense of a few hundred gigabytes afterwards.</p>
-    <p class="home-actions"><a class="button button-light" href="{{ '/join/' | url }}">How to apply</a><a class="button button-ghost" href="mailto:{{ site.contact.pi_email }}">Write to Omri</a></p>
+<section class="lp-join-section" aria-labelledby="lp-join-title">
+  <div class="lp-shell lp-join-grid">
+    <div><p class="lp-eyebrow">There’s more to discover</p><h2 id="lp-join-title">Bring your<br><em>curiosity.</em></h2></div>
+    <div class="lp-join-copy"><p>Like asking “what if?”<br>Even better if you like building the experiment that answers it.</p><p class="lp-join-small">Graduate students, postdocs, and undergraduate researchers: take a look at joining TFML.</p><a class="lp-button lp-button-dark" href="{{ '/join/' | url }}">Find your place in the lab <span aria-hidden="true">↗</span></a></div>
   </div>
 </section>
 
