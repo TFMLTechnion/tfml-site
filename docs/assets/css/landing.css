@@ -3,8 +3,8 @@
 .landing {
   --lp-ink: #14191e;
   --lp-muted: #536069;
-  --lp-blue: #2549ed;
-  --lp-lime: #ddff78;
+  --lp-blue: #1f4e8c;
+  --lp-lime: #cfdac2;
   --lp-line: #d9dfe2;
   --lp-gutter: clamp(1.25rem, 4.5vw, 4rem);
   --lp-heading: "Space Grotesk", "Arial", sans-serif;
