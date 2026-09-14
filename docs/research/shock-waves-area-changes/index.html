@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Shock waves through abrupt area changes | Transient Fluid Mechanics Laboratory</title>
-<meta name="description" content="How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.">
+<meta name="description" content="A shock wave crossing a step in a duct bends, slows and starts bouncing between the walls. Two metres later it is flat again. The reverberating triple point is what gets it there, and it rings the walls for milliseconds on the way.">
 <link rel="canonical" href="https://www.tfmltechnion.com/research/shock-waves-area-changes/">
 
 <meta property="og:site_name" content="Transient Fluid Mechanics Laboratory">
 <meta property="og:title" content="Shock waves through abrupt area changes">
-<meta property="og:description" content="How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.">
+<meta property="og:description" content="A shock wave crossing a step in a duct bends, slows and starts bouncing between the walls. Two metres later it is flat again. The reverberating triple point is what gets it there, and it rings the walls for milliseconds on the way.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tfmltechnion.com/research/shock-waves-area-changes/">
-<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/shock-area-changes.jpg">
+<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/shock-waves-area-changes/hero-schlieren.jpg">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=6f4d79c6">
+<link rel="stylesheet" href="/assets/css/site.css?v=d389b291">
 </head>
 <body class="page-project">
 <a class="skip" href="#main">Skip to content</a>
@@ -38,41 +38,141 @@
 </header>
 <main id="main">
 
-<article class="article wrap">
-  <p class="crumbs"><a href="/research/">Research</a> <span aria-hidden="true">/</span> Compressible flows and shock waves</p>
-  <h1>Shock waves through abrupt area changes</h1>
-  <p class="lede">How a normal shock recovers after an abrupt expansion or contraction in a duct, combining shock-tube experiments, large-eddy simulation and geometrical shock dynamics.</p>
-  <figure class="lead-figure"><img src="/assets/img/research/shock-area-changes.jpg" alt="Schlieren image of a shock wave passing an abrupt area expansion" width="1200" height="700"></figure>
-  <div class="prose"><h2>Evolution of a shock wave moving through an expansion</h2>
-<p>When a normal shock passes over a step change in the cross-section of a duct, it experiences strong reflections, vortex formation and pressure fluctuations. Over time the shock front recovers into a uniform normal shock, but the transient path to that state is complex and was poorly understood. We combine experiments, large-eddy simulations (LES) and geometrical shock dynamics (GSD) to uncover the mechanisms that drive this evolution.</p>
-<p>Experiments are performed in a 40 × 40 mm shock tube fitted with a 2 m long test section, long enough to capture the far-downstream development. The duct includes back-facing steps of varying heights (expansion ratios 1.75–3.25). High-speed schlieren imaging at up to 140 kHz and 26 pressure transducers resolve both the near-step transient and the far-downstream recovery.</p>
-<p>The experiments are complemented by three-dimensional LES of the compressible Navier–Stokes equations with high-order schemes, validated against the measurements, and by geometrical shock dynamics adapted with corrections for expanding geometries, which gives a simplified predictive model for the shock propagation velocity. Together these methods cover Mach numbers 1.1–1.8 and expansion ratios up to 5.</p>
-<p><strong>What we found.</strong> Immediately after the expansion the shock slows down and becomes curved, producing strong reflections and vortices near the corner. A triple point forms and reverberates between the duct walls, creating a train of reflected shocks that extends downstream and induces large pressure fluctuations long after the initial shock has passed. Further downstream the front gradually straightens and approaches a pseudo-steady velocity. Scaling laws show that this velocity depends on the expansion ratio and the far-downstream shock speed, so the final outcome of a very complex transient can be predicted with a simple relation. These findings are relevant to the design of jet engines, pressure-relief devices and protective ducts.</p>
-<h2>Evolution of a shock wave moving through a contraction</h2>
-<p>The companion study asks how shock waves behave when they meet sudden contractions of different shapes. Although shock reflection is a classic subject, its dynamics in confined geometries are still not fully understood. In a custom-built shock tube, a pneumatic fast-opening valve generates controlled shocks that travel through a square duct and meet one of four contraction geometries: a forward-facing step (90°), a 15° wedge, a 45° wedge and a quadrant profile. High-speed schlieren imaging captures the density gradients that evolve within microseconds of the interaction.</p>
-<p>Three-dimensional LES, using a solver developed at the Technion CFDLAB with a monotonicity-preserving scheme for the inviscid fluxes, a fourth-order explicit scheme for the diffusive fluxes and Runge–Kutta time integration, extends the study to configurations that are not accessible experimentally. The simulations agree closely with the schlieren images.</p>
-<p><strong>What we found.</strong> Geometry is the key factor. In the step case the transmitted shock remains normal and produces the strongest reflection. In the sloped geometries the incoming shock undergoes complex reflection processes that lead to multiple reflections behind the contraction: the 45° wedge generates regular reflections while the 15° wedge produces Mach reflections, changing the transient flow significantly. The quadrant profile smooths the interaction, weakening the reflections and shortening the transient. Sharp steps therefore produce strong reflections and prolonged unsteadiness, while smoother profiles stabilize the flow more quickly, a practical insight for ducts, nozzles and flow passages where shock control matters.</p></div>
-  
-  <div class="figures">
-    
-    <figure><img src="/assets/img/research/shock-contraction-series.png" alt="" loading="lazy" width="800" height="500"><figcaption>Time series of experimental images showing the shock wave evolution after it impinges on four different contraction geometries, incoming Mach number 1.4.</figcaption></figure>
-    
-    <figure><img src="/assets/img/research/shock-contraction-les.png" alt="" loading="lazy" width="800" height="500"><figcaption>Experimental schlieren images (top) compared with LES (bottom) for a 15° wedge, a 45° wedge and a forward-facing step at representative times after the interaction.</figcaption></figure>
-    
-  </div>
-  
-  
-  <section class="related">
-    <h2>Publications from this project</h2>
-    <ul class="pub-list">
-      <li class="pub">
-  <span class="pub-title"><a href="https://doi.org/10.1017/jfm.2024.814">The dynamics of shock wave propagation far downstream of an abrupt area expansion</a></span>
-  <span class="pub-authors">Gichon, Y., Jose, J. T., Chandravamsi, H., Evron, Y. &amp; Ram, O.</span>
-  <span class="pub-venue"><em>Journal of Fluid Mechanics</em> 997, A30 (2024)</span>
-</li>
-    </ul>
+<article class="feature feature-essay">
+
+  <header class="feature-hero feature-hero-flip wrap">
+    <div class="feature-hero-text">
+      <p class="crumbs"><a href="/research/">Research</a> <span aria-hidden="true">/</span> Compressible flows and shock waves</p>
+      <h1>Shock waves through abrupt area changes</h1>
+      <p class="feature-lede">A shock wave runs down a duct. The duct gets taller. The shock bends, slows, and starts bouncing between the walls. Two metres later it is flat again.</p>
+      <p class="feature-meta">From a paper in the Journal of Fluid Mechanics. Link at the end.</p>
+    </div>
+    <figure class="feature-hero-media">
+      <img src="/assets/img/research/shock-waves-area-changes/hero-schlieren.jpg" alt="Schlieren photograph of a shock wave just after a back-facing step, the front already curved and a vortex rolling up at the corner" width="2048" height="763">
+    </figure>
+  </header>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">A shock meets a step</h2>
+    <div class="f-prose">
+      <p>A shock in a straight duct is flat. Every part of it travels at the same speed, and the pressure behind it is the same everywhere.</p>
+      <p>The step breaks that. Near the corner the shock suddenly has room to spread sideways, so it curves and slows. The rest of the front follows, until the whole thing is curved and much slower than it was. It reaches the far wall and reflects — cleanly at first, then, as the angle grows, into a shape with a sharp kink in it. That kink is a <em>triple point</em>, and everything after this is its story.</p>
+    </div>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/shock-waves-area-changes/near-step-series.png" alt="Six schlieren frames in sequence over the first 0.37 milliseconds: a flat shock crosses a back-facing step, curves, rolls up a vortex at the corner, strikes the far wall and reflects into a kinked pattern of several shocks" width="1600" height="1710" loading="lazy" decoding="async">
+    </figure>
+    <div class="f-prose">
+      <p>Within a third of a millisecond, one flat shock has become four or five, interacting with each other, with the walls, and with the flow behind them.</p>
+    </div>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>Experiments run in a 40 × 40 mm shock tube fitted with an unusually long 2 m test section, with schlieren at up to 140 kHz from two Phantom V2640 cameras interleaved by half a frame, and 26 flush-mounted PCB transducers sampled at 250 kHz. The frames above are <em>M</em> = 1.7, <em>H</em> = 70 mm, <em>H</em>/<em>h</em> = 1.75. The induced flow (221 m s⁻¹) separates at the sharp corner into a strong corner vortex. The shock impinges on the top wall at <em>t</em> ≈ 0.13 ms as a regular reflection; RR→MR transition follows at <em>t</em> ≈ 0.16 ms, giving a Mach stem, triple point and slip line. At <em>t</em> ≈ 0.15 ms the first reflected shock hits the corner vortex, and that interaction launches a second incident shock with its own reflection pattern. The vortex disperses by about 1.3 ms, leaving a shear layer, a recirculation region and standing lambda shocks.</p>
+    </details>
   </section>
-  
+
+  <section class="f-section wrap">
+    <h2 class="f-title">The triple point reverberates between the walls</h2>
+    <div class="f-prose">
+      <p>The triple point starts at the top wall and travels down across the front. When it reaches the bottom wall it reflects and heads back up. It does this over and over as the shock runs downstream.</p>
+    </div>
+    <figure class="f-figure f-figure-wide">
+      <img src="/assets/img/research/shock-waves-area-changes/scaling-collapse.png" alt="Two plots. On the left the triple point's height in the duct traces a repeated zig-zag between the two walls as it travels downstream; on the right its speed shows a matching saw-tooth that decays towards a steady value" width="1600" height="242" loading="lazy" decoding="async">
+    </figure>
+    <div class="f-prose">
+      <p>Each bounce speeds up the part of the front near the wall it struck. That part then slows down again — but never all the way back to where it started. The next bounce shoves a different part, and the one after that returns to the first, a little less hard.</p>
+      <p>Run it back and forth enough times and the fast parts and the slow parts even out. The front stops being lopsided, not because anything smooths it, but because the triple point keeps carrying momentum from the part that has too much to the part that has too little. That is the mechanism, and it is the paper's main result.</p>
+      <p>Every bounce also leaves a shock behind, so a train of them builds up in the shock's wake and keeps growing as it goes.</p>
+    </div>
+    <figure class="f-figure f-figure-wide">
+      <img src="/assets/img/research/shock-waves-area-changes/downstream-sequence.png" alt="Seven strips stacked down the page, each showing the whole two-metre test section at a later time, with the shock front moving right and a lengthening train of shocks behind it, beside diagrams of the triple point at three stages" width="1600" height="838" loading="lazy" decoding="async">
+    </figure>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>Tracking the triple point and both wall intersections gives <em>u</em><sub>TP</sub>, <em>V</em><sub>s,t</sub> and <em>V</em><sub>s,b</sub>, with <em>u</em><sub>TP</sub> lying between the two throughout. Each impingement produces a sharp rise at that wall and a slower decay, with progressively smaller increments, converging on a pseudo-steady <em>u</em><sub>TPss</sub>. Larger <em>H</em> lengthens the interval between impingements and lowers <em>u</em><sub>TPss</sub>; larger <em>M</em> shortens it and raises it. Positions scale on <em>H</em> and velocities on <em>u</em><sub>TPss</sub>, which collapses the separate experiments onto one curve. Ensemble maps taken 1 mm behind the triple point show why it decays: moving away from a wall, it enters gas at lower pressure and lower sound speed.</p>
+    </details>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Watch it happen</h2>
+    <div class="f-prose">
+      <p>The first clip is the experiment, with the camera following the shock down the tube; watch the kink cross from one wall to the other. The second is the simulation, which shows the whole duct at once — something no camera can do. Both are sped up.</p>
+    </div>
+    <figure class="f-figure f-figure-center f-video">
+      <video autoplay loop muted playsinline preload="metadata"
+             aria-label="Looping schlieren recording of the shock crossing the step and reverberating between the walls"
+             poster="/assets/img/research/shock-waves-area-changes/movie-experiment-poster.jpg" width="1024" height="280">
+        <source src="/assets/img/research/shock-waves-area-changes/movie-experiment.webm" type="video/webm">
+        <source src="/assets/img/research/shock-waves-area-changes/movie-experiment.mp4" type="video/mp4">
+      </video>
+    </figure>
+    <figure class="f-figure f-figure-wide f-video">
+      <video autoplay loop muted playsinline preload="metadata"
+             aria-label="Looping numerical schlieren from the simulation, showing the whole 1.8 metre duct at once"
+             poster="/assets/img/research/shock-waves-area-changes/movie-les-poster.jpg" width="1400" height="134">
+        <source src="/assets/img/research/shock-waves-area-changes/movie-les.webm" type="video/webm">
+        <source src="/assets/img/research/shock-waves-area-changes/movie-les.mp4" type="video/mp4">
+      </video>
+    </figure>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">The duct rings after the shock has gone</h2>
+    <div class="f-prose">
+      <p>A transducer set into the wall sees the front arrive as one clean step up in pressure. Then it sees jump after jump, for milliseconds, as the train passes over it.</p>
+      <p>Further downstream the jumps get weaker but last longer, because the train keeps growing. And the transducer directly opposite, in the other wall, sees its jumps at different moments. The duct is being shaken from side to side rather than squeezed, which is a harder thing for a structure to take. For a real duct, that ringing matters more than the shock that started it.</p>
+    </div>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>At <em>x</em> = 685 mm the wall records sharp jumps for about 2.5 ms; at <em>x</em> = 1464 mm they are weaker but still arriving after 4.5 ms, when the useful run ends. The pressure field settles into three regions: rapid depressurisation and recirculation behind the step; a recovered, nearly uniform stretch whose residual unsteadiness comes from the shear layer, not shocks; and the shock-train region just behind the front, where the transient loading is. Raising the expansion ratio gives fewer jumps but larger ones. Even beyond 25<em>H</em>, no truly steady pressure field was measured.</p>
+    </details>
+  </section>
+
+  <section class="f-section wrap">
+    <h2 class="f-title">Where it ends up</h2>
+    <div class="f-prose">
+      <p>Counted in heights of the widened duct, the front takes about fifteen to seventeen of them to become uniform. Below that distance, whatever is bolted to the wall is still being hit unevenly.</p>
+      <p>What you need before any of that is usable is the speed the shock finally settles at. Simulations across the whole parameter space supplied it, as a single relation.</p>
+    </div>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/shock-waves-area-changes/mss-scaling.png" alt="Four plots comparing simulation and the fast geometric model: final shock Mach number against inlet Mach number for expansion ratios from 1 to 5, with power-law fits to the slopes" width="1600" height="1300" loading="lazy" decoding="async">
+    </figure>
+    <div class="f-eq">
+      <p class="f-eq-formula" aria-hidden="true"><em>M</em><sub>ss</sub> &asymp; (<em>H</em>/<em>h</em>)<sup><em>n</em></sup> (<em>M</em> &minus; 1) + 1</p>
+      <p class="visually-hidden">M sub s s is approximately equal to the ratio H over h raised to the power n, times the quantity M minus one, plus one.</p>
+    </div>
+    <div class="f-prose">
+      <p>The dashed lines are a much cheaper model, which treats the shock as a surface and works out how fast each piece should travel from the shape of the space ahead of it. For a duct that opens out gently that is a fair trade, because little happens behind the front. For a step it is not: the model tracks the first diffraction, then runs the shock too fast, because it cannot see the triple point come back.</p>
+    </div>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p><em>n</em> = −0.42 for a gradual expansion and −0.48 for a step, from power-law fits to the slopes of (<em>M</em><sub>ss</sub> − 1) against (<em>M</em> − 1) across 48 simulated configurations of each geometry, <em>M</em> = 1.1–1.8 and <em>H</em>/<em>h</em> = 1–5. Both coefficients are empirical and hold only inside that range. The front becomes uniform at roughly 15<em>H</em> for <em>M</em> = 1.4 and 17<em>H</em> for <em>M</em> = 1.7; at <em>M</em> = 1.7 with <em>H</em> = 130 mm it has still not settled within the 2 m test section. GSD solves Whitham's <em>A</em>–<em>M</em> rule with the Ridoux transverse correction; it diverges once Mach reflection forms, having no coupling to the post-shock flow, and overpredicts the downstream Mach number by under 6 %, worst at <em>H</em>/<em>h</em> = 5 and <em>M</em> = 1.8 (1.46 against 1.38). The LES uses sixth-order optimised upwind reconstruction with a monotonicity-preserving limiter, an HLLC solver and third-order TVD Runge–Kutta, on 120 million cells across four NVIDIA A100 GPUs.</p>
+    </details>
+  </section>
+
+  <section class="f-section wrap f-papers">
+    <h2 class="f-title">Read the paper</h2>
+    <div class="paper">
+      <p class="paper-venue">Journal of Fluid Mechanics 997, A30 (2024), open access</p>
+      <h3><a href="https://doi.org/10.1017/jfm.2024.814">The dynamics of shock wave propagation far downstream of an abrupt area expansion</a></h3>
+      <p class="paper-authors">Yoav Gichon, Jibu Tom Jose, Hemanth Chandravamsi, Yigal Evron and Omri Ram</p>
+    </div>
+    <p class="paper-also">The figures and clips on this page come from that article, published open access under a <a href="http://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> licence.</p>
+    <p class="paper-also">A related question — what happens when a duct narrows instead of widening — has its own page: <a href="/research/shock-local-constriction/">Shock interaction with local constrictions</a>.</p>
+    <p class="f-funding">This work was supported by the Israel Science Foundation (grant 3113/21) and the Zuckerman STEM Leadership Program. Jibu Tom Jose was partially supported by a Technion postdoctoral fellowship. Computational resources were provided by the CFDLAB at the Technion.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <div class="f-invite">
+      <h2>Work with us</h2>
+      <p>If this is the kind of problem you want to spend a few years on, we would like to hear from you.</p>
+      <ul class="f-invite-links">
+        <li><a class="button" href="/join/">Join the lab</a></li>
+        <li><a href="#contact">Contact the lab</a></li>
+        <li><a href="/facilities/">See the shock tube</a></li>
+      </ul>
+    </div>
+  </section>
+
 </article>
 
 </main>
@@ -103,6 +203,6 @@
     <p>© 2026 Transient Fluid Mechanics Laboratory, Technion. <a href="https://scholar.google.com/citations?user=bxnJmGgAAAAJ">Google Scholar</a></p>
   </div>
 </footer>
-<script src="/assets/js/site.js?v=706903ba" defer></script>
+<script src="/assets/js/site.js?v=e920a9f3" defer></script>
 </body>
 </html>

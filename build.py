@@ -56,7 +56,9 @@ def initials(name):
     return "".join(p[0] for p in parts[:2]).upper()
 
 def fmt_date(d):
-    return d.strftime("%-d %B %Y") if hasattr(d, "strftime") else str(d)
+    # "5 September 2026". The day is formatted separately because the no-padding flag
+    # differs by platform ("%-d" on Linux and macOS, "%#d" on Windows).
+    return f"{d.day} {d:%B %Y}" if hasattr(d, "strftime") else str(d)
 
 # ----------------------------------------------------------------------------- content
 

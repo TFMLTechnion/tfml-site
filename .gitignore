@@ -1,3 +1,5 @@
 preview/
 __pycache__/
 .DS_Store
+incoming/*
+!incoming/README.md

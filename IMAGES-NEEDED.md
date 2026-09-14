@@ -31,6 +31,10 @@ over the online address.
 - **A workshop photo** (3D printers, CNC, laser cutter) for the Facilities page: save it as
   `static/img/facilities/workshop.jpg` and add `image: workshop.jpg` to the Workshop block in
   `content/facilities.yml`.
+- **Optional, for `/research/shock-waves-area-changes/`.** Its "What the walls feel" section is
+  the one section with no picture. Figure 8 (pressure traces at eight stations, top wall against
+  bottom) or figure 15 (the x–t pressure map) from the JFM paper would fill it. Drop either in
+  `incoming/` and I'll wire it up.
 
 All other portraits were replaced in September 2026 with the square studio photos; new
 portraits should follow the same format (square, at least 800 × 800 px, JPEG).

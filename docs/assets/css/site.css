@@ -446,6 +446,24 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .paper-also { font-family: var(--sans); font-size: var(--step--1); line-height: 1.6; color: var(--ink-soft); border-top: 1px solid var(--line); padding-top: 1.25rem; margin-top: 1.5rem; max-width: 76ch; }
 .f-funding { font-family: var(--sans); font-size: var(--step--1); color: var(--ink-soft); margin-top: 2.5rem; max-width: 70ch; }
 
+/* Long-form variant: a feature that reads as an article rather than a deck. No section
+   eyebrows, no figure captions, no takeaway boxes, so figures sit directly in the run of
+   text and have to carry their own spacing. Scoped, so the other feature pages are
+   untouched. */
+.feature-essay .f-section { border-top: 0; padding-block: 0; }
+.feature-essay .f-title { font-size: var(--step-2); max-width: none; margin: clamp(2.5rem, 5vw, 4rem) 0 clamp(.8rem, 1.6vw, 1.2rem); }
+/* text runs the full width of the column rather than stopping at a reading measure */
+.feature-essay .f-prose, .feature-essay .expert,
+.feature-essay .paper-also, .feature-essay .f-funding, .feature-essay .f-invite p { max-width: none; }
+.feature-essay .f-figure { margin-block: clamp(2rem, 4vw, 3rem); }
+/* justified body copy; hyphenation keeps the word spacing from opening into rivers */
+.feature-essay .f-prose p, .feature-essay .expert p { text-align: justify; hyphens: auto; }
+.feature-essay .f-eq { background: none; border: 0; padding-block: 0; margin-block: clamp(2rem, 4vw, 3rem); }
+.feature-essay .expert { margin-top: clamp(1.75rem, 3.5vw, 2.5rem); }
+.feature-essay .f-papers { border-top: 1px solid var(--line); margin-top: clamp(3rem, 6vw, 4.5rem); padding-top: clamp(2rem, 4vw, 3rem); }
+.feature-essay .f-papers .f-title, .feature-essay .f-invite h2 { margin-top: 0; }
+.feature-essay .f-invite { margin-top: clamp(2.5rem, 5vw, 4rem); }
+
 /* Inline SVG diagrams */
 .diagram { width: 100%; height: auto; display: block; font-family: var(--sans); }
 .diagram text { font-size: 13px; fill: var(--ink); }
