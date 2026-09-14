@@ -1,0 +1,92 @@
+{% extends "base.html" %}
+{% set F = 'research/rising-spheres/' %}
+{% block content %}
+<article class="feature">
+
+  <header class="feature-hero feature-hero-flip wrap">
+    <div class="feature-hero-text">
+      <p class="crumbs"><a href="{{ '/research/' | url }}">Research</a> <span aria-hidden="true">/</span> {{ theme.title }}</p>
+      <h1>Seeing the flow right next to a moving body</h1>
+      <p class="feature-lede">Measure a flow with particles and you get velocity at scattered points. Smoothing those into a field is routine, until a solid body sits in the middle of it. Then the method quietly invents a flow where the body is, and never learns that fluid touching a surface has to travel with it.</p>
+      <p class="feature-meta">Built for our experiments on <a href="{{ '/research/rising-spheres/' | url }}">freely rising spheres</a>. Code, data and the paper are at the <a href="#use-it">end of this page</a>.</p>
+    </div>
+    <figure class="feature-hero-media f-mask">
+      {% include "features/_ledm_mask.svg" %}
+      <figcaption>The idea, in one picture. A body rises through a fixed grid. Points swallowed by it turn <strong>grey</strong>, points in the thin shell hugging its surface turn <strong>orange</strong>, and the rest stay <strong>blue</strong> for open fluid. A drawing of the idea, not measured data.</figcaption>
+    </figure>
+  </header>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">The problem</p>
+    <h2 class="f-title">Every reconstruction assumes the world is all fluid</h2>
+    <p class="f-subtitle">The assumption breaks in the one place you cannot afford to lose it.</p>
+    <div class="f-prose">
+      <p>Smoothing scattered velocities onto a grid is routine in open water. Put a solid body in the middle and two things go wrong at once. The method fills the body with a flow that does not exist, and it never learns that fluid touching the surface must move with the surface.</p>
+      <p>That thin region is where the flow changes fastest, and pressure, drag and lift are all worked out from how fast it changes. For a body that moves it is worse: a point that is solid in one frame is open water in the next.</p>
+    </div>
+    <p class="f-takeaway">The worst-reconstructed part of the measurement is the part you most want.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">The idea</p>
+    <h2 class="f-title">Tell the reconstruction where the body is</h2>
+    <p class="f-subtitle">Every frame, sort each grid point by how far it sits from the surface, then act on that.</p>
+    <ul class="f-bullets">
+      <li>The shell is told to move with the body, so fluid at the surface travels with the surface.</li>
+      <li>Conservation of mass is applied only where there is actually fluid.</li>
+      <li>A point the body has just vacated is told to forget what it held a moment ago.</li>
+    </ul>
+    <figure class="f-figure f-figure-center">
+      <img src="{{ img(F ~ 'ledm-overview.png') }}" alt="Three panels: tracer particles around a moving sphere, the same region with every grid point sorted into inside the body, a shell at its surface, or open fluid, and the reconstructed flow field wrapping around the body" width="986" height="321" loading="lazy" decoding="async">
+      <figcaption>The same three steps on real data. Left, the tracer particles, with the body's shape and motion already known. Centre, every grid point sorted by its distance to the surface. Right, the flow that comes out: wrapping around the body, blank where the solid is, and pinned to the body's own motion at the shell.</figcaption>
+    </figure>
+    <p class="f-takeaway">The body stops being a hole in the data and becomes part of the problem.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">Does it work</p>
+    <h2 class="f-title">Testing against a flow we already know</h2>
+    <p class="f-subtitle">A simulated rising sphere gives a complete reference field, which no experiment can offer.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="{{ img(F ~ 'ledm-cfd-sphere.png') }}" alt="Speed contours around a rising sphere: the simulated reference beside three reconstructions at grid spacings of one, one and a half, and two millimetres, followed by line profiles comparing all four" width="1796" height="1040" loading="lazy" decoding="async">
+      <figcaption>A simulated rising sphere, used as an exact answer to mark against. Leftmost, the reference flow; beside it, reconstructions at grid spacings of one, one and a half and two millimetres. The plots below trace speed around and along the body, reference in black and the three reconstructions in colour. They sit on top of one another almost everywhere.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>In the simplest controlled test, the error in the first layer of fluid next to the surface drops from about fourteen per cent of the body's own speed to about three. Coarsen the grid and the reconstruction degrades gently rather than falling apart, which matters because real measurements rarely give you the spacing you would like.</p>
+    </div>
+    <p class="f-takeaway">The correction is local. Far from the body nothing changes, which is the point.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">Not just spheres</p>
+    <h2 class="f-title">A tumbling body works too</h2>
+    <p class="f-subtitle">An elongated body whose orientation changes every frame, not only its position.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="{{ img(F ~ 'ledm-spheroid-full.png') }}" alt="A tumbling elongated body rising through simulated flow, with its path and orientation, speed contours on three planes comparing reference and reconstruction, and profiles of speed around the body" width="1678" height="1374" loading="lazy" decoding="async">
+      <figcaption>An elongated body rising and tumbling through nearly a full turn. Top left, its path with the orientation drawn at intervals. Centre, speed on three cuts through the body: reference above, reconstruction below. Bottom, speed traced right around the body on each cut, reference in black and reconstruction in red dashes. The two agree to within a few per cent of the body's speed.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>A sphere is a forgiving test: it looks the same from every side. A tumbling body is not, because both where it is and which way it points change from frame to frame. The same handling covers fixed walls, several bodies at once, and bodies that spin.</p>
+    </div>
+    <p class="f-takeaway">Anything whose shape and motion you know can be handled the same way.</p>
+  </section>
+
+  <section class="f-section wrap f-papers" id="use-it">
+    <p class="f-eyebrow">Use it</p>
+    <h2 class="f-title">Code and data</h2>
+    <p class="f-subtitle">It runs on a desktop: roughly four and a half seconds per snapshot on a single processor core.</p>
+    <div class="paper">
+      <p class="paper-venue">Measurement Science and Technology (2026), accepted</p>
+      <h3><a href="https://github.com/TFMLTechnion/LEDM">Dynamic masking for boundary-aware velocity reconstruction in volumetric particle tracking with moving solids</a></h3>
+      <p class="paper-authors">Jibu Tom Jose, Arieh Jacobson, Dhanush Vittal Shenoy, Steven H. Frankel and Omri Ram</p>
+    </div>
+    <ul class="f-invite-links">
+      <li><a class="button" href="https://github.com/TFMLTechnion/LEDM">Read the code</a></li>
+      <li><a href="https://doi.org/10.5281/zenodo.21965844">Download the validation data</a></li>
+      <li><a href="{{ '/research/rising-spheres/' | url }}">The experiment it was built for</a></li>
+    </ul>
+    <p class="f-funding">This work was partially funded by the American Chemical Society Petroleum Research Fund (grant 65901-ND9). Jibu Tom Jose was supported by a Technion postdoctoral fellowship.</p>
+  </section>
+
+</article>
+{% endblock %}

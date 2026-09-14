@@ -29,4 +29,8 @@
     clips[i].controls = true;
     clips[i].pause();
   }
+  var diagrams = document.querySelectorAll('svg.diagram-animated');
+  for (var j = 0; j < diagrams.length; j++) {
+    if (diagrams[j].pauseAnimations) diagrams[j].pauseAnimations();
+  }
 })();
