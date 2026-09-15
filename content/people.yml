@@ -126,6 +126,8 @@ people:
     group: msc
     role: M.Sc. student, since 2026
     image: neta-kahane.jpg
+    education:
+      - B.Sc. Physics and Sociology-Anthropology (double major), Hebrew University of Jerusalem
     project: Natural-convection-driven mixing in a cell
 
   - name: Omri Gurfinkel
