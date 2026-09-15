@@ -43,7 +43,7 @@ people:
   - name: Rami Yanai
     group: staff
     role: Lab engineer
-    # image: rami-yanai.jpg          # no photo yet; add the file and remove the # at the start of this line
+    image: rami-yanai.jpg
     education:
       - B.Sc. Mechanical Engineering, Technion
     email: rami.ya@me.technion.ac.il
