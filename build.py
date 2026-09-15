@@ -228,8 +228,8 @@ def build(out_dir, preview=False):
     render("404.html", "/404.html", page_id="404", section="", page_title="Page not found")
 
     # Standalone pages published verbatim (unlisted: not in navigation or sitemap)
-    for page in sorted((CONTENT / "pages").glob("*.html")) if (CONTENT / "pages").exists() else []:
-        dest = out / page.stem / "index.html"
+    for page in sorted((CONTENT / "pages").rglob("*.html")) if (CONTENT / "pages").exists() else []:
+        dest = out / page.relative_to(CONTENT / "pages").with_suffix("") / "index.html"
         dest.parent.mkdir(parents=True, exist_ok=True)
         dest.write_text(page.read_text(encoding="utf-8"), encoding="utf-8")
 
