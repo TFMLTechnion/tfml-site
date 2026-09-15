@@ -69,7 +69,7 @@
 <body>
 <main class="gi">
   <h1>Equipment loan request</h1>
-  <p class="lead">Borrowing a camera, lens, sensor, instrument or tool from the lab, or taking one to another lab? Fill this in so the lab manager knows what is where. Fields marked * are required.</p>
+  <p class="lead">Taking equipment out of the lab, or to another lab? Fill this in so the lab manager knows what is where. All fields are required.</p>
 
   <form id="loanForm" action="https://formsubmit.co/omriram@gmail.com" method="POST">
     <input type="hidden" name="_subject" value="Equipment loan request">
@@ -78,89 +78,49 @@
     <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
 
     <fieldset>
-      <legend>Borrower</legend>
+      <legend>Who</legend>
       <div class="row">
         <div class="field">
           <label for="borrower">Full name *</label>
           <input id="borrower" name="Borrower" type="text" autocomplete="name" required>
         </div>
         <div class="field">
-          <label for="borrowerEmail">Email *</label>
-          <input id="borrowerEmail" name="Borrower email" type="email" placeholder="name@campus.technion.ac.il" autocomplete="email" required>
-        </div>
-      </div>
-      <div class="row">
-        <div class="field">
           <label for="borrowerPhone">Phone *</label>
           <input id="borrowerPhone" name="Borrower phone" type="tel" inputmode="tel" placeholder="050-000-0000" pattern="[0-9+\(\)\-\s]{7,20}" title="7 to 20 characters: digits, spaces, +, ( ) or -" required>
         </div>
-        <div class="field">
-          <label for="group">Group or lab *</label>
-          <input id="group" name="Group or lab" type="text" placeholder="TFML, or another lab and its PI" required>
-        </div>
       </div>
     </fieldset>
 
     <fieldset>
-      <legend>Equipment</legend>
+      <legend>What</legend>
       <div class="field">
-        <label for="item">What is being borrowed *</label>
-        <input id="item" name="Equipment" type="text" placeholder="Phantom v2640 camera, Tokina 100 mm lens, PCB 113B26 transducer…" required>
-        <p class="hint">One request per loan. List every item that leaves together, including cables, lenses, mounts and cases.</p>
-      </div>
-      <div class="row">
-        <div class="field">
-          <label for="serial">Serial or asset number</label>
-          <input id="serial" name="Serial or asset number" type="text" placeholder="If it has one">
-        </div>
-        <div class="field">
-          <label for="quantity">Quantity *</label>
-          <input id="quantity" name="Quantity" type="number" min="1" step="1" value="1" required>
-        </div>
-      </div>
-      <div class="field">
-        <label for="condition">Condition at pick-up</label>
-        <input id="condition" name="Condition at pick-up" type="text" placeholder="Any existing marks, missing parts, known issues">
+        <label for="item">Equipment *</label>
+        <input id="item" name="Equipment" type="text" placeholder="Phantom v2640 camera with Tokina 100 mm lens and case" required>
+        <p class="hint">Everything that leaves together, including cables, lenses and cases.</p>
       </div>
     </fieldset>
 
     <fieldset>
-      <legend>Loan</legend>
+      <legend>When and where</legend>
       <div class="row">
         <div class="field">
           <label for="pickupDate">Pick-up date *</label>
           <input id="pickupDate" name="Pick-up date" type="date" required>
         </div>
         <div class="field">
-          <label for="returnDate">Planned return date *</label>
-          <input id="returnDate" name="Planned return date" type="date" required>
+          <label for="returnDate">Return date *</label>
+          <input id="returnDate" name="Return date" type="date" required>
         </div>
       </div>
       <div class="field">
-        <label>Where will it be used? *</label>
-        <div class="choices">
-          <label class="choice"><input type="radio" name="Where it will be used" value="Inside TFML" required> <span>Inside TFML<small>Moving between our own facilities</small></span></label>
-          <label class="choice"><input type="radio" name="Where it will be used" value="Another lab at the Technion"> <span>Another lab at the Technion<small>Give the building and room below</small></span></label>
-          <label class="choice"><input type="radio" name="Where it will be used" value="Off campus"> <span>Off campus<small>Field measurement, another institution, a supplier</small></span></label>
-        </div>
-      </div>
-      <div class="field">
-        <label for="location">Location details *</label>
-        <input id="location" name="Location details" type="text" placeholder="Building, room, or address" required>
-      </div>
-      <div class="field">
-        <label for="purpose">Purpose *</label>
-        <textarea id="purpose" name="Purpose" placeholder="What the equipment is needed for, and for which project" required></textarea>
-      </div>
-      <div class="field">
-        <label for="notes">Notes (optional)</label>
-        <textarea id="notes" name="Notes" placeholder="Transport, insurance, training already received, anything else the lab manager should know"></textarea>
+        <label for="purpose">Where it is going, and what for *</label>
+        <textarea id="purpose" name="Where and why" placeholder="Building and room, or off campus, and the project it is for" required></textarea>
       </div>
     </fieldset>
 
     <fieldset>
       <legend>Responsibility</legend>
-      <label class="agree"><input type="checkbox" name="Agreement" value="Accepted" required> <span>I am responsible for this equipment while it is on loan. I will return it clean and complete by the planned date, report any damage or fault immediately, and will not lend it on to anyone else without asking the lab manager.</span></label>
+      <label class="agree"><input type="checkbox" name="Agreement" value="Accepted" required> <span>I am responsible for this equipment while it is on loan, will return it complete by the return date, and will report any damage immediately.</span></label>
     </fieldset>
 
     <div class="actions">
@@ -205,7 +165,7 @@
 
     var data = {};
     new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
-    data._subject = 'Equipment loan: ' + data['Equipment'] + ', ' + data['Borrower'] + ', ' + data['Pick-up date'] + ' to ' + data['Planned return date'];
+    data._subject = 'Equipment loan: ' + data['Equipment'] + ', ' + data['Borrower'] + ', ' + data['Pick-up date'] + ' to ' + data['Return date'];
 
     sendBtn.disabled = true;
     sendBtn.textContent = 'Sending…';
