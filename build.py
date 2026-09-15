@@ -227,6 +227,12 @@ def build(out_dir, preview=False):
            page_description="Open positions for graduate students, postdocs and undergraduates at TFML, Technion.")
     render("404.html", "/404.html", page_id="404", section="", page_title="Page not found")
 
+    # Standalone pages published verbatim (unlisted: not in navigation or sitemap)
+    for page in sorted((CONTENT / "pages").glob("*.html")) if (CONTENT / "pages").exists() else []:
+        dest = out / page.stem / "index.html"
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        dest.write_text(page.read_text(encoding="utf-8"), encoding="utf-8")
+
     # Redirects from the old Wix addresses (live site only)
     for old, new in ({} if preview else (site.get("redirects") or {})).items():
         dest = out / old.strip("/") / "index.html"

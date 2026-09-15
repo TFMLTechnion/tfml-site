@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Guest invite request – TFML team</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  /* Everything is scoped to .gi so it can be pasted into the /team page without touching site styles. */
+  :root {
+    --gi-ink: #1B2430; --gi-muted: #5B6672; --gi-line: #C9D2DC; --gi-soft: #EEF1F4;
+    --gi-blue: #1747A6; --gi-blue-dark: #103783;
+    --gi-plate: #F7C600; --gi-band: #0033A0;
+    --gi-ok: #1E7F4F; --gi-ok-bg: #EAF6EE; --gi-ok-line: #BFE3CC; --gi-err: #B4232C;
+  }
+  body { margin: 0; background: var(--gi-soft); font-family: "IBM Plex Sans", "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: var(--gi-ink); -webkit-font-smoothing: antialiased; }
+  .gi { max-width: 640px; margin: 40px auto; padding: 32px; background: #fff; border: 1px solid var(--gi-line); border-radius: 12px; box-sizing: border-box; }
+  .gi * { box-sizing: border-box; }
+  .gi [hidden] { display: none !important; }
+  .gi h1 { margin: 0 0 8px; font-size: 28px; line-height: 1.2; font-weight: 600; letter-spacing: -0.01em; }
+  .gi .lead { margin: 0; color: var(--gi-muted); font-size: 15px; line-height: 1.5; }
+
+  .gi fieldset { border: 0; padding: 0; margin: 28px 0 0; min-width: 0; }
+  .gi legend { padding: 0; margin: 0 0 14px; font-size: 17px; font-weight: 600; }
+  .gi .row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .gi .row + .row, .gi .row + .field, .gi .field + .row, .gi .field + .field { margin-top: 16px; }
+  .gi label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; }
+  .gi input, .gi textarea { width: 100%; font: inherit; font-size: 16px; color: var(--gi-ink); background: #fff; border: 1px solid var(--gi-line); border-radius: 8px; padding: 11px 12px; }
+  .gi textarea { min-height: 88px; resize: vertical; }
+  .gi input:focus-visible, .gi textarea:focus-visible { outline: 2px solid var(--gi-blue); outline-offset: 1px; border-color: var(--gi-blue); }
+  .gi input:user-invalid, .gi textarea:user-invalid { border-color: var(--gi-err); }
+
+  /* License plate field */
+  .gi .plate { display: flex; border: 2px solid var(--gi-ink); border-radius: 6px; overflow: hidden; background: var(--gi-plate); }
+  .gi .plate:focus-within { outline: 2px solid var(--gi-blue); outline-offset: 2px; }
+  .gi .plate:has(input:user-invalid) { border-color: var(--gi-err); }
+  .gi .plate-band { flex: 0 0 44px; display: flex; align-items: center; justify-content: center; background: var(--gi-band); color: #fff; font-size: 13px; font-weight: 600; letter-spacing: 0.06em; }
+  .gi .plate input { border: 0; border-radius: 0; background: transparent; color: #000; font-size: 24px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; padding: 10px 14px; }
+  .gi .plate input:focus-visible { outline: 0; }
+  .gi .plate input::placeholder { color: rgba(0, 0, 0, 0.4); }
+
+  /* Actions and states */
+  .gi .actions { display: flex; align-items: center; gap: 16px; flex-wrap: wrap; margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--gi-line); }
+  .gi button { font: inherit; font-size: 15px; font-weight: 600; padding: 12px 20px; border-radius: 8px; border: 1px solid transparent; cursor: pointer; transition: background-color 120ms ease; }
+  .gi .primary { background: var(--gi-blue); color: #fff; }
+  .gi .primary:hover { background: var(--gi-blue-dark); }
+  .gi .primary:disabled { opacity: 0.6; cursor: default; }
+  .gi .secondary { background: #fff; color: var(--gi-blue); border-color: var(--gi-blue); }
+  .gi button:focus-visible { outline: 2px solid var(--gi-blue); outline-offset: 2px; }
+  .gi .note { margin: 0; font-size: 13px; color: var(--gi-muted); }
+  .gi .note a { color: inherit; }
+  .gi .error { margin: 14px 0 0; color: var(--gi-err); font-size: 14px; line-height: 1.5; }
+  .gi .error a { color: inherit; font-weight: 600; }
+  .gi .done { display: none; margin-top: 28px; padding: 20px; border: 1px solid var(--gi-ok-line); background: var(--gi-ok-bg); border-radius: 8px; }
+  .gi .done.show { display: block; }
+  .gi .done h2 { margin: 0 0 6px; font-size: 18px; color: var(--gi-ok); }
+  .gi .done p { margin: 0 0 16px; line-height: 1.5; }
+  .gi .hp { position: absolute; left: -9999px; width: 1px; height: 1px; }
+
+  @media (max-width: 560px) {
+    .gi { margin: 0; padding: 24px 20px; border-radius: 0; border-left: 0; border-right: 0; }
+    .gi .row { grid-template-columns: 1fr; }
+    .gi h1 { font-size: 24px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .gi button { transition: none; } }
+</style>
+</head>
+<body>
+<!-- To embed on the /team page: copy the <style> block above plus everything from <main> to </script> below. -->
+<main class="gi">
+  <h1>Guest invite request</h1>
+  <p class="lead">Ask the lab manager to add a visitor and their car to the entry system. Fields marked * are required.</p>
+
+  <form id="guestForm" action="https://formsubmit.co/tfml@technion.ac.il" method="POST">
+    <!-- FormSubmit settings: table-style email, no CAPTCHA step. After activation you can replace the
+         address in the action above with the random string FormSubmit gives you, to keep it out of the page source. -->
+    <input type="hidden" name="_subject" value="Guest invite request">
+    <input type="hidden" name="_template" value="table">
+    <input type="hidden" name="_captcha" value="false">
+    <!-- <input type="hidden" name="_next" value="https://your-site.example/team/thanks"> -->
+    <input type="text" name="_honey" class="hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+    <fieldset>
+      <legend>Visit</legend>
+      <div class="row">
+        <div class="field">
+          <label for="requester">Requested by *</label>
+          <input id="requester" name="Requested by" type="text" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="visitDate">Visit date *</label>
+          <input id="visitDate" name="Visit date" type="date" required>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Driver</legend>
+      <div class="field">
+        <label for="driverName">Full name *</label>
+        <input id="driverName" name="Driver name" type="text" autocomplete="off" required>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="driverEmail">Email *</label>
+          <input id="driverEmail" name="Driver email" type="email" placeholder="name@example.com" autocomplete="off" required>
+        </div>
+        <div class="field">
+          <label for="driverPhone">Phone *</label>
+          <input id="driverPhone" name="Driver phone" type="tel" inputmode="tel" placeholder="050-000-0000"
+                 pattern="[0-9+\(\)\-\s]{7,20}" title="7 to 20 characters: digits, spaces, +, ( ) or -" autocomplete="off" required>
+        </div>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Car</legend>
+      <div class="field">
+        <label for="plate">License plate *</label>
+        <div class="plate">
+          <span class="plate-band" aria-hidden="true">IL</span>
+          <input id="plate" name="License plate" type="text" placeholder="12-345-67" autocomplete="off" spellcheck="false" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="field">
+          <label for="carMake">Make and model *</label>
+          <input id="carMake" name="Car make and model" type="text" placeholder="Toyota Corolla" required>
+        </div>
+        <div class="field">
+          <label for="carColor">Color *</label>
+          <input id="carColor" name="Car color" type="text" placeholder="White" required>
+        </div>
+      </div>
+      <div class="field">
+        <label for="notes">Notes (optional)</label>
+        <textarea id="notes" name="Notes" placeholder="Arrival time, repeat visits, anything else the lab manager should know"></textarea>
+      </div>
+    </fieldset>
+
+    <div class="actions">
+      <button type="submit" class="primary" id="sendBtn">Send request</button>
+      <p class="note">Goes to the lab manager at <a href="mailto:tfml@technion.ac.il">tfml@technion.ac.il</a></p>
+    </div>
+    <p class="error" id="errorBox" role="alert" hidden></p>
+  </form>
+
+  <div class="done" id="doneBox" role="status">
+    <h2>Request sent</h2>
+    <p>The lab manager has the guest's details and will follow up if anything is missing.</p>
+    <button type="button" class="secondary" id="againBtn">Send another request</button>
+  </div>
+</main>
+
+<script>
+(function () {
+  var TO = 'tfml@technion.ac.il';
+  var form = document.getElementById('guestForm');
+  var sendBtn = document.getElementById('sendBtn');
+  var errorBox = document.getElementById('errorBox');
+  var doneBox = document.getElementById('doneBox');
+  // FormSubmit's JSON endpoint is the form action with /ajax/ inserted.
+  var endpoint = form.action.replace('formsubmit.co/', 'formsubmit.co/ajax/');
+
+  // Visits can't be in the past.
+  var d = new Date(), pad = function (n) { return String(n).padStart(2, '0'); };
+  document.getElementById('visitDate').min = d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate());
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    if (!form.reportValidity()) return;
+
+    var data = {};
+    new FormData(form).forEach(function (v, k) { data[k] = String(v).trim(); });
+    data['License plate'] = data['License plate'].toUpperCase();
+    data._subject = 'Guest invite: ' + data['Driver name'] + ', ' + data['Visit date'];
+
+    sendBtn.disabled = true;
+    sendBtn.textContent = 'Sending…';
+    errorBox.hidden = true;
+
+    fetch(endpoint, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(data)
+    })
+      .then(function (r) { return r.json(); })
+      .then(function (res) {
+        if (String(res.success) !== 'true') throw new Error(res.message || 'the service did not accept it');
+        form.hidden = true;
+        doneBox.classList.add('show');
+      })
+      .catch(function (err) {
+        // Network failures are TypeErrors; messages from the service itself are worth showing.
+        showError(err instanceof TypeError ? '' : err.message, data);
+      })
+      .finally(function () {
+        sendBtn.disabled = false;
+        sendBtn.textContent = 'Send request';
+      });
+  });
+
+  function showError(msg, data) {
+    var lines = Object.keys(data).filter(function (k) { return k.charAt(0) !== '_'; })
+      .map(function (k) { return k + ': ' + data[k]; }).join('\n');
+    var mailto = 'mailto:' + TO + '?subject=' + encodeURIComponent(data._subject) + '&body=' + encodeURIComponent(lines);
+    errorBox.innerHTML = 'The request didn\'t send' + (msg ? ' (' + escapeHtml(msg) + ')' : '') +
+      '. Try again, or <a href="' + mailto + '">email the details to the lab manager</a> instead.';
+    errorBox.hidden = false;
+  }
+
+  function escapeHtml(s) {
+    return String(s).replace(/[&<>"']/g, function (c) { return '&#' + c.charCodeAt(0) + ';'; });
+  }
+
+  document.getElementById('againBtn').addEventListener('click', function () {
+    form.reset();
+    doneBox.classList.remove('show');
+    form.hidden = false;
+    document.getElementById('requester').focus();
+  });
+})();
+</script>
+</body>
+</html>
