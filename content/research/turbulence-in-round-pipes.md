@@ -2,20 +2,21 @@
 title: Turbulence in round pipes across area changes
 theme: multiphase
 order: 2
+template: features/turbulence-in-round-pipes.html   # this page has its own layout (an illustrated story)
 summary: >-
-  Stereo and tomographic PIV of turbulent pipe flow through abrupt and gradual expansions
-  and contractions, a simple geometry that is notoriously hard to image.
-image: turbulence-round-pipes.png       # Wix file: Picture5.png
-image_alt: Stereo PIV measurement of turbulent flow across a pipe expansion
+  Engineering handbooks have said for a century that a gentle taper loses more pressure
+  than a sharp step, without anyone measuring why. We imaged both geometries inside a
+  round pipe and found the answer in how the returning flow meets the oncoming stream.
+image: pipe-expansions/mean-fields.png
+image_alt: >-
+  Measured mean flow through a pipe expansion, the sharp step above and the gentle wedge
+  below, with streamlines showing the recirculation behind each
 related:
   - Effect of expansion geometry on turbulence
   - Coherent structure transport in turbulent axisymmetric pipe expansions
-figures:
-  - image: turbulence-fields.png        # Wix file: 709014_904fa293...png
-    caption: Mean and turbulent flow fields measured across the area change.
-  - image: turbulence-modes.png         # Wix file: Screenshot 2023-12-13 152450.png
-    caption: Reduced-order modes of the separated flow behind the step.
 ---
-High-resolution stereo PIV experiments are performed in the refractive-index-matched round channel with varying pipe geometries. We study the flow near an abrupt expansion or contraction to understand how the area change affects the turbulence upstream and downstream of the step. Four cases, with 45° and 90° steps in both directions, are compared at matched inlet Reynolds number; the area ratio is 2.56:1 for the contractions and 1:2.56 for the expansions. Although this is a simple problem, it is extremely difficult to image because of the curvature of the pipe, a difficulty that refractive index matching removes.
+A pipe that widens loses pressure, and how much it loses depends on the shape of the transition. Counter to intuition, a gradual 45° taper is more expensive than an abrupt 90° step. The result has been in engineering handbooks since Gibson measured it in 1910, but it had never been explained from direct measurement of the flow itself.
 
-From the PIV data we characterize the recirculation region behind the step, the shear layer and the turbulent stresses. Pressures and flow rates are chosen to prevent cavitation. Comparing the turbulence characteristics of the different expansion and contraction regions helps explain pressure losses, sedimentation in particle-laden flow and efficiency. Reduced-order modeling with proper orthogonal decomposition (POD) and dynamic mode decomposition (DMD) isolates the important features of the flow field, and the stereo PIV results are extended with high-speed tomographic PIV and time-resolved stereo PIV.
+We measured both geometries in a refractive-index-matched round channel, where the working fluid is tuned to the refractive index of the acrylic pipe so the curved wall stops bending the light. Two expansions are compared, a 90° step and a 45° wedge, at an area ratio of 2.56 and at step-height Reynolds numbers of 25,000 and 35,000. The gentle wedge produces more turbulence, a broader shear layer and higher losses, and the reason is geometric: in the step a secondary vortex forms in the corner and weakens the returning flow, while in the wedge the return flow runs up the slope and meets the oncoming stream head on.
+
+Contractions and time-resolved tomographic measurements are ongoing work.

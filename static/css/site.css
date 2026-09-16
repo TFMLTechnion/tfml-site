@@ -384,6 +384,8 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 /* The numbers band: the strongest hook on the page, so it gets a tinted full-width
    band, a label of its own and figures large enough to carry the page. */
 .stats-band { background: var(--wash); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+/* A second measurement band sharing the same tinted strip. */
+.stats-eyebrow-2 { border-top: 1px solid var(--line); padding-top: clamp(1.5rem, 3vw, 2.25rem); }
 .stats-eyebrow { font-family: var(--sans); font-size: var(--step--1); font-weight: 500; letter-spacing: .09em; text-transform: uppercase; color: var(--ink-faint); margin: 0; padding-top: clamp(2.25rem, 4.5vw, 3.25rem); }
 .stats { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(1.5rem, 3vw, 2.5rem); padding-block: clamp(1.75rem, 3vw, 2.5rem) clamp(2.5rem, 5vw, 3.75rem); font-family: var(--sans); }
 .stats > div { border-top: 1px solid var(--line); padding-top: 1.1rem; }
@@ -399,6 +401,11 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .feature-hero-flip .feature-hero-media { order: -1; }
 .feature-hero-flip .feature-lede { max-width: 46ch; }
 .feature-hero-flip .feature-meta { max-width: 52ch; }
+
+/* A feature hero with no figure: the text runs the full column. */
+.feature-hero-solo { grid-template-columns: minmax(0, 1fr); }
+.feature-hero-solo .feature-lede { max-width: 54ch; }
+.feature-hero-solo .feature-meta { max-width: 60ch; }
 
 /* Short prose block inside a slide-rhythm section. */
 .f-prose { max-width: 68ch; }
@@ -427,6 +434,18 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
 .f-title { font-size: var(--step-3); font-weight: 400; letter-spacing: -0.02em; max-width: 24ch; margin-bottom: .5rem; }
 .f-subtitle { font-family: var(--sans); font-size: var(--step-0); line-height: 1.5; color: var(--ink-soft); max-width: 64ch; margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem); }
 .f-takeaway { font-family: var(--serif); font-size: var(--step-1); line-height: 1.4; color: var(--ink); background: var(--wash); border-left: 3px solid var(--line); padding: clamp(1rem, 2.2vw, 1.4rem) clamp(1.1rem, 2.5vw, 1.6rem); margin: clamp(2rem, 4vw, 3rem) 0 0; }
+
+/* Figures that do not need the full column: a line plot or a coarse contour map reads
+   perfectly well below the text width and sits better in the page. These have to out-
+   specify .f-figure-center, which otherwise caps every figure at --fig-max. */
+.feature .f-figure-xs { max-width: min(100%, 400px); }
+.feature .f-figure-sm { max-width: min(100%, 500px); }
+.feature .f-figure-md { max-width: min(100%, 640px); }
+.feature .f-figure-portrait { max-width: min(100%, 460px); }
+.feature .f-figure-portrait-sm { max-width: min(100%, 360px); }
+
+/* Small status tag beside an eyebrow, for work that is not published yet. */
+.f-tag { display: inline-block; margin-left: .6rem; padding: .15rem .5rem; border: 1px solid var(--line); border-radius: 2px; background: var(--wash); color: var(--ink-faint); font-weight: 500; letter-spacing: .06em; }
 
 .f-bullets { list-style: none; margin: clamp(1.75rem, 3vw, 2.25rem) 0 0; padding: 0; max-width: 68ch; font-family: var(--sans); font-size: var(--step-0); line-height: 1.5; }
 .f-bullets li { position: relative; padding-left: 1.5rem; margin-bottom: .8rem; color: var(--ink-soft); }
