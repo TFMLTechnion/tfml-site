@@ -33,6 +33,7 @@ nav:
   - {label: People, url: /people/}
   - {label: Facilities, url: /facilities/}
   - {label: Publications, url: /publications/}
+  - {label: Code, url: /code/}
   - {label: News, url: /news/}
   - {label: Join us, url: /join/}
 

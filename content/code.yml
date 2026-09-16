@@ -1,0 +1,49 @@
+# ------------------------------------------------------------------
+# Open-source software released by the lab.
+# Each entry: name, tagline, licence, summary, points, links.
+# An optional research: {label, url} points at the project page behind the code.
+# ------------------------------------------------------------------
+- name: uPrime
+  tagline: Turbulence analysis without scripting
+  licence: GPL-3.0
+  image: uprime-gui.png                  # in static/img/code/
+  image_alt: >-
+    The uPrime main window: a sidebar of loading, preprocessing and analysis modules on the
+    left, and a mean speed field through a pipe expansion with velocity vectors on the right
+  image_caption: >-
+    The main window. Loading, preprocessing and the analysis modules run down the left; the
+    field view and its colour bar fill the rest.
+  summary: >-
+    A standalone desktop application for post-processing velocity fields from PIV and CFD.
+    It reads Tecplot ASCII files written by LaVision DaVis and MATLAB .mat files, and puts
+    the whole turbulence pipeline in one window. Nothing to script, nothing to configure.
+  points:
+    - Reynolds stresses, turbulent kinetic energy budget, spectra, correlations, proper orthogonal and dynamic mode decomposition, and vortex identification
+    - "Probability analysis: velocity distributions, forward and reverse flow probability, binary space-time maps and quadrant decomposition"
+    - Convergence checking at any point in the field, so you know whether a statistic has settled before you publish it
+    - Datasets larger than memory are mapped to disk, and heavy analysis runs in the background while the window stays responsive
+    - Non-destructive masking of walls, shadows and reflections; the raw data is never modified
+    - Export to PNG at 300 dpi, and to PDF and SVG with editable text
+    - Windows executable with no Python install required; macOS and Linux run from source
+  links:
+    - {label: Project site, url: "https://cmdrryder.github.io/uPrime/"}
+    - {label: Source on GitHub, url: "https://github.com/CmdrRyder/uPrime"}
+
+- name: LE-DM
+  tagline: Velocity reconstruction that knows where the body is
+  licence: GPL-3.0
+  summary: >-
+    A reference implementation of the boundary-aware reconstruction we built for the rising
+    sphere experiments. Give it scattered particle tracks plus the shape and motion of a
+    rigid body, and it returns a divergence-free velocity field on a fixed grid that
+    behaves properly right up to the moving surface.
+  points:
+    - Sorts every grid point into open fluid, a thin shell at the body surface, or solid interior, and solves all three together in one pass
+    - Enforces the body's own motion at the surface and conservation of mass only where there is fluid
+    - Rigid spheres and ellipsoids in this release
+    - Pure Python on numpy, scipy and matplotlib, with no compiled extensions
+    - Ships with a small synthetic translating sphere that runs with no external data, so an install can be checked in minutes
+  links:
+    - {label: Source on GitHub, url: "https://github.com/TFMLTechnion/LEDM"}
+    - {label: Validation data on Zenodo, url: "https://doi.org/10.5281/zenodo.21965844"}
+  research: {label: How the method works, url: /research/dynamic-masking/}

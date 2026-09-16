@@ -67,6 +67,7 @@ def load_content():
     people_doc = yaml.safe_load((CONTENT / "people.yml").read_text(encoding="utf-8"))
     pubs = yaml.safe_load((CONTENT / "publications.yml").read_text(encoding="utf-8"))
     facilities = yaml.safe_load((CONTENT / "facilities.yml").read_text(encoding="utf-8"))
+    code = yaml.safe_load((CONTENT / "code.yml").read_text(encoding="utf-8"))
 
     rank = {"under review": 0, "submitted": 0, "accepted": 1}
     pubs.sort(key=lambda p: (-int(p["year"]), rank.get(p.get("status"), 2), p["authors"]))
@@ -117,12 +118,12 @@ def load_content():
     join_meta, join_body = read_front_matter(CONTENT / "join.md")
     join = dict(join_meta, body=join_body)
 
-    return site, people, groups, pubs, facilities, projects, posts, join
+    return site, people, groups, pubs, facilities, projects, posts, join, code
 
 # ----------------------------------------------------------------------------- build
 
 def build(out_dir, preview=False):
-    site, people, groups, pubs, facilities, projects, posts, join = load_content()
+    site, people, groups, pubs, facilities, projects, posts, join, code = load_content()
     out = ROOT / out_dir
     if out.exists():
         shutil.rmtree(out)
@@ -225,6 +226,8 @@ def build(out_dir, preview=False):
                page_description=post.get("summary"), post=_with_urls([post], url)[0],
                prev=posts[i + 1] if i + 1 < len(posts) else None, next=posts[i - 1] if i > 0 else None,
                og_image=post.get("image_url"))
+    render("code.html", "/code/", page_id="code", section="code", page_title="Code", code=code,
+           page_description="Open-source software from TFML: uPrime for turbulence analysis of PIV and CFD velocity fields, and LE-DM for velocity reconstruction around moving bodies.")
     render("join.html", "/join/", page_id="join", section="join", page_title="Join us", join=join,
            page_description="Open positions for graduate students, postdocs and undergraduates at TFML, Technion.")
     render("404.html", "/404.html", page_id="404", section="", page_title="Page not found")
@@ -253,7 +256,7 @@ def build(out_dir, preview=False):
         (out / "CNAME").write_text(host + "\n")
         (out / ".nojekyll").write_text("")
         (out / "robots.txt").write_text(f"User-agent: *\nAllow: /\nSitemap: {site['url']}/sitemap.xml\n")
-        pages = ["/", "/research/", "/people/", "/facilities/", "/publications/", "/news/", "/join/"]
+        pages = ["/", "/research/", "/people/", "/facilities/", "/publications/", "/code/", "/news/", "/join/"]
         pages += [p["url"] for p in projects] + [p["url"] for p in posts]
         today = datetime.date.today().isoformat()
         sm = ['<?xml version="1.0" encoding="UTF-8"?>', '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
