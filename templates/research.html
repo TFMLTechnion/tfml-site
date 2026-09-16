@@ -3,8 +3,30 @@
 <section class="page-head wrap">
   <h1>Research</h1>
   <p class="lede">Two threads run through everything we do: shock waves and compressible flow on one side, multiphase flows made visible by refractive index matching on the other. Both depend on time-resolved measurements of fast events, and on building the experiments that make those measurements possible.</p>
-  {% if img('research/research-header.jpg') %}<img class="page-head-img" src="{{ img('research/research-header.jpg') }}" alt="" width="1200" height="700">{% endif %}
 </section>
+{# Header ribbon. The frames ship as a side-scrolling strip so the projects behind them
+   stay reachable without JavaScript; site.js stacks the frames and crossfades between
+   them, unless the visitor has asked for less movement. Each image is decorative on its
+   own (alt="") because the label beside it already names the link. #}
+{% set ribbon = [
+  ('shock-porous-media.jpg',     '/research/shock-porous-media/',        'Shock waves and porous media',                  2408, 1641),
+  ('tomographic-setup.jpg',      '/research/rising-spheres/',            'Tomo-PTV of buoyancy driven spheres',           2140,  984),
+  ('shock-waves-area-changes/hero-schlieren.jpg', '/research/shock-waves-area-changes/', 'Shock waves through abrupt area changes', 2048, 763),
+  ('turbulence-round-pipes.png', '/research/turbulence-in-round-pipes/', 'Turbulence in round pipes across area changes', 2049,  816),
+  ('cavitation-inception.jpg',   '/research/cavitation-inception/',      'Inception of attached cavitation',              1651,  834)
+] %}
+<div class="ribbon" data-ribbon>
+  <ul class="ribbon-track">
+    {% for name, href, title, w, h in ribbon if img('research/' ~ name) %}
+    <li class="ribbon-frame">
+      <a class="ribbon-link" href="{{ href | url }}">
+        <img src="{{ img('research/' ~ name) }}" alt="" width="{{ w }}" height="{{ h }}" loading="{{ 'eager' if loop.first else 'lazy' }}">
+        <span class="ribbon-label">{{ title }}</span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>
 {% for theme in site.themes %}
 <section class="section wrap">
   <h2 class="section-title">{{ theme.title }}</h2>
