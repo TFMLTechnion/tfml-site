@@ -30,7 +30,7 @@
     </a>
     <button class="lp-menu-toggle" type="button" aria-expanded="false" aria-controls="lp-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
     <nav class="lp-nav" id="lp-nav" aria-label="Main navigation">
-      {% for item in site.nav %}{% if loop.last %}<a class="lp-nav-join" href="{{ item.url | url }}">{{ item.label }}<span aria-hidden="true">↗</span></a>{% else %}<a href="{{ item.url | url }}">{{ item.label }}</a>{% endif %}{% endfor %}
+      {% for item in site.nav %}{% if loop.last %}<a class="lp-nav-join" href="{{ item.url | url }}">{{ item.label }}<span aria-hidden="true">↗</span></a>{% else %}<a href="{{ item.url | url }}"{% if item.url.strip('/') == section %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endif %}{% endfor %}
     </nav>
   </div>
 </header>

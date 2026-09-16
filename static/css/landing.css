@@ -84,6 +84,32 @@
 .lp-index a > span:last-child { margin-left: auto; font-size: 1.35rem; }
 .lp-index a:hover { background: #f3f6ff; }
 
+/* Interior pages in the landing style. Smaller than the home hero, same construction. */
+.lp-page-head { padding-block: clamp(2.5rem, 4.5vw, 4rem) clamp(1rem, 2vw, 1.5rem); }
+.lp-page-head h1 { font-size: clamp(2.6rem, 4.6vw, 4.25rem); font-weight: 600; letter-spacing: -.062em; margin: 0 0 1.1rem; }
+.lp-page-head h1 em { color: var(--lp-blue); }
+.lp-page-head-lede { max-width: 58ch; color: var(--lp-muted); font-size: 1.1875rem; margin: 0; }
+
+/* The research index carries nine projects rather than the home page's three, so the same
+   card runs four-up with smaller type and a shallower image. Scoped to this variant, so
+   the home grid is untouched. */
+.lp-section.lp-section-compact { padding-block: clamp(2.25rem, 3.5vw, 3.5rem); }
+/* Stacked, not the home page's two columns: with four cards below, a bottom-aligned note
+   in the right column floats above the title and reads as if it belonged to the card
+   underneath it. Title, then the note, then a rule that closes the header off. */
+.lp-section-compact .lp-section-heading { display: block; margin-bottom: 1.5rem; padding-bottom: 1.15rem; border-bottom: 1px solid var(--lp-line); }
+.lp-section-compact .lp-section-heading > p { max-width: 76ch; justify-self: start; margin: .7rem 0 0; font-size: 1.0625rem; }
+.landing .lp-section-compact h2 { font-size: clamp(1.9rem, 2.7vw, 2.75rem); }
+.lp-research-grid.lp-grid-compact { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.4rem; }
+.lp-grid-compact .lp-card-image { aspect-ratio: 1.5; margin-bottom: .85rem; }
+.landing .lp-grid-compact h3 { font-size: 1.0625rem; line-height: 1.25; letter-spacing: -.028em; margin: 0 0 .45rem; }
+.lp-grid-compact p:not(.lp-label) { font-size: .9375rem; line-height: 1.48; margin-bottom: .85rem; }
+.lp-grid-compact .lp-card-action { padding-top: .55rem; font-size: .8125rem; }
+.lp-grid-compact .lp-card-action span { font-size: 1.05rem; }
+@media (max-width: 1100px) { .lp-research-grid.lp-grid-compact { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+@media (max-width: 860px)  { .lp-research-grid.lp-grid-compact { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.6rem; } }
+@media (max-width: 560px)  { .lp-research-grid.lp-grid-compact { grid-template-columns: minmax(0, 1fr); } }
+
 .lp-section { padding-block: clamp(4rem, 7vw, 7rem); }
 .lp-section-top { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: space-between; align-items: center; margin-bottom: 2rem; }
 .lp-section-top .lp-eyebrow { margin: 0 !important; }

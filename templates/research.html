@@ -1,9 +1,12 @@
-{% extends "base.html" %}
+{% extends "base-landing.html" %}
 {% block content %}
-<section class="page-head wrap">
+
+<section class="lp-page-head lp-shell">
+  <p class="lp-eyebrow">Transient Fluid Mechanics Laboratory</p>
   <h1>Research</h1>
-  <p class="lede">Two threads run through everything we do: shock waves and compressible flow on one side, multiphase flows made visible by refractive index matching on the other. Both depend on time-resolved measurements of fast events, and on building the experiments that make those measurements possible.</p>
+  <p class="lp-page-head-lede">Two threads run through everything we do: shock waves and compressible flow on one side, multiphase flows made visible by refractive index matching on the other. Both depend on time-resolved measurements of fast events, and on building the experiments that make those measurements possible.</p>
 </section>
+
 {# Header ribbon. One frame shows at a time; the first is visible in the markup and
    site.js crossfades to the rest, unless the visitor has asked for less movement. Each
    image is decorative on its own (alt="") because the label beside it names the link. #}
@@ -17,7 +20,7 @@
   ('ribbon/ledm-panels.png',          '/research/dynamic-masking/',           'Seeing the flow right next to a moving body'),
   ('ribbon/shock-constrictions.jpg',  '/research/shock-local-constriction/',  'Shock interaction with local constrictions')
 ] %}
-<div class="wrap">
+<div class="lp-shell">
 <div class="ribbon" data-ribbon>
   <ul class="ribbon-track">
     {% for name, href, title in ribbon if img('research/' ~ name) %}
@@ -31,26 +34,27 @@
   </ul>
 </div>
 </div>
+
+{# The cards are the same component the home page uses for its research grid, so the two
+   pages read as one design rather than two. #}
 {% for theme in site.themes %}
-<section class="section wrap">
-  <h2 class="section-title">{{ theme.title }}</h2>
-  <div>
-    <p class="theme-blurb">{{ theme.blurb }}</p>
-    {# Tiles. The whole card is one link, and the summary is always visible: a visitor
-       deciding where to click should not have to hover to find out what a project is,
-       and on a touch screen there is no hover to give. #}
-    <ul class="project-tiles">
-      {% for p in projects if p.theme == theme.id %}
-      <li class="project-tile">
-        <a href="{{ p.url | url }}">
-          <span class="tile-media">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" loading="lazy" width="480" height="320">{% else %}<span class="ph ph-wide"></span>{% endif %}</span>
-          <h3 class="tile-title">{{ p.title }}</h3>
-          <p class="tile-summary">{{ p.card or p.summary }}</p>
-        </a>
-      </li>
-      {% endfor %}
-    </ul>
+<section class="lp-section lp-section-compact lp-shell">
+  <div class="lp-section-heading">
+    <h2>{{ theme.title }}</h2>
+    <p>{{ theme.blurb }}</p>
   </div>
+  <ul class="lp-research-grid lp-grid-compact">
+    {% for p in projects if p.theme == theme.id %}
+    <li class="lp-research-card">
+      <a href="{{ p.url | url }}">
+        <div class="lp-card-image">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" width="480" height="375" loading="lazy" decoding="async">{% endif %}</div>
+        <h3>{{ p.title }}</h3>
+        <p>{{ p.card or p.summary }}</p>
+        <span class="lp-card-action">Read about the project <span aria-hidden="true">&#8599;</span></span>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
 </section>
 {% endfor %}
 {% endblock %}
