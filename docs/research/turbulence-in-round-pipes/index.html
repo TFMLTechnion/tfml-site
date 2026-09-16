@@ -4,20 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Turbulence in round pipes across area changes | Transient Fluid Mechanics Laboratory</title>
-<meta name="description" content="Stereo and tomographic PIV of turbulent pipe flow through abrupt and gradual expansions and contractions, a simple geometry that is notoriously hard to image.">
+<meta name="description" content="Engineering handbooks have said for a century that a gentle taper loses more pressure than a sharp step, without anyone measuring why. We imaged both geometries inside a round pipe and found the answer in how the returning flow meets the oncoming stream.">
 <link rel="canonical" href="https://www.tfmltechnion.com/research/turbulence-in-round-pipes/">
 
 <meta property="og:site_name" content="Transient Fluid Mechanics Laboratory">
 <meta property="og:title" content="Turbulence in round pipes across area changes">
-<meta property="og:description" content="Stereo and tomographic PIV of turbulent pipe flow through abrupt and gradual expansions and contractions, a simple geometry that is notoriously hard to image.">
+<meta property="og:description" content="Engineering handbooks have said for a century that a gentle taper loses more pressure than a sharp step, without anyone measuring why. We imaged both geometries inside a round pipe and found the answer in how the returning flow meets the oncoming stream.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tfmltechnion.com/research/turbulence-in-round-pipes/">
-<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/turbulence-round-pipes.png">
+<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/pipe-expansions/mean-fields.png">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/site.css?v=f20143ee">
+<link rel="stylesheet" href="/assets/css/site.css?v=9f3818f0">
 </head>
 <body class="page-project">
 <a class="skip" href="#main">Skip to content</a>
@@ -38,38 +38,155 @@
 </header>
 <main id="main">
 
-<article class="article wrap">
-  <p class="crumbs"><a href="/research/">Research</a> <span aria-hidden="true">/</span> Multiphase and index-matched flows</p>
-  <h1>Turbulence in round pipes across area changes</h1>
-  <p class="lede">Stereo and tomographic PIV of turbulent pipe flow through abrupt and gradual expansions and contractions, a simple geometry that is notoriously hard to image.</p>
-  <figure class="lead-figure"><img src="/assets/img/research/turbulence-round-pipes.png" alt="Stereo PIV measurement of turbulent flow across a pipe expansion" width="1200" height="700"></figure>
-  <div class="prose"><p>High-resolution stereo PIV experiments are performed in the refractive-index-matched round channel with varying pipe geometries. We study the flow near an abrupt expansion or contraction to understand how the area change affects the turbulence upstream and downstream of the step. Four cases, with 45° and 90° steps in both directions, are compared at matched inlet Reynolds number; the area ratio is 2.56:1 for the contractions and 1:2.56 for the expansions. Although this is a simple problem, it is extremely difficult to image because of the curvature of the pipe, a difficulty that refractive index matching removes.</p>
-<p>From the PIV data we characterize the recirculation region behind the step, the shear layer and the turbulent stresses. Pressures and flow rates are chosen to prevent cavitation. Comparing the turbulence characteristics of the different expansion and contraction regions helps explain pressure losses, sedimentation in particle-laden flow and efficiency. Reduced-order modeling with proper orthogonal decomposition (POD) and dynamic mode decomposition (DMD) isolates the important features of the flow field, and the stereo PIV results are extended with high-speed tomographic PIV and time-resolved stereo PIV.</p></div>
-  
-  <div class="figures">
-    
-    <figure><img src="/assets/img/research/turbulence-fields.png" alt="" loading="lazy" width="800" height="500"><figcaption>Mean and turbulent flow fields measured across the area change.</figcaption></figure>
-    
-    <figure><img src="/assets/img/research/turbulence-modes.png" alt="" loading="lazy" width="800" height="500"><figcaption>Reduced-order modes of the separated flow behind the step.</figcaption></figure>
-    
+<article class="feature feature-reading">
+
+  <header class="feature-hero feature-hero-flip wrap">
+    <div class="feature-hero-text">
+      <p class="crumbs"><a href="/research/">Research</a> <span aria-hidden="true">/</span> Multiphase and index-matched flows</p>
+      <h1>The gentle slope is the expensive one</h1>
+      <p class="feature-lede">Widen a pipe with a smooth 45&deg; taper and it should treat the flow more kindly than a blunt 90&deg; step. It does not. The gentle expansion makes more turbulence, spreads it wider, and costs more pressure. Engineers have designed around this for a century without anyone watching it happen.</p>
+      <p class="feature-meta">Two papers from the lab in <em>Physical Review Fluids</em>, one published and one under review. Both are linked at the <a href="#papers">end of this page</a>.</p>
+    </div>
+    <figure class="feature-hero-media">
+      <img src="/assets/img/research/pipe-expansions/mean-fields.png" alt="Measured mean flow through a pipe expansion, the 90 degree step above and the 45 degree wedge below, each with streamlines showing a large recirculating region behind the corner" width="1700" height="1257">
+      <figcaption>Mean flow through each expansion, step above and wedge below. <strong>Red</strong> is fast, <strong>blue</strong> slow or reversed. Both reattach five to eight step heights downstream.</figcaption>
+    </figure>
+  </header>
+
+  <div class="stats-band">
+    <div class="wrap">
+      <p class="stats-eyebrow">Stereo PIV &mdash; the settled picture</p>
+      <section class="stats" aria-label="The stereo PIV measurement in four numbers">
+        <div><strong>2 &times; 25 MP</strong><span>cameras viewing the same sheet from either side</span></div>
+        <div><strong>3,000</strong><span>independent snapshots per case, over 200 seconds</span></div>
+        <div><strong>54 &micro;m</strong><span>finest vector spacing, about 1.26 times the Kolmogorov scale</span></div>
+        <div><strong>107 &times; 54</strong><span>mm field of view, covering the whole recirculation</span></div>
+      </section>
+      <p class="stats-eyebrow stats-eyebrow-2">High-speed PIV &mdash; the moving picture</p>
+      <section class="stats" aria-label="The high-speed PIV measurement in four numbers">
+        <div><strong>8,000</strong><span>frames per second, one every 125 microseconds</span></div>
+        <div><strong>10,000</strong><span>consecutive fields, a continuous 1.25 second record</span></div>
+        <div><strong>2</strong><span>high-speed cameras side by side, to reach farther downstream</span></div>
+        <div><strong>494 &micro;m</strong><span>vector spacing, the price paid for resolving time</span></div>
+      </section>
+    </div>
   </div>
-  
-  
-  <section class="related">
-    <h2>Publications from this project</h2>
-    <ul class="pub-list">
-      <li class="pub">
-  <span class="pub-title"><a href="https://arxiv.org/abs/2603.19457">Coherent structure transport in turbulent axisymmetric pipe expansions</a></span>
-  <span class="pub-authors">Jose, J. T., Friedmann, G. &amp; Ram, O.</span>
-  <span class="pub-venue"><em>Physical Review Fluids</em> (2026) <span class="pub-status">under review</span> <span class="pub-note">arXiv:2603.19457</span></span>
-</li><li class="pub">
-  <span class="pub-title"><a href="https://doi.org/10.1103/572s-84gk">Effect of expansion geometry on turbulence in axisymmetric pipe flows</a></span>
-  <span class="pub-authors">Jose, J. T., Friedmann, G., Feld, D. &amp; Ram, O.</span>
-  <span class="pub-venue"><em>Physical Review Fluids</em> 11(3), 034607 (2026)</span>
-</li>
-    </ul>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">The puzzle</p>
+    <h2 class="f-title">A design rule nobody had watched happen</h2>
+    <p class="f-subtitle">Gibson measured it in 1910. It has been in the handbooks ever since.</p>
+    <figure class="f-figure f-figure-center f-figure-xs">
+      <img src="/assets/img/research/pipe-expansions/loss-coefficient.png" alt="Loss coefficient plotted against expansion angle, rising to a peak near 35 to 40 degrees and falling again toward 90 degrees" width="661" height="544" loading="lazy" decoding="async">
+      <figcaption>Pressure lost across the expansion, against how gently it opens out. The penalty peaks near 35&ndash;40&deg; and falls away toward a square step.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>That curve is one of the oldest results in pipe design. Open a pipe out too gently and the loss climbs; open it abruptly and the loss falls back. Beyond roughly 16&deg; in a circular pipe, a square step is the cheaper choice.</p>
+      <p>It is a strange thing to design around for a hundred years without knowing the cause. The measurements it rests on are pressure drops across the fitting, which tell you what the flow costs but nothing about what the flow does.</p>
+    </div>
+    <p class="f-takeaway">A well-known design rule that nobody had watched happen.</p>
   </section>
-  
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">Why it is hard</p>
+    <h2 class="f-title">You cannot see inside a round pipe</h2>
+    <p class="f-subtitle">A curved acrylic wall works as a lens, and bends the measurement out of shape.</p>
+    <div class="f-prose">
+      <p>Optical measurement needs a clear view of the tracer particles. A round pipe refuses to give one: the curved wall bends every ray that crosses it, so the particles appear displaced from where they really are. This is why a geometry as ordinary as a widening pipe has so little direct flow data behind it.</p>
+      <p>The fix is to make the wall optically disappear, by tuning the liquid until it bends light exactly as much as the acrylic does. It is the same trick that lets us measure the flow around <a href="/research/rising-spheres/">freely rising spheres</a>, used here on the pipe instead of the body inside it.</p>
+    </div>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/schematic.png" alt="Schematic of the closed index-matched water loop, the two expansion geometries, and the two camera arrangements used for the stereo and high-speed measurements" width="1312" height="673" loading="lazy" decoding="async">
+      <figcaption>The rig: (a) the closed index-matched loop, (b) the 90&deg; step and (c) the 45&deg; wedge, (d) the stereo cameras and (e) the high-speed pair.</figcaption>
+    </figure>
+    <p class="f-takeaway">Index matching turns an opaque geometry into a measurable one.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">What happens</p>
+    <h2 class="f-title">The return flow decides everything</h2>
+    <p class="f-subtitle">Both geometries recirculate. What differs is how that returning fluid gets back to the corner.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/step-vs-wedge.png" alt="Step and wedge side by side: above, mean velocity with streamlines; below, an instantaneous vorticity field with velocity vectors showing the shear layers on both sides of the pipe" width="1513" height="622" loading="lazy" decoding="async">
+      <figcaption>Step (left) against wedge (right). Above, the mean flow with streamlines. Below, a single instant: <strong>red</strong> and <strong>blue</strong> mark fluid turning opposite ways along each shear layer.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>Follow the returning fluid. In the wedge it runs back along the slope, keeps its momentum, and arrives at the corner still moving fast, meeting the oncoming stream at a sharp angle. In the step it has to negotiate a second, counter-rotating vortex parked in the corner; it separates around that obstacle and arrives weakened and turned.</p>
+      <p>That single difference sets everything that follows. Where the two streams meet head on, they fight; where one arrives softened, they do not.</p>
+    </div>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/return-flow.png" alt="Streamline sketches near the corner, step on the left and wedge on the right, with red arrows marking the oncoming free stream and the returning flow" width="1400" height="501" loading="lazy" decoding="async">
+      <figcaption>How the two streams meet. Step left, wedge right; <strong>red arrows</strong> mark the oncoming flow and the return flow.</figcaption>
+    </figure>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>Area ratio 2.56, from 25 mm to 40 mm diameter, giving a step height of 7.5 mm. Step-height Reynolds numbers of 25,000 and 35,000, corresponding to inlet speeds of 3.6 and 5.1 m/s. Working fluid sodium iodide at 62&ndash;63%, refractive index 1.488. Two 25 megapixel cameras, 3,000 snapshots over 200 seconds; vector resolution 217 &micro;m, or 54 &micro;m with sum-of-correlation, about 1.26 times the Kolmogorov scale. A counter-rotating secondary vortex forms in the corner of the step cases and is absent in the wedge cases. Reattachment occurs five to eight step heights downstream.</p>
+    </details>
+    <p class="f-takeaway">Geometry sets how the returning flow meets the oncoming flow, and that sets the turbulence.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">The consequence</p>
+    <h2 class="f-title">A broader shear layer, and more of it sideways</h2>
+    <p class="f-subtitle">The wedge spreads its turbulence over a wider region and pushes more of it out of the plane.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/shear-layer-corner.png" alt="Close-up maps of streamwise velocity just behind the corner for the step and the wedge, with vertical lines marking four measurement stations" width="1700" height="531" loading="lazy" decoding="async">
+      <figcaption>Just behind the corner, step left and wedge right. The band between <strong>red</strong> and <strong>blue</strong> is the shear layer; in the wedge it sits lower and spreads faster.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>Because the return flow cannot punch through the oncoming stream, it is squeezed sideways instead. Right at the corner that sideways motion dominates: as much as 80% of the turbulent energy there is in the out-of-plane direction, around the pipe rather than along it. That is energy taken from the mean flow and never recovered, which is exactly what a loss coefficient measures.</p>
+    </div>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/out-of-plane.png" alt="Contour maps of the out-of-plane turbulent stress for step and wedge, beside magnified maps of where turbulence is generated for all four cases" width="1360" height="484" loading="lazy" decoding="async">
+      <figcaption>Left, the sideways turbulence: step above, wedge below. Right, where turbulence is made, for all four cases. The wedge spreads it wider; the step pins it to the corner.</figcaption>
+    </figure>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/fluctuation-direction.png" alt="Colour maps of the direction of the turbulent fluctuations for the step and wedge at both Reynolds numbers, with a triangular colour key" width="1500" height="551" loading="lazy" decoding="async">
+      <figcaption>Which way the fluctuations point. <strong>Red</strong> is motion along one direction, <strong>green</strong> across two, <strong>blue</strong> shared evenly among three. The wedge grows a broad red tongue down the slope.</figcaption>
+    </figure>
+    <p class="f-takeaway">The gentle geometry makes more turbulence, over a broader region, and pays for it in pressure.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">What moves <span class="f-tag">Under review</span></p>
+    <h2 class="f-title">Slow and long-lived, or fast and fleeting</h2>
+    <p class="f-subtitle">The two geometries do not just make different amounts of turbulence. They move it differently.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="/assets/img/research/pipe-expansions/structures.png" alt="Maps highlighting the boundaries that separate parcels of fluid, for the step and the wedge, showing bright filament-like ridges along the shear layers" width="1251" height="517" loading="lazy" decoding="async">
+      <figcaption>The structures themselves, step left and wedge right. Bright filaments mark the lines fluid is carried along, traced forward (top) and backward (bottom) in time.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>In the step, individual structures hold together far longer, persisting for 15 to 18 milliseconds against roughly 5 in the wedge, but they travel slowly, at 57 to 67 per cent of the inlet speed. The wedge is the opposite: short-lived structures moving fast, at 75 to 95 per cent.</p>
+      <p>By the time the flow has reattached to the wall, the difference has gone. Both geometries settle to 35 to 42 per cent, and downstream of that point you could not tell them apart.</p>
+    </div>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>Streamwise integral time scales are 15&ndash;18 ms in the step against approximately 5 ms in the wedge, with the same ordering at both Reynolds numbers. Space&ndash;time correlations give convection velocities U<sub>c</sub>/U<sub>m</sub> = 0.57&ndash;0.67 for the step and 0.75&ndash;0.95 for the wedge. Toward reattachment, U<sub>c</sub>/U<sub>m</sub> narrows to 0.35&ndash;0.42 for all four cases. The broader step correlation ridges are associated primarily with stronger radial variation of the local convection velocity rather than systematically stronger local decorrelation.</p>
+    </details>
+    <p class="f-takeaway">Expansion geometry matters most right at the corner and washes out downstream.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">Why it matters</p>
+    <h2 class="f-title">Every piping system is full of these</h2>
+    <div class="f-prose">
+      <p>An expansion is one of the commonest fittings there is, and the choice between a taper and a step is made on cost and space as often as on physics. The turbulence it generates sets the pressure a pump has to supply, decides whether particles carried in the flow stay suspended or settle out in the corner, and governs how well two streams mix downstream of the joint.</p>
+    </div>
+    <p class="f-takeaway">If you must widen a pipe and you cannot do it very gradually, do it abruptly.</p>
+  </section>
+
+  <section class="f-section wrap f-papers" id="papers">
+    <h2 class="f-title">Read the papers</h2>
+    <div class="paper">
+      <p class="paper-venue">Physical Review Fluids 11(3), 034607 (2026)</p>
+      <h3><a href="https://doi.org/10.1103/572s-84gk">Effect of expansion geometry on turbulence in axisymmetric pipe flows</a></h3>
+      <p class="paper-authors">Jibu Tom Jose, Gal Friedmann, Dvir Feld and Omri Ram</p>
+      <p>The mean flow, the shear layers and the turbulent stresses in both geometries, and the return-flow mechanism that explains the loss curve.</p>
+    </div>
+    <p class="paper-also">Companion study, currently under review: <a href="https://arxiv.org/abs/2603.19457">Coherent structure transport in turbulent axisymmetric pipe expansions</a> &mdash; <em>Physical Review Fluids</em>, arXiv:2603.19457. Jibu Tom Jose, Gal Friedmann and Omri Ram. How long the structures last and how fast they travel.</p>
+    <p class="f-funding">This work was supported by the American Chemical Society Petroleum Research Fund New Directions Grant 65901-ND9. Jibu Tom Jose was supported by a Technion postdoctoral fellowship.</p>
+  </section>
+
 </article>
 
 </main>
