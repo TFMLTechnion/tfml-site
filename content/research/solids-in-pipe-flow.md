@@ -1,5 +1,6 @@
 ---
 title: Inertial solids in high-speed pipe flow
+card: "Following solid spheres through fast pipe flow in three dimensions."
 theme: multiphase
 order: 1
 summary: >-

@@ -1,5 +1,6 @@
 ---
 title: Inception of attached cavitation
+card: "Microbubbles trapped near the wall keep restarting cavitation, whatever the flow carries."
 theme: multiphase
 order: 5
 summary: >-

@@ -46,7 +46,8 @@
   var quiet = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)');
   if (quiet && quiet.matches) return;
 
-  var HOLD = 10000;         // ms a frame stays up, fade included
+  var HOLD = 5000;          // ms a frame stays up, fade included. Each frame carries only
+                            // a project title, so it is read long before this elapses.
   var index = 0, timer = null, paused = false;
 
   ribbon.classList.add('is-cycling');

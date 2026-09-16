@@ -1,5 +1,6 @@
 ---
 title: Tomo-PTV of buoyancy driven spheres
+card: "We make a rising sphere invisible, then find it again to measure the forces on it."
 theme: multiphase
 order: 3
 template: features/rising-spheres.html   # this page has its own layout (an illustrated story)

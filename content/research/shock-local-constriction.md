@@ -1,5 +1,6 @@
 ---
 title: Shock interaction with local constrictions
+card: "How a shock wave behaves squeezing through a short narrowing."
 theme: compressible
 order: 2
 summary: >-

@@ -1,5 +1,6 @@
 ---
 title: Seeing the flow right next to a moving body
+card: "Measuring the flow right up to a moving surface, where ordinary reconstructions go wrong."
 theme: multiphase
 order: 4
 template: features/dynamic-masking.html   # this page has its own layout (an illustrated story)

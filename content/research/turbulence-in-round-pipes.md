@@ -1,5 +1,6 @@
 ---
 title: Turbulence in round pipes across area changes
+card: "A gentle taper costs more pressure than a sharp step. We measured why."
 theme: multiphase
 order: 2
 template: features/turbulence-in-round-pipes.html   # this page has its own layout (an illustrated story)

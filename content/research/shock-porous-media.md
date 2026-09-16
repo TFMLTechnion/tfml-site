@@ -1,5 +1,6 @@
 ---
 title: Shock waves and porous media
+card: "A porous layer smooths the pressure behind a shock, so the load on a wall can be predicted."
 theme: compressible
 order: 3
 summary: >-

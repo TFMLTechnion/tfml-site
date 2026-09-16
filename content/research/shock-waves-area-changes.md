@@ -1,5 +1,6 @@
 ---
 title: Shock waves through abrupt area changes
+card: "A shock crossing a step bends and bounces between the walls before it flattens out again."
 theme: compressible
 order: 1
 template: features/shock-waves-area-changes.html   # this page has its own layout (an illustrated story)

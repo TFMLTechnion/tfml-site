@@ -36,14 +36,17 @@
   <h2 class="section-title">{{ theme.title }}</h2>
   <div>
     <p class="theme-blurb">{{ theme.blurb }}</p>
-    <ul class="project-list">
+    {# Tiles. The whole card is one link, and the summary is always visible: a visitor
+       deciding where to click should not have to hover to find out what a project is,
+       and on a touch screen there is no hover to give. #}
+    <ul class="project-tiles">
       {% for p in projects if p.theme == theme.id %}
-      <li class="project-row">
-        <a class="project-thumb" href="{{ p.url | url }}" tabindex="-1" aria-hidden="true">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" loading="lazy" width="240" height="160">{% else %}<span class="ph ph-thumb"></span>{% endif %}</a>
-        <div>
-          <h3 class="project-title"><a href="{{ p.url | url }}">{{ p.title }}</a></h3>
-          <p class="project-summary">{{ p.summary }}</p>
-        </div>
+      <li class="project-tile">
+        <a href="{{ p.url | url }}">
+          <span class="tile-media">{% if p.image_url %}<img src="{{ p.image_url }}" alt="" loading="lazy" width="480" height="320">{% else %}<span class="ph ph-wide"></span>{% endif %}</span>
+          <h3 class="tile-title">{{ p.title }}</h3>
+          <p class="tile-summary">{{ p.card or p.summary }}</p>
+        </a>
       </li>
       {% endfor %}
     </ul>

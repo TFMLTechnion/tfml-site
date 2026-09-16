@@ -1,5 +1,6 @@
 ---
 title: Oil–water separation and thin water films
+card: "A droplet crossing into oil stays wrapped in a water film far longer than the crossing itself."
 theme: multiphase
 order: 6
 summary: >-

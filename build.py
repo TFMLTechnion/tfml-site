@@ -226,7 +226,7 @@ def build(out_dir, preview=False):
                page_description=post.get("summary"), post=_with_urls([post], url)[0],
                prev=posts[i + 1] if i + 1 < len(posts) else None, next=posts[i - 1] if i > 0 else None,
                og_image=post.get("image_url"))
-    render("code.html", "/code/", page_id="code", section="code", page_title="Code", code=code,
+    render("code.html", "/code/", page_id="code", section="code", page_title="Codes", code=code,
            page_description="Open-source software from TFML: uPrime for turbulence analysis of PIV and CFD velocity fields, and LE-DM for velocity reconstruction around moving bodies.")
     render("join.html", "/join/", page_id="join", section="join", page_title="Join us", join=join,
            page_description="Open positions for graduate students, postdocs and undergraduates at TFML, Technion.")
