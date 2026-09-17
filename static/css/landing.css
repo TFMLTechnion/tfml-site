@@ -389,3 +389,72 @@
   .lp-wake-copy h2 em, .lp-wake-copy > p:not(.lp-eyebrow), .lp-wake-facts dd { color: #14191e; }
   .lp-wake-player { box-shadow: none; border: 1px solid #d9dfe2; }
 }
+
+/* ==========================================================================
+   Research pages in the landing design
+   The project pages keep their own structure -- the feature system (.f-*) and
+   the plain article layout -- and restate only type, colour and figure size, so
+   a project page and the home page read as one site rather than two.
+   ========================================================================== */
+
+.landing .feature, .landing .article { font-family: var(--lp-body); color: var(--lp-ink); }
+/* One reading column, narrower than the shell the header and footer use. */
+.landing .feature .wrap, .landing .article { width: min(calc(100% - 2 * var(--lp-gutter)), 920px); max-width: none; margin-inline: auto; padding-inline: 0; }
+.landing .feature a, .landing .article a { color: var(--lp-blue); }
+.landing .crumbs { font-family: var(--lp-body); font-size: .8125rem; font-weight: 500; letter-spacing: .08em; text-transform: uppercase; color: var(--lp-muted); margin-bottom: 1.5rem; }
+.landing .crumbs a { color: var(--lp-muted); }
+
+/* Hero. */
+.landing .feature-hero, .landing .article > h1 { padding-block: 0; }
+.landing .feature-hero { padding-block: clamp(2.5rem, 4.5vw, 4rem) clamp(1.25rem, 2.5vw, 2rem); }
+.landing .feature-hero h1, .landing .article h1 { font-family: var(--lp-heading); font-size: clamp(2.2rem, 3.4vw, 3.25rem); font-weight: 500; letter-spacing: -.055em; line-height: 1.07; max-width: 22ch; }
+.landing .feature-lede, .landing .article .lede { font-family: var(--lp-body); font-size: 1.1875rem; line-height: 1.55; color: var(--lp-ink); max-width: 62ch; margin-top: 1.25rem; }
+.landing .feature-meta { font-family: var(--lp-body); font-size: .9375rem; line-height: 1.55; color: var(--lp-muted); max-width: 62ch; }
+
+/* Slide rhythm. */
+.landing .f-section { border-top: 1px solid var(--lp-line); padding-block: clamp(2.5rem, 4.5vw, 3.75rem); }
+.landing .f-eyebrow { font-family: var(--lp-body); font-size: .8125rem; font-weight: 500; letter-spacing: .08em; color: var(--lp-muted); margin-bottom: .9rem; }
+.landing .f-title { font-family: var(--lp-heading); font-size: clamp(1.7rem, 2.4vw, 2.4rem); font-weight: 500; letter-spacing: -.05em; line-height: 1.1; max-width: 26ch; margin-bottom: .6rem; }
+.landing .f-subtitle { font-family: var(--lp-body); font-size: 1.0625rem; line-height: 1.55; color: var(--lp-muted); }
+.landing .f-prose, .landing .f-bullets, .landing .article .prose { font-family: var(--lp-body); font-size: 1.0625rem; line-height: 1.65; color: var(--lp-ink); }
+.landing .f-takeaway { font-family: var(--lp-heading); font-size: 1.125rem; font-weight: 500; letter-spacing: -.03em; line-height: 1.35; color: var(--lp-ink); background: #f4f7f8; border-left: 3px solid var(--lp-line); }
+.landing .f-tag { font-family: var(--lp-body); font-size: .75rem; border-color: var(--lp-line); background: #f4f7f8; color: var(--lp-muted); }
+
+/* Figures: smaller by default here than on the classic pages, and never wider than
+   the column. Captions are the quiet grey the rest of the site uses. */
+.landing .feature { --fig-max: 700px; }
+.landing .feature figcaption, .landing .article figcaption { font-family: var(--lp-body); font-size: .875rem; line-height: 1.5; color: var(--lp-muted); }
+.landing .feature .f-figure { margin-block: clamp(1.5rem, 3vw, 2.25rem); }
+.landing .f-videos-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.25rem, 2.5vw, 2rem); }
+.landing .f-videos-2 figcaption { max-width: none; }
+.landing .f-pair { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 290px); gap: clamp(1.5rem, 3vw, 2.5rem); align-items: end; }
+.landing .f-pair .f-figure { margin-block: 0; }
+
+/* The numbers band. */
+.landing .stats-band { background: #f4f7f8; border-color: var(--lp-line); }
+.landing .stats-eyebrow { font-family: var(--lp-body); font-size: .8125rem; font-weight: 500; letter-spacing: .08em; color: var(--lp-muted); }
+.landing .stats > div { border-top-color: var(--lp-line); }
+.landing .stats strong { font-family: var(--lp-heading); font-size: clamp(1.45rem, 1rem + 1.5vw, 2rem); font-weight: 500; letter-spacing: -.045em; color: var(--lp-ink); }
+.landing .stats span { font-family: var(--lp-body); font-size: .875rem; color: var(--lp-muted); }
+
+/* Asides: the specialist note, the papers, the closing invitation. */
+.landing .expert { border-left-color: var(--lp-line); }
+.landing .expert summary, .landing .expert p { font-family: var(--lp-body); }
+.landing .expert summary { color: var(--lp-blue); }
+.landing .f-papers .paper { border-top-color: var(--lp-line); }
+.landing .paper h3 { font-family: var(--lp-heading); font-size: 1.25rem; font-weight: 500; letter-spacing: -.035em; }
+.landing .paper-venue, .landing .paper-authors, .landing .paper-also, .landing .f-funding { font-family: var(--lp-body); color: var(--lp-muted); }
+.landing .f-invite { background: #f4f7f8; border-top-color: var(--lp-line); }
+.landing .f-invite h2 { font-family: var(--lp-heading); font-size: clamp(1.5rem, 2vw, 1.9rem); font-weight: 500; letter-spacing: -.045em; }
+.landing .f-invite p { font-family: var(--lp-body); }
+.landing .f-invite-links, .landing .article .related { font-family: var(--lp-body); }
+.landing .feature .button { display: inline-flex; align-items: center; min-height: 3rem; padding: .7rem 1.2rem; border-radius: 3px; background: var(--lp-ink); border: 0; color: #fff !important; font-family: var(--lp-body); font-size: 1rem; font-weight: 500; text-decoration: none; }
+.landing .feature .button:hover { background: var(--lp-blue); }
+
+/* The plain project page. */
+.landing .article .prose h2, .landing .article .related h2 { font-family: var(--lp-heading); font-size: clamp(1.5rem, 2vw, 1.9rem); font-weight: 500; letter-spacing: -.045em; }
+.landing .article .figures figcaption { margin-top: .6rem; }
+
+@media (max-width: 760px) {
+  .landing .f-videos-2, .landing .f-pair { grid-template-columns: minmax(0, 1fr); }
+}

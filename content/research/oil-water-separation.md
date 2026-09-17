@@ -2,7 +2,7 @@
 title: Oil–water separation and thin water films
 card: "A droplet crossing into oil stays wrapped in a water film far longer than the crossing itself."
 theme: multiphase
-order: 6
+order: 5
 summary: >-
   Water droplets crossing an oil–water interface are wrapped in a film that persists thousands
   of times longer than the crossing itself, with consequences for oil-spill dynamics.

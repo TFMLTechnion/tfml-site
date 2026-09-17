@@ -2,7 +2,7 @@
 title: Tomo-PTV of buoyancy driven spheres
 card: "We make a rising sphere invisible, then find it again to measure the forces on it."
 theme: multiphase
-order: 3
+order: 2
 template: features/rising-spheres.html   # this page has its own layout (an illustrated story)
 summary: >-
   How we measure the forces on a freely rising sphere that is optically invisible: index

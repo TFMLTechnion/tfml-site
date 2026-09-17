@@ -1,0 +1,138 @@
+{% extends "base-landing.html" %}
+{% set F = 'research/solids-in-pipe/' %}
+{% block content %}
+<article class="feature feature-reading">
+
+  <header class="feature-hero wrap">
+    <div class="feature-hero-text">
+      <p class="crumbs"><a href="{{ '/research/' | url }}">Research</a> <span aria-hidden="true">/</span> {{ theme.title }}</p>
+      <h1>Solids do not go where the flow goes</h1>
+      <p class="feature-lede">Pipelines carry sand, catalyst, ice and debris, and the rules used to size them treat those solids as passengers that follow the fluid. A particle with enough inertia does not. Where the bore changes, the fluid reorganises and the solid keeps its own momentum.</p>
+      <p class="feature-meta">Recorded and reconstructed; the analysis is under way. What follows is the measurement as it stands rather than finished results. Supported by the American Chemical Society Petroleum Research Fund.</p>
+    </div>
+    <figure class="feature-hero-media">
+      <img src="{{ img(F ~ 'paths-step.png') }}" alt="Three sphere paths through the pipe expansion, drawn over the step outline and coloured by the local mean flow speed: two pass straight through, one loops back on itself behind the step" width="1500" height="957" decoding="async">
+      <figcaption>Three spheres crossing the step, coloured by the flow speed around them. Two ride the core straight through; the third turns back on itself behind the corner, where the fluid is barely moving.</figcaption>
+    </figure>
+  </header>
+
+  <div class="stats-band">
+    <div class="wrap">
+      <p class="stats-eyebrow">Time-resolved tomographic particle tracking</p>
+      <section class="stats" aria-label="The measurement in four numbers">
+        <div><strong>8,800&nbsp;Hz</strong><span>frames a second, one every 114 microseconds</span></div>
+        <div><strong>64 &times; 40 &times; 30</strong><span>millimetre volume, straddling the step</span></div>
+        <div><strong>1.6&ndash;3.2&nbsp;mm</strong><span>acrylic spheres, invisible in the liquid</span></div>
+        <div><strong>483&nbsp;&micro;m</strong><span>final vector spacing through that volume</span></div>
+      </section>
+    </div>
+  </div>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">The question</p>
+    <h2 class="f-title">An area change is where the two part company</h2>
+    <p class="f-subtitle">Fittings are sized for fluid alone. Much of what a real pipeline carries is not fluid.</p>
+    <div class="f-prose">
+      <p>Sand in an oil line, catalyst in a reactor loop, grit in a water main: pipelines rarely carry one clean phase. Where the bore changes, the fluid reorganises within a diameter or two and a solid particle cannot. It crosses streamlines, runs into walls, and can sit for a long time in fluid that is going nowhere.</p>
+      <p>What that costs in pressure and in wear is handled by correlations fitted to pressure readings. Almost none of them rest on watching where the particles actually go.</p>
+    </div>
+    <p class="f-takeaway">The design rules are old. The measurement is new.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">How we see it</p>
+    <h2 class="f-title">Make the pipe and the spheres disappear</h2>
+    <p class="f-subtitle">A curved wall bends light. A solid sphere blocks it. Index matching removes both at once.</p>
+    <div class="f-prose">
+      <p>Optical measurement inside a round pipe fails twice over. The curved acrylic wall acts as a lens, so a particle is never quite where it appears to be, and a solid sphere in the way throws a shadow across everything behind it.</p>
+      <p>Both problems vanish if the liquid bends light exactly as much as the acrylic does. A concentrated sodium iodide solution does, so the pipe and the spheres in it become invisible and four high-speed cameras can look straight through at the tracer particles. The same trick carries our work on <a href="{{ '/research/rising-spheres/' | url }}">freely rising spheres</a> and on <a href="{{ '/research/turbulence-in-round-pipes/' | url }}">pipe expansions</a>.</p>
+    </div>
+    <div class="f-pair">
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'flow-loop.png') }}" alt="Schematic of the closed flow loop: a 10 horsepower centrifugal pump, flowmeter, filter, pressure tank and the acrylic test section with pressure transducers at either end" width="1313" height="612" loading="lazy" decoding="async">
+        <figcaption>The closed loop. A 10&nbsp;hp pump drives the liquid past a flowmeter and a filter, through the acrylic test section and back through the pressure tank.</figcaption>
+      </figure>
+      <figure class="f-figure">
+        <img src="{{ img(F ~ 'cameras.png') }}" alt="Plan view of the test section with four Phantom v2640 cameras arranged around it, two above and two below, each on a Scheimpflug adapter, viewing the laser volume that straddles the area change" width="976" height="1161" loading="lazy" decoding="async">
+        <figcaption>Four cameras view one laser volume from either side, each tilted on a Scheimpflug adapter to hold the whole depth in focus.</figcaption>
+      </figure>
+    </div>
+    <details class="expert">
+      <summary>For the specialist</summary>
+      <p>Four Phantom v2640 cameras on Scheimpflug adapters, recording at 8,800&nbsp;Hz over a 64 &times; 40 &times; 30&nbsp;mm volume at a magnification of 33.16&nbsp;pixels per millimetre. Each run holds 10,000 consecutive fields, a continuous record of 1.14&nbsp;s. Particle tracking with Shake-The-Box in DaVis 11 gives a final vector spacing of 483&nbsp;&micro;m.</p>
+    </details>
+    <p class="f-takeaway">Two obstacles to seeing, removed by one liquid.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">What the cameras record</p>
+    <h2 class="f-title">Both area changes, on the same rig</h2>
+    <p class="f-subtitle">One camera's view, lit by the laser volume. Flow runs right to left in both clips.</p>
+    <div class="f-videos-2">
+      <figure class="f-figure f-video">
+        <video autoplay loop muted playsinline preload="metadata"
+               aria-label="Looping clip of tracer particles flowing through a sudden expansion, with a sphere crossing the field"
+               poster="{{ img(F ~ 'expansion-poster.jpg') }}" width="720" height="480">
+          <source src="{{ img(F ~ 'expansion.mp4') }}" type="video/mp4">
+        </video>
+        <figcaption><strong>Into the wide section</strong> The narrow pipe ends part-way across the frame and the flow opens out. A sphere arrives with the core.</figcaption>
+      </figure>
+      <figure class="f-figure f-video">
+        <video autoplay loop muted playsinline preload="metadata"
+               aria-label="Looping clip of tracer particles flowing through a contraction, with several spheres crossing the field"
+               poster="{{ img(F ~ 'contraction-poster.jpg') }}" width="720" height="480">
+          <source src="{{ img(F ~ 'contraction.mp4') }}" type="video/mp4">
+        </video>
+        <figcaption><strong>Into the narrow section</strong> The other area change, filmed the same way. Several spheres cross at once as the bore closes down.</figcaption>
+      </figure>
+    </div>
+    <p class="f-takeaway">Nothing between the cameras and the flow.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">What comes out</p>
+    <h2 class="f-title">Every tracer, tracked</h2>
+    <p class="f-subtitle">Tens of thousands of individual particle paths, in every frame, through the whole volume.</p>
+    <figure class="f-figure f-video f-figure-center">
+      <video autoplay loop muted playsinline preload="metadata"
+             aria-label="Looping clip of the reconstructed tracer particles in the measurement volume, coloured by speed, with the view rotating around the volume"
+             poster="{{ img(F ~ 'tracks-poster.jpg') }}" width="820" height="404">
+        <source src="{{ img(F ~ 'tracks.mp4') }}" type="video/mp4">
+      </video>
+      <figcaption>Reconstructed tracer particles, coloured by how fast they travel along the pipe. <strong>Dark</strong> is the fast core arriving from the narrow pipe; <strong>red</strong> is fluid barely moving at all, filling the wider section beyond the step. The view turns so the volume can be seen from every side.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>The two regions meet along a sharp boundary rather than a gradual one. The core carries on as though the narrow wall were still there; the fluid beside it has been left behind. A sphere that stays in the core is through in milliseconds. A sphere that strays out of it is in no hurry to leave.</p>
+    </div>
+    <p class="f-takeaway">The flow splits in two, and the solids have to choose.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <p class="f-eyebrow">First look <span class="f-tag">analysis in progress</span></p>
+    <h2 class="f-title">Some cross, some get caught</h2>
+    <p class="f-subtitle">Sphere paths from three runs, seen in the volume and in the three views through it.</p>
+    <figure class="f-figure f-figure-center">
+      <img src="{{ img(F ~ 'trajectory-panels.png') }}" alt="Three rows of sphere trajectories: each row shows the paths inside the two pipe sections and then projected along the pipe, across it and end-on. Two rows contain paths that loop behind the step; the middle row runs straight through" width="1472" height="1086" loading="lazy" decoding="async">
+      <figcaption>Three runs, one to a row. Left, the paths inside the two pipe sections; then the same paths seen from the side, from above and end-on. The middle row crosses cleanly. The other two each contain a sphere that loops behind the step and comes back.</figcaption>
+    </figure>
+    <div class="f-prose">
+      <p>This is as far as the analysis has gone, and it is already the interesting part: a path that loops has spent time in fluid that was going nowhere, which is where wear, settling and blockage begin.</p>
+      <p>Pulling the sphere out of ten thousand consecutive volumes, and measuring the flow in the millimetre of liquid around it, is the work in front of us. The reconstruction we built for <a href="{{ '/research/dynamic-masking/' | url }}">moving bodies</a> was written for exactly this: a solid travelling through the measurement volume, which ordinary reconstruction quietly fills with a flow that is not there.</p>
+    </div>
+    <p class="f-takeaway">The recording is done. Reading it is the work in front of us.</p>
+  </section>
+
+  <section class="f-section wrap">
+    <div class="f-invite">
+      <h2>Work with us</h2>
+      <p>A recorded dataset that nobody has finished reading is a good place to start a thesis.</p>
+      <ul class="f-invite-links">
+        <li><a class="button" href="{{ '/join/' | url }}">Join the lab</a></li>
+        <li><a href="{{ '/research/dynamic-masking/' | url }}">The method built for this measurement</a></li>
+        <li><a href="{{ '/research/turbulence-in-round-pipes/' | url }}">The same expansion, without the spheres</a></li>
+      </ul>
+    </div>
+  </section>
+
+</article>
+{% endblock %}
