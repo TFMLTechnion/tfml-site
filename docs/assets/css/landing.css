@@ -144,6 +144,9 @@
 .landing .code-links a:not(.lp-button) { color: var(--lp-blue); }
 .lp-code-figure { margin: 0; }
 .lp-code-figure img { width: 100%; border: 1px solid var(--lp-line); border-radius: 3px; }
+/* A clip stands in for the screenshot where a tool has no interface to show. */
+.lp-code-clip { max-width: 420px; margin-inline: auto; }
+.lp-code-clip video { display: block; width: 100%; height: auto; border: 1px solid var(--lp-line); border-radius: 3px; }
 .lp-code-figure figcaption { margin-top: .7rem; font-size: .875rem; color: var(--lp-muted); line-height: 1.5; }
 .lp-tag { display: inline-block; margin-left: .5rem; padding: .1rem .5rem; border: 1px solid var(--lp-line); border-radius: 2px; font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--lp-muted); vertical-align: .1em; }
 
