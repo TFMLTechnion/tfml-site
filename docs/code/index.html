@@ -16,95 +16,87 @@
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/assets/css/site.css?v=592ea2bd">
+<link rel="stylesheet" href="/assets/css/landing.css?v=e24f3232">
 </head>
-<body class="page-code">
+<body class="landing">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="/">
-      <img class="brand-logo" src="/assets/img/logo.png" alt="" width="180" height="53">
-      <span class="brand-text"><span class="brand-name">Transient Fluid Mechanics Laboratory</span><span class="brand-sub">Technion – Israel Institute of Technology</span></span>
+
+<header class="lp-header">
+  <div class="lp-shell lp-header-inner">
+    <a class="lp-brand" href="/" aria-label="TFML, Transient Fluid Mechanics Laboratory home">
+      <img src="/assets/img/logo.png" alt="TFML" width="2048" height="604">
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
-      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
-      <span class="visually-hidden">Menu</span>
-    </button>
-    <nav id="nav" class="nav">
-      <a href="/research/">Research</a><a href="/people/">People</a><a href="/facilities/">Facilities</a><a href="/publications/">Publications</a><a href="/code/" aria-current="page">Codes</a><a href="/news/">News</a><a href="/join/">Join us</a>
+    <button class="lp-menu-toggle" type="button" aria-expanded="false" aria-controls="lp-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
+    <nav class="lp-nav" id="lp-nav" aria-label="Main navigation">
+      <a href="/research/">Research</a><a href="/people/">People</a><a href="/facilities/">Facilities</a><a href="/publications/">Publications</a><a href="/code/" aria-current="page">Codes</a><a href="/news/">News</a><a class="lp-nav-join" href="/join/">Join us<span aria-hidden="true">↗</span></a>
     </nav>
   </div>
 </header>
+
 <main id="main">
 
-<section class="page-head wrap">
+<section class="lp-page-head lp-shell">
+  <p class="lp-eyebrow">Transient Fluid Mechanics Laboratory</p>
   <h1>Codes</h1>
-  <p class="lede">Measurement is half the work; making sense of what comes out of it is the other half. These are the tools we built for our own experiments, released so that anyone can use them.</p>
+  <p class="lp-page-head-lede">Measurement is half the work; making sense of what comes out of it is the other half. These are the tools we built for our own experiments, released so that anyone can use them.</p>
 </section>
 
-<section class="section wrap">
-  <h2 class="section-title">uPrime<span class="status">GPL-3.0</span></h2>
-  <div>
-    <p class="code-tagline">Turbulence analysis without scripting</p>
-    <p class="code-summary">A standalone desktop application for post-processing velocity fields from PIV and CFD. It reads Tecplot ASCII files written by LaVision DaVis and MATLAB .mat files, and puts the whole turbulence pipeline in one window. Nothing to script, nothing to configure.</p>
+<section class="lp-section lp-section-compact lp-shell">
+  <div class="lp-section-heading">
+    <h2>uPrime</h2>
+    <p>Turbulence analysis without scripting <span class="lp-tag">GPL-3.0</span></p>
+  </div>
+  <div class="lp-code-body">
+    <div>
+      <p class="lp-code-summary">A standalone desktop application for post-processing velocity fields from PIV and CFD. It reads Tecplot ASCII files written by LaVision DaVis and MATLAB .mat files, and puts the whole turbulence pipeline in one window. Nothing to script, nothing to configure.</p>
+      <ul class="specs"><li>Reynolds stresses, turbulent kinetic energy budget, spectra, correlations, proper orthogonal and dynamic mode decomposition, and vortex identification</li><li>Probability analysis: velocity distributions, forward and reverse flow probability, binary space-time maps and quadrant decomposition</li><li>Convergence checking at any point in the field, so you know whether a statistic has settled before you publish it</li><li>Datasets larger than memory are mapped to disk, and heavy analysis runs in the background while the window stays responsive</li><li>Non-destructive masking of walls, shadows and reflections; the raw data is never modified</li><li>Export to PNG at 300 dpi, and to PDF and SVG with editable text</li><li>Windows executable with no Python install required; macOS and Linux run from source</li></ul>
+      <ul class="code-links">
+        <li><a class="lp-button lp-button-dark" href="https://cmdrryder.github.io/uPrime/">Project site <span aria-hidden="true">&#8599;</span></a></li><li><a href="https://github.com/CmdrRyder/uPrime">Source on GitHub</a></li>
+        
+      </ul>
+    </div>
     
-    <figure class="code-figure">
+    <figure class="lp-code-figure">
       <img src="/assets/img/code/uprime-gui.png" alt="The uPrime main window: a sidebar of loading, preprocessing and analysis modules on the left, and a mean speed field through a pipe expansion with velocity vectors on the right" width="1548" height="1027" loading="lazy" decoding="async">
       <figcaption>The main window. Loading, preprocessing and the analysis modules run down the left; the field view and its colour bar fill the rest.</figcaption>
     </figure>
     
-    <ul class="specs"><li>Reynolds stresses, turbulent kinetic energy budget, spectra, correlations, proper orthogonal and dynamic mode decomposition, and vortex identification</li><li>Probability analysis: velocity distributions, forward and reverse flow probability, binary space-time maps and quadrant decomposition</li><li>Convergence checking at any point in the field, so you know whether a statistic has settled before you publish it</li><li>Datasets larger than memory are mapped to disk, and heavy analysis runs in the background while the window stays responsive</li><li>Non-destructive masking of walls, shadows and reflections; the raw data is never modified</li><li>Export to PNG at 300 dpi, and to PDF and SVG with editable text</li><li>Windows executable with no Python install required; macOS and Linux run from source</li></ul>
-    <ul class="code-links">
-      <li><a class="button" href="https://cmdrryder.github.io/uPrime/">Project site</a></li><li><a href="https://github.com/CmdrRyder/uPrime">Source on GitHub</a></li>
-      
-    </ul>
   </div>
 </section>
 
-<section class="section wrap">
-  <h2 class="section-title">LE-DM<span class="status">GPL-3.0</span></h2>
-  <div>
-    <p class="code-tagline">Velocity reconstruction that knows where the body is</p>
-    <p class="code-summary">A reference implementation of the boundary-aware reconstruction we built for the rising sphere experiments. Give it scattered particle tracks plus the shape and motion of a rigid body, and it returns a divergence-free velocity field on a fixed grid that behaves properly right up to the moving surface.</p>
+<section class="lp-section lp-section-compact lp-shell">
+  <div class="lp-section-heading">
+    <h2>LE-DM</h2>
+    <p>Velocity reconstruction that knows where the body is <span class="lp-tag">GPL-3.0</span></p>
+  </div>
+  <div class="lp-code-body">
+    <div>
+      <p class="lp-code-summary">A reference implementation of the boundary-aware reconstruction we built for the rising sphere experiments. Give it scattered particle tracks plus the shape and motion of a rigid body, and it returns a divergence-free velocity field on a fixed grid that behaves properly right up to the moving surface.</p>
+      <ul class="specs"><li>Sorts every grid point into open fluid, a thin shell at the body surface, or solid interior, and solves all three together in one pass</li><li>Enforces the body&#39;s own motion at the surface and conservation of mass only where there is fluid</li><li>Rigid spheres and ellipsoids in this release</li><li>Pure Python on numpy, scipy and matplotlib, with no compiled extensions</li><li>Ships with a small synthetic translating sphere that runs with no external data, so an install can be checked in minutes</li></ul>
+      <ul class="code-links">
+        <li><a class="lp-button lp-button-dark" href="https://github.com/TFMLTechnion/LEDM">Source on GitHub <span aria-hidden="true">&#8599;</span></a></li><li><a href="https://doi.org/10.5281/zenodo.21965844">Validation data on Zenodo</a></li>
+        <li><a href="/research/dynamic-masking/">How the method works <span aria-hidden="true">&#8599;</span></a></li>
+      </ul>
+    </div>
     
-    <ul class="specs"><li>Sorts every grid point into open fluid, a thin shell at the body surface, or solid interior, and solves all three together in one pass</li><li>Enforces the body&#39;s own motion at the surface and conservation of mass only where there is fluid</li><li>Rigid spheres and ellipsoids in this release</li><li>Pure Python on numpy, scipy and matplotlib, with no compiled extensions</li><li>Ships with a small synthetic translating sphere that runs with no external data, so an install can be checked in minutes</li></ul>
-    <ul class="code-links">
-      <li><a class="button" href="https://github.com/TFMLTechnion/LEDM">Source on GitHub</a></li><li><a href="https://doi.org/10.5281/zenodo.21965844">Validation data on Zenodo</a></li>
-      <li><a href="/research/dynamic-masking/">How the method works <span aria-hidden="true">&rarr;</span></a></li>
-    </ul>
   </div>
 </section>
 
 
 </main>
-<footer class="site-footer" id="contact">
-  <div class="wrap footer-grid">
-    <div>
-      <h2 class="footer-heading">Transient Fluid Mechanics Laboratory</h2>
-      <address>
-        California Energy Building, Floor -1, Suite 11<br>
-        Faculty of Mechanical Engineering, Technion, Haifa 3200003, Israel<br>
-        <a href="mailto:tfml@technion.ac.il">tfml@technion.ac.il</a>
-      </address>
+
+<footer class="lp-footer" id="contact">
+  <div class="lp-shell">
+    <div class="lp-footer-grid">
+      <div><p class="lp-footer-wordmark">TFML<span aria-hidden="true">.</span></p><p class="lp-footer-name">Transient Fluid Mechanics Laboratory<br>Technion – Israel Institute of Technology</p></div>
+      <div><h2>Find us</h2><address>California Energy Building, Floor -1, Suite 11<br>Faculty of Mechanical Engineering, Technion, Haifa 3200003, Israel</address><a href="mailto:tfml@technion.ac.il">tfml@technion.ac.il</a></div>
+      <div><h2>Contact</h2><p>For research and<br>collaboration enquiries.</p><a href="mailto:omri.ram@technion.ac.il">omri.ram@technion.ac.il</a><p class="lp-footer-social"><a href="https://scholar.google.com/citations?user=bxnJmGgAAAAJ">Google Scholar</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="https://github.com/TFMLTechnion">GitHub</a></p></div>
     </div>
-    <div>
-      <h2 class="footer-heading">Omri Ram</h2>
-      <address>
-        Dan-Kahn Building, Room 402<br>
-        Faculty of Mechanical Engineering, Technion, Haifa 3200003, Israel<br>
-        <a href="mailto:omri.ram@technion.ac.il">omri.ram@technion.ac.il</a>
-      </address>
-    </div>
-    <div class="footer-aside">
-      <img src="/assets/img/technion-logo.png" alt="Technion – Israel Institute of Technology" width="160" height="72" class="footer-logo">
-      <p class="epigraph">“Nothing ever is, everything is becoming.” <span class="epigraph-source">Plato</span></p>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <p>© 2026 Transient Fluid Mechanics Laboratory, Technion. <a href="https://scholar.google.com/citations?user=bxnJmGgAAAAJ">Google Scholar</a></p>
+    <div class="lp-footer-bottom"><p>© 2026 TFML, Technion</p><a href="#main">Back to the top <span aria-hidden="true">↑</span></a></div>
   </div>
 </footer>
-<script src="/assets/js/site.js?v=ce0263a1" defer></script>
+<script src="/assets/js/landing.js?v=76535dd2" defer></script>
 </body>
 </html>

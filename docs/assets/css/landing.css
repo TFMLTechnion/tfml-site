@@ -90,6 +90,67 @@
 .lp-page-head h1 em { color: var(--lp-blue); }
 .lp-page-head-lede { max-width: 58ch; color: var(--lp-muted); font-size: 1.1875rem; margin: 0; }
 
+/* ==========================================================================
+   Interior pages: people, publications, codes, join
+   These reuse the classic markup, restyled here so the shared partials keep
+   working on any page still on the classic base.
+   ========================================================================== */
+
+/* A section whose heading introduces a list rather than a grid. */
+.lp-section-list .lp-section-heading { margin-bottom: .9rem; padding-bottom: .8rem; }
+.landing .lp-year { font-variant-numeric: tabular-nums; font-size: clamp(1.6rem, 2.1vw, 2.1rem); }
+
+/* Long-form body copy (the Join page). */
+.lp-prose { max-width: 68ch; }
+.lp-prose > :first-child { margin-top: 0; }
+.lp-prose p, .lp-prose ul, .lp-prose ol { margin: 0 0 1.2rem; }
+.landing .lp-prose h2 { font-size: clamp(1.5rem, 2.1vw, 2rem); margin: 2.6rem 0 .8rem; }
+.landing .lp-prose h3 { font-size: 1.2rem; margin: 1.8rem 0 .5rem; }
+.lp-prose li { margin-bottom: .4rem; }
+.lp-prose strong { font-weight: 600; color: var(--lp-ink); }
+.lp-prose a { color: var(--lp-blue); }
+
+/* People. */
+.landing .people-grid { gap: 2.4rem 1.5rem; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); }
+.landing .people-grid-compact { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
+.landing .person { font-family: var(--lp-body); font-size: .9375rem; line-height: 1.5; color: var(--lp-muted); }
+.landing .portrait { border-radius: 3px; background: #eff2f2; margin-bottom: .9rem; }
+.landing .portrait-ph { font-family: var(--lp-heading); color: #9aa7ae; }
+.landing .person-name { font-family: var(--lp-heading); font-size: 1.0625rem; font-weight: 500; letter-spacing: -.03em; line-height: 1.2; color: var(--lp-ink); margin-bottom: .2rem; }
+.landing .person-role { color: var(--lp-ink); margin-bottom: .5rem; }
+.landing .person-edu { line-height: 1.45; }
+.landing .person-project { font-family: var(--lp-editorial); font-style: italic; font-size: 1rem; color: var(--lp-muted); }
+.landing .person-now { color: var(--lp-muted); }
+.landing .person-links { gap: .3rem 1rem; }
+.landing .person-links a { color: var(--lp-blue); }
+
+/* Publications: pub_item.html is shared, so it is restyled rather than rewritten. */
+.landing .pub { padding: .95rem 0; border-top: 1px solid var(--lp-line); }
+.landing .pub:last-child { border-bottom: 1px solid var(--lp-line); }
+.landing .pub-title { font-family: var(--lp-heading); font-size: 1.0625rem; font-weight: 500; letter-spacing: -.028em; line-height: 1.3; color: var(--lp-ink); }
+.landing .pub-title a { text-decoration: none; }
+.landing .pub-title a:hover { color: var(--lp-blue); text-decoration: underline; }
+.landing .pub-authors, .landing .pub-venue { font-family: var(--lp-body); font-size: .9375rem; color: var(--lp-muted); }
+.landing .pub-status { color: var(--lp-blue); }
+.landing .pub-note { color: var(--lp-muted); }
+
+/* Codes: the screenshot sits beside the description rather than interrupting it. */
+.lp-code-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: clamp(1.5rem, 3vw, 3rem); align-items: start; }
+.lp-code-summary { max-width: 52ch; color: var(--lp-muted); }
+.landing .lp-code-body .specs { font-family: var(--lp-body); font-size: .9375rem; line-height: 1.5; }
+.landing .lp-code-body .specs li { padding: .5rem 0; border-top: 1px solid var(--lp-line); color: var(--lp-muted); }
+.landing .lp-code-body .specs li:last-child { border-bottom: 1px solid var(--lp-line); }
+.landing .code-links { display: flex; flex-wrap: wrap; align-items: center; gap: .9rem 1.6rem; margin: 1.5rem 0 0; padding: 0; list-style: none; font-size: .9375rem; font-weight: 500; }
+.landing .code-links a:not(.lp-button) { color: var(--lp-blue); }
+.lp-code-figure { margin: 0; }
+.lp-code-figure img { width: 100%; border: 1px solid var(--lp-line); border-radius: 3px; }
+.lp-code-figure figcaption { margin-top: .7rem; font-size: .875rem; color: var(--lp-muted); line-height: 1.5; }
+.lp-tag { display: inline-block; margin-left: .5rem; padding: .1rem .5rem; border: 1px solid var(--lp-line); border-radius: 2px; font-size: .75rem; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; color: var(--lp-muted); vertical-align: .1em; }
+
+@media (max-width: 860px) {
+  .lp-code-body { grid-template-columns: minmax(0, 1fr); }
+}
+
 /* The research index carries nine projects rather than the home page's three, so the same
    card runs four-up with smaller type and a shallower image. Scoped to this variant, so
    the home grid is untouched. */
