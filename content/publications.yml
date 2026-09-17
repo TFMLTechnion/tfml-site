@@ -45,6 +45,7 @@
   venue: Measurement Science and Technology
   year: 2026
   status: accepted
+  url: https://doi.org/10.1088/1361-6501/aea7c4
   image: home/pub-ledm.jpg
   blurb: A reconstruction method that knows where the moving body is, so the measured flow obeys the surface it touches.
 

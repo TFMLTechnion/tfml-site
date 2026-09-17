@@ -46,4 +46,5 @@
   links:
     - {label: Source on GitHub, url: "https://github.com/TFMLTechnion/LEDM"}
     - {label: Validation data on Zenodo, url: "https://doi.org/10.5281/zenodo.21965844"}
+    - {label: The paper, url: "https://doi.org/10.1088/1361-6501/aea7c4"}
   research: {label: How the method works, url: /research/dynamic-masking/}
