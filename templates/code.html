@@ -25,6 +25,14 @@
       <img src="{{ img('code/' ~ c.image) }}" alt="{{ c.image_alt }}" width="1548" height="1027" loading="lazy" decoding="async">
       {% if c.image_caption %}<figcaption>{{ c.image_caption }}</figcaption>{% endif %}
     </figure>
+    {% elif c.video and img('code/' ~ c.video) %}
+    <figure class="lp-code-figure lp-code-clip">
+      <video autoplay loop muted playsinline preload="metadata" aria-label="{{ c.video_alt }}"
+             poster="{{ img('code/' ~ c.video_poster) }}" width="620" height="694">
+        <source src="{{ img('code/' ~ c.video) }}" type="video/mp4">
+      </video>
+      {% if c.video_caption %}<figcaption>{{ c.video_caption }}</figcaption>{% endif %}
+    </figure>
     {% endif %}
   </div>
 </section>

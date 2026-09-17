@@ -32,6 +32,15 @@
 - name: LE-DM
   tagline: Velocity reconstruction that knows where the body is
   licence: GPL-3.0
+  video: ledm-ptv.mp4                    # in static/img/code/
+  video_poster: ledm-ptv-poster.jpg
+  video_alt: >-
+    Rotating view of measured particle tracks around a freely rising sphere: a dense cloud of
+    scattered points coloured by speed, with the wake picked out in red and green
+  video_caption: >-
+    Why the method exists. This is what the measurement looks like: particle tracks around a
+    freely rising sphere, coloured by speed. Scattered points, no surface anywhere in them, and
+    a solid body moving through the middle that an ordinary reconstruction is never told about.
   summary: >-
     A reference implementation of the boundary-aware reconstruction we built for the rising
     sphere experiments. Give it scattered particle tracks plus the shape and motion of a
