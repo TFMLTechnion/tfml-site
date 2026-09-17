@@ -1,26 +1,31 @@
-{% extends "base.html" %}
+{% extends "base-landing.html" %}
 {% block content %}
-<section class="page-head wrap">
+<section class="lp-page-head lp-shell">
+  <p class="lp-eyebrow">Transient Fluid Mechanics Laboratory</p>
   <h1>Codes</h1>
-  <p class="lede">Measurement is half the work; making sense of what comes out of it is the other half. These are the tools we built for our own experiments, released so that anyone can use them.</p>
+  <p class="lp-page-head-lede">Measurement is half the work; making sense of what comes out of it is the other half. These are the tools we built for our own experiments, released so that anyone can use them.</p>
 </section>
 {% for c in code %}
-<section class="section wrap">
-  <h2 class="section-title">{{ c.name }}{% if c.licence %}<span class="status">{{ c.licence }}</span>{% endif %}</h2>
-  <div>
-    <p class="code-tagline">{{ c.tagline }}</p>
-    <p class="code-summary">{{ c.summary }}</p>
+<section class="lp-section lp-section-compact lp-shell">
+  <div class="lp-section-heading">
+    <h2>{{ c.name }}</h2>
+    <p>{{ c.tagline }}{% if c.licence %} <span class="lp-tag">{{ c.licence }}</span>{% endif %}</p>
+  </div>
+  <div class="lp-code-body">
+    <div>
+      <p class="lp-code-summary">{{ c.summary }}</p>
+      <ul class="specs">{% for p in c.points %}<li>{{ p }}</li>{% endfor %}</ul>
+      <ul class="code-links">
+        {% for l in c.links %}<li><a{% if loop.first %} class="lp-button lp-button-dark"{% endif %} href="{{ l.url }}">{{ l.label }}{% if loop.first %} <span aria-hidden="true">&#8599;</span>{% endif %}</a></li>{% endfor %}
+        {% if c.research %}<li><a href="{{ c.research.url | url }}">{{ c.research.label }} <span aria-hidden="true">&#8599;</span></a></li>{% endif %}
+      </ul>
+    </div>
     {% if c.image and img('code/' ~ c.image) %}
-    <figure class="code-figure">
+    <figure class="lp-code-figure">
       <img src="{{ img('code/' ~ c.image) }}" alt="{{ c.image_alt }}" width="1548" height="1027" loading="lazy" decoding="async">
       {% if c.image_caption %}<figcaption>{{ c.image_caption }}</figcaption>{% endif %}
     </figure>
     {% endif %}
-    <ul class="specs">{% for p in c.points %}<li>{{ p }}</li>{% endfor %}</ul>
-    <ul class="code-links">
-      {% for l in c.links %}<li><a{% if loop.first %} class="button"{% endif %} href="{{ l.url }}">{{ l.label }}</a></li>{% endfor %}
-      {% if c.research %}<li><a href="{{ c.research.url | url }}">{{ c.research.label }} <span aria-hidden="true">&rarr;</span></a></li>{% endif %}
-    </ul>
   </div>
 </section>
 {% endfor %}

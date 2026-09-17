@@ -1,7 +1,10 @@
-{% extends "base.html" %}
+{% extends "base-landing.html" %}
 {% block content %}
-<article class="article wrap article-narrow">
+<section class="lp-page-head lp-shell">
+  <p class="lp-eyebrow">Transient Fluid Mechanics Laboratory</p>
   <h1>{{ join.title }}</h1>
-  <div class="prose">{{ join.body }}</div>
-</article>
+</section>
+<section class="lp-section lp-section-compact lp-shell">
+  <div class="lp-prose">{{ join.body }}</div>
+</section>
 {% endblock %}
