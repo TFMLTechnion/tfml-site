@@ -12,7 +12,7 @@
 <meta property="og:description" content="Particle tracking measures the flow at thousands of scattered points, but turning those points into a smooth picture goes wrong exactly where a solid body sits. We built a reconstruction that is told where the body is in every frame, so the flow it reports next to a moving surface is one you can trust.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://www.tfmltechnion.com/research/dynamic-masking/">
-<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/rising-spheres/ledm-thumb.png">
+<meta property="og:image" content="https://www.tfmltechnion.com/assets/img/research/rising-spheres/ledm-thumb.png?v=d4227fcc">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,7 +26,7 @@
 <header class="lp-header">
   <div class="lp-shell lp-header-inner">
     <a class="lp-brand" href="/" aria-label="TFML, Transient Fluid Mechanics Laboratory home">
-      <img src="/assets/img/logo.png" alt="TFML" width="2048" height="604">
+      <img src="/assets/img/logo.png?v=10f1fa89" alt="TFML" width="2048" height="604">
     </a>
     <button class="lp-menu-toggle" type="button" aria-expanded="false" aria-controls="lp-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
     <nav class="lp-nav" id="lp-nav" aria-label="Main navigation">
@@ -590,7 +590,7 @@
       <li>A point the body has just vacated is told to forget what it held a moment ago.</li>
     </ul>
     <figure class="f-figure f-figure-center">
-      <img src="/assets/img/research/rising-spheres/ledm-overview.png" alt="Three panels: tracer particles around a moving sphere, the same region with every grid point sorted into inside the body, a shell at its surface, or open fluid, and the reconstructed flow field wrapping around the body" width="986" height="321" loading="lazy" decoding="async">
+      <img src="/assets/img/research/rising-spheres/ledm-overview.png?v=a57a5bf8" alt="Three panels: tracer particles around a moving sphere, the same region with every grid point sorted into inside the body, a shell at its surface, or open fluid, and the reconstructed flow field wrapping around the body" width="986" height="321" loading="lazy" decoding="async">
       <figcaption>The same three steps on real data. Left, the tracer particles, with the body's shape and motion already known. Centre, every grid point sorted by its distance to the surface. Right, the flow that comes out: wrapping around the body, blank where the solid is, and pinned to the body's own motion at the shell.</figcaption>
     </figure>
     <p class="f-takeaway">The body stops being a hole in the data and becomes part of the problem.</p>
@@ -601,7 +601,7 @@
     <h2 class="f-title">Testing against a flow we already know</h2>
     <p class="f-subtitle">A simulated rising sphere gives a complete reference field, which no experiment can offer.</p>
     <figure class="f-figure f-figure-center">
-      <img src="/assets/img/research/rising-spheres/ledm-cfd-sphere.png" alt="Speed contours around a rising sphere: the simulated reference beside three reconstructions at grid spacings of one, one and a half, and two millimetres, followed by line profiles comparing all four" width="1796" height="1040" loading="lazy" decoding="async">
+      <img src="/assets/img/research/rising-spheres/ledm-cfd-sphere.png?v=5275619d" alt="Speed contours around a rising sphere: the simulated reference beside three reconstructions at grid spacings of one, one and a half, and two millimetres, followed by line profiles comparing all four" width="1796" height="1040" loading="lazy" decoding="async">
       <figcaption>A simulated rising sphere, used as an exact answer to mark against. Leftmost, the reference flow; beside it, reconstructions at grid spacings of one, one and a half and two millimetres. The plots below trace speed around and along the body, reference in black and the three reconstructions in colour. They sit on top of one another almost everywhere.</figcaption>
     </figure>
     <div class="f-prose">
@@ -615,7 +615,7 @@
     <h2 class="f-title">A tumbling body works too</h2>
     <p class="f-subtitle">An elongated body whose orientation changes every frame, not only its position.</p>
     <figure class="f-figure f-figure-center">
-      <img src="/assets/img/research/rising-spheres/ledm-spheroid-full.png" alt="A tumbling elongated body rising through simulated flow, with its path and orientation, speed contours on three planes comparing reference and reconstruction, and profiles of speed around the body" width="1678" height="1374" loading="lazy" decoding="async">
+      <img src="/assets/img/research/rising-spheres/ledm-spheroid-full.png?v=d7a5739a" alt="A tumbling elongated body rising through simulated flow, with its path and orientation, speed contours on three planes comparing reference and reconstruction, and profiles of speed around the body" width="1678" height="1374" loading="lazy" decoding="async">
       <figcaption>An elongated body rising and tumbling through nearly a full turn. Top left, its path with the orientation drawn at intervals. Centre, speed on three cuts through the body: reference above, reconstruction below. Bottom, speed traced right around the body on each cut, reference in black and reconstruction in red dashes. The two agree to within a few per cent of the body's speed.</figcaption>
     </figure>
     <div class="f-prose">

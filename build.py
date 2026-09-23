@@ -43,13 +43,22 @@ def find_image(folder, name):
     for c in candidates:
         if c.exists():
             rel = c.relative_to(STATIC).as_posix()
-            return "/assets/" + rel
+            return "/assets/" + rel + "?v=" + _fingerprint(c)
     key = f"{folder}/{name}" if folder else name
     spec = IMAGE_SOURCES.get(key)
     if spec:
         REMOTE_USED.append(key)
         return spec["url"] if isinstance(spec, dict) else spec
     return None
+
+_fp_cache = {}
+def _fingerprint(path):
+    """Short hash of a file's contents, appended to its URL so browsers fetch a new version when it changes."""
+    import hashlib
+    key = str(path)
+    if key not in _fp_cache:
+        _fp_cache[key] = hashlib.md5(path.read_bytes()).hexdigest()[:8]
+    return _fp_cache[key]
 
 def initials(name):
     parts = [p for p in re.split(r"[\s-]+", name) if p]
