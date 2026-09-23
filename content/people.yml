@@ -173,6 +173,8 @@ people:
     group: alumni
     role: Undergraduate research assistant
     image: aryeh-jacobson.jpg
+    education:
+      - B.Sc. Mechanical Engineering, Technion
     note: Co-author of the LE-DM paper on boundary-aware velocity reconstruction
 
   - name: Tal Marder
