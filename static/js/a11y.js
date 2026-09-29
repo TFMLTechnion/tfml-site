@@ -16,12 +16,11 @@
   }
   apply();
 
-  var wrap = document.createElement('div');
+  var wrap = document.createElement('span');
   wrap.id = 'a11y-menu';
   wrap.innerHTML =
     '<button type="button" class="a11y-toggle" aria-expanded="false" aria-controls="a11y-panel">' +
-      '<svg aria-hidden="true" viewBox="0 0 24 24" width="22" height="22"><circle cx="12" cy="4.5" r="2" fill="currentColor"/><path d="M4 8.5h16v2l-5.5 1v4.5l1.6 6h-2.2L12 16.5 10.1 22H7.9l1.6-6V11.5L4 10.5z" fill="currentColor"/></svg>' +
-      '<span>Accessibility</span></button>' +
+      'Display options</button>' +
     '<div id="a11y-panel" class="a11y-panel" hidden>' +
       '<p class="a11y-title">Display options</p>' +
       '<div class="a11y-row"><span id="a11y-size-label">Text size</span>' +
@@ -33,7 +32,9 @@
       '<label class="a11y-check"><input type="checkbox" data-pref="noanim"> Stop animations</label>' +
       '<div class="a11y-foot"><button type="button" class="a11y-reset">Reset</button><a href="/accessibility/">Accessibility statement</a></div>' +
     '</div>';
-  document.body.appendChild(wrap);
+  // Sits in the footer next to the accessibility link; falls back to the page corner if there is no footer line.
+  var host = document.querySelector('.lp-footer-bottom p, .footer-bottom p');
+  if (host) { host.appendChild(document.createTextNode(' ')); host.appendChild(wrap); } else { wrap.classList.add('a11y-floating'); document.body.appendChild(wrap); }
 
   var toggle = wrap.querySelector('.a11y-toggle');
   var panel = wrap.querySelector('.a11y-panel');
