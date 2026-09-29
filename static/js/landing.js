@@ -1,7 +1,6 @@
 /* Local, progressive enhancements. No services, cookies or tracking. */
 (function () {
   'use strict';
-  if (!document.body.classList.contains('landing')) return;
 
   var header = document.querySelector('.lp-header');
   var nav = document.getElementById('lp-nav');

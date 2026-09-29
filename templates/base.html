@@ -16,57 +16,42 @@
 <link rel="icon" href="{{ '/assets/img/favicon.svg' | url }}" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,300..700;1,6..72,300..700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=Newsreader:ital,opsz,wght@1,6..72,400;1,6..72,500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="{{ '/assets/css/site.css' | url }}?v={{ css_v }}">
+<link rel="stylesheet" href="{{ '/assets/css/landing.css' | url }}?v={{ landing_css_v }}">
 </head>
-<body class="page-{{ page_id }}{% if hero_dark %} hero-dark{% endif %}">
+<body class="page-{{ page_id }}{% if page_id == "home" %} landing{% else %} inner{% endif %}">
 <a class="skip" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="wrap header-inner">
-    <a class="brand" href="{{ '/' | url }}">
-      {% if img('logo.png') %}<img class="brand-logo" src="{{ img('logo.png') }}" alt="" width="180" height="53">{% endif %}
-      <span class="brand-text"><span class="brand-name">{{ site.name }}</span><span class="brand-sub">Technion – Israel Institute of Technology</span></span>
+
+<header class="lp-header">
+  <div class="lp-shell lp-header-inner">
+    <a class="lp-brand" href="{{ '/' | url }}" aria-label="TFML, Transient Fluid Mechanics Laboratory home">
+      <img src="{{ img('logo.png') }}" alt="TFML" width="2048" height="604">
     </a>
-    <button class="nav-toggle" aria-expanded="false" aria-controls="nav">
-      <span class="nav-toggle-bar"></span><span class="nav-toggle-bar"></span>
-      <span class="visually-hidden">Menu</span>
-    </button>
-    <nav id="nav" class="nav">
-      {% for item in site.nav %}<a href="{{ item.url | url }}"{% if item.url.strip('/') == section %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endfor %}
+    <button class="lp-menu-toggle" type="button" aria-expanded="false" aria-controls="lp-nav" hidden>Menu <span aria-hidden="true">＋</span></button>
+    <nav class="lp-nav" id="lp-nav" aria-label="Main navigation">
+      {% for item in site.nav %}{% if loop.last %}<a class="lp-nav-join" href="{{ item.url | url }}">{{ item.label }}<span aria-hidden="true">↗</span></a>{% else %}<a href="{{ item.url | url }}"{% if item.url.strip('/') == section %} aria-current="page"{% endif %}>{{ item.label }}</a>{% endif %}{% endfor %}
     </nav>
   </div>
 </header>
+
 <main id="main">
 {% block content %}{% endblock %}
 </main>
-<footer class="site-footer" id="contact">
-  <div class="wrap footer-grid">
-    <div>
-      <h2 class="footer-heading">{{ site.name }}</h2>
-      <address>
-        {{ site.contact.lab_address }}<br>
-        {{ site.contact.postal }}<br>
-        <a href="mailto:{{ site.contact.lab_email }}">{{ site.contact.lab_email }}</a>
-      </address>
+
+<footer class="lp-footer" id="contact">
+  <div class="lp-shell">
+    <div class="lp-footer-grid">
+      <div><p class="lp-footer-wordmark">TFML<span aria-hidden="true">.</span></p><p class="lp-footer-name">{{ site.name }}<br>Technion – Israel Institute of Technology</p></div>
+      <div><h2>Find us</h2><address>{{ site.contact.lab_address }}<br>{{ site.contact.postal }}</address><a href="mailto:{{ site.contact.lab_email }}">{{ site.contact.lab_email }}</a></div>
+      <div><h2>Contact</h2><p>For research and<br>collaboration enquiries.</p><a href="mailto:{{ site.contact.pi_email }}">{{ site.contact.pi_email }}</a><p class="lp-footer-social"><a href="{{ site.scholar_url }}">Google Scholar</a><a href="https://www.linkedin.com/in/omri-ram-11293415a/">LinkedIn</a><a href="https://github.com/TFMLTechnion">GitHub</a></p></div>
     </div>
-    <div>
-      <h2 class="footer-heading">{{ site.contact.pi_name }}</h2>
-      <address>
-        {{ site.contact.pi_address }}<br>
-        {{ site.contact.postal }}<br>
-        <a href="mailto:{{ site.contact.pi_email }}">{{ site.contact.pi_email }}</a>
-      </address>
-    </div>
-    <div class="footer-aside">
-      {% if img('technion-logo.png') %}<img src="{{ img('technion-logo.png') }}" alt="Technion – Israel Institute of Technology" width="160" height="72" class="footer-logo">{% else %}<p class="footer-affiliation">{{ site.affiliation }}</p>{% endif %}
-      <p class="epigraph">“{{ site.epigraph.text }}” <span class="epigraph-source">{{ site.epigraph.source }}</span></p>
-    </div>
-  </div>
-  <div class="wrap footer-bottom">
-    <p>© {{ year }} {{ site.name }}, Technion. <a href="{{ site.scholar_url }}">Google Scholar</a> <a href="{{ '/accessibility/' | url }}">Accessibility</a></p>
+    <div class="lp-footer-bottom"><p>© {{ year }} TFML, Technion <a href="{{ '/accessibility/' | url }}">Accessibility</a></p><a href="#main">Back to the top <span aria-hidden="true">↑</span></a></div>
   </div>
 </footer>
+<script src="{{ '/assets/js/landing.js' | url }}?v={{ landing_js_v }}" defer></script>
 <script src="{{ '/assets/js/site.js' | url }}?v={{ js_v }}" defer></script>
 <script src="{{ '/assets/js/a11y.js' | url }}?v={{ a11y_js_v }}" defer></script>
+<script src="{{ '/assets/js/site.js' | url }}?v={{ js_v }}" defer></script>
 </body>
 </html>
