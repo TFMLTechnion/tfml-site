@@ -1,23 +1,35 @@
 {% extends "base.html" %}
 {% block content %}
-<article class="article wrap article-narrow">
-  <p class="crumbs"><a href="{{ '/news/' | url }}">News</a></p>
-  <h1>{{ post.title }}</h1>
-  <p class="meta"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time></p>
-  {% if post.image_url %}<figure class="lead-figure"><img src="{{ post.image_url }}" alt="" width="1200" height="700"></figure>{% endif %}
-  <div class="prose">{{ post.body }}</div>
+<article class="article wrap post">
+  <div class="post-head">
+    <p class="crumbs"><a href="{{ '/news/' | url }}">News</a></p>
+    <h1>{{ post.title }}</h1>
+    <p class="meta"><time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time></p>
+  </div>
+  {% if post.image_url %}<figure class="post-lead"><img src="{{ post.image_url }}" alt="" width="1600" height="1000"></figure>{% endif %}
+  <div class="prose post-prose">{{ post.body }}</div>
   {% if post.figure_list %}
-  <div class="figures">
+  <div class="post-gallery">
     {% for f in post.figure_list %}
-    <figure>{% if f.url %}<img src="{{ f.url }}" alt="" loading="lazy" width="800" height="500">{% else %}<div class="ph ph-wide"></div>{% endif %}<figcaption>{{ f.caption }}</figcaption></figure>
+    <figure>{% if f.url %}<img src="{{ f.url }}" alt="" loading="lazy" width="800" height="600">{% else %}<div class="ph ph-wide"></div>{% endif %}<figcaption>{{ f.caption }}</figcaption></figure>
     {% endfor %}
   </div>
   {% endif %}
-  {% if prev or next %}
-  <nav class="post-nav">
-    {% if next %}<a href="{{ next.url | url }}"><span>Newer</span>{{ next.title }}</a>{% endif %}
-    {% if prev %}<a href="{{ prev.url | url }}"><span>Older</span>{{ prev.title }}</a>{% endif %}
-  </nav>
-  {% endif %}
 </article>
+{% set others = (posts | rejectattr('slug', 'equalto', post.slug) | list)[:3] %}
+{% if others %}
+<section class="wrap post-more">
+  <h2>More news</h2>
+  <ul class="news-grid">
+    {% for p in others %}
+    <li>
+      <a class="news-card{% if not p.image_url %} news-card-text{% endif %}" href="{{ p.url | url }}">
+        {% if p.image_url %}<img src="{{ p.image_url }}" alt="" loading="lazy" width="800" height="500">{% endif %}
+        <div class="news-card-body"><time datetime="{{ p.date.isoformat() }}">{{ p.date | date }}</time><h3>{{ p.title }}</h3></div>
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</section>
+{% endif %}
 {% endblock %}

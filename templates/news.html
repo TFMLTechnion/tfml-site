@@ -2,15 +2,44 @@
 {% block content %}
 <section class="page-head wrap">
   <h1>News</h1>
+  <p class="lede">Papers, people, facilities and the occasional day out of the lab.</p>
 </section>
-<section class="section wrap section-tight">
-  <ul class="news-list news-list-full">
-    {% for post in posts %}
-    <li class="news-row">
-      <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
-      <div><h2 class="news-title"><a href="{{ post.url | url }}">{{ post.title }}</a></h2><p class="news-summary">{{ post.summary }}</p></div>
+
+{% set featured = posts[0] %}
+<section class="wrap news-featured">
+  <a class="news-feature-card" href="{{ featured.url | url }}">
+    <div class="news-feature-media">
+      {% if featured.image_url %}<img src="{{ featured.image_url }}" alt="" width="1200" height="800">{% else %}<div class="news-ph"></div>{% endif %}
+    </div>
+    <div class="news-feature-body">
+      <time datetime="{{ featured.date.isoformat() }}">{{ featured.date | date }}</time>
+      <h2>{{ featured.title }}</h2>
+      <p>{{ featured.summary }}</p>
+      <span class="news-read">Read the story</span>
+    </div>
+  </a>
+</section>
+
+{% set ns = namespace(year=None) %}
+<section class="wrap news-archive">
+  {% for post in posts[1:] %}
+    {% if post.date.year != ns.year %}
+      {% if ns.year is not none %}</ul>{% endif %}
+      {% set ns.year = post.date.year %}
+      <h2 class="news-year">{{ ns.year }}</h2>
+      <ul class="news-grid">
+    {% endif %}
+    <li>
+      <a class="news-card{% if not post.image_url %} news-card-text{% endif %}" href="{{ post.url | url }}">
+        {% if post.image_url %}<img src="{{ post.image_url }}" alt="" loading="lazy" width="800" height="500">{% endif %}
+        <div class="news-card-body">
+          <time datetime="{{ post.date.isoformat() }}">{{ post.date | date }}</time>
+          <h3>{{ post.title }}</h3>
+          <p>{{ post.summary }}</p>
+        </div>
+      </a>
     </li>
-    {% endfor %}
-  </ul>
+  {% endfor %}
+  {% if ns.year is not none %}</ul>{% endif %}
 </section>
 {% endblock %}
