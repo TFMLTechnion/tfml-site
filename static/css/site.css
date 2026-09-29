@@ -798,8 +798,8 @@ figcaption { font-family: var(--sans); font-size: var(--step--1); color: var(--i
    Accessibility menu and display modes (see /accessibility/)
    ========================================================================== */
 #a11y-menu { position: relative; display: inline-block; font-family: var(--sans); font-size: inherit; color: inherit; }
-#a11y-menu .a11y-toggle { font: inherit; background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; text-underline-offset: .14em; cursor: pointer; }
-#a11y-menu .a11y-toggle:hover { color: var(--accent); }
+#a11y-menu .a11y-toggle { font: inherit; background: none !important; border: 0; padding: 0; color: inherit !important; text-decoration: underline; text-underline-offset: .14em; cursor: pointer; }
+#a11y-menu .a11y-toggle:hover { text-decoration-thickness: 2px; }
 #a11y-menu .a11y-toggle:focus-visible, #a11y-menu button:focus-visible, #a11y-menu input:focus-visible { outline: 3px solid #0f4c81; outline-offset: 3px; }
 #a11y-menu .a11y-panel { position: absolute; left: 0; bottom: calc(100% + .6rem); width: 17rem; background: #fff; color: #172231; border: 1px solid #c9d2dc; border-radius: 10px; padding: 1rem; box-shadow: 0 8px 30px rgba(0,0,0,.18); font-size: 0.9375rem; text-align: left; z-index: 100; }
 #a11y-menu .a11y-title { margin: 0 0 .75rem; font-weight: 600; }
