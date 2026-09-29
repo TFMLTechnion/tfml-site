@@ -143,7 +143,7 @@ def build(out_dir, preview=False):
     # never keep an outdated copy after a change
     import hashlib
     asset_v = {name: hashlib.md5((STATIC / name).read_bytes()).hexdigest()[:8]
-               for name in ("css/site.css", "js/site.js", "css/landing.css", "js/landing.js")}
+               for name in ("css/site.css", "js/site.js", "css/landing.css", "js/landing.js", "js/a11y.js")}
     env.filters["date"] = fmt_date
 
     current = {"path": "/"}
@@ -174,7 +174,7 @@ def build(out_dir, preview=False):
         html = env.get_template(template).render(
             site=site, projects=_with_urls(projects, url), posts=_with_urls(posts, url),
             img=img, year=datetime.date.today().year, css_v=asset_v["css/site.css"], js_v=asset_v["js/site.js"],
-            landing_css_v=asset_v["css/landing.css"], landing_js_v=asset_v["js/landing.js"], **ctx)
+            landing_css_v=asset_v["css/landing.css"], landing_js_v=asset_v["js/landing.js"], a11y_js_v=asset_v["js/a11y.js"], **ctx)
         if preview:  # links written inside Markdown content are root-relative; make them relative too
             html = re.sub(r'(href|src)="(/[^"]*)"', lambda m: f'{m.group(1)}="{url(m.group(2))}"', html)
         dest = out / path.lstrip("/")
@@ -239,6 +239,8 @@ def build(out_dir, preview=False):
            page_description="Open-source software from TFML: uPrime for turbulence analysis of PIV and CFD velocity fields, and LE-DM for velocity reconstruction around moving bodies.")
     render("join.html", "/join/", page_id="join", section="join", page_title="Join us", join=join,
            page_description="Open positions for graduate students, postdocs and undergraduates at TFML, Technion.")
+    render("accessibility.html", "/accessibility/", page_id="accessibility", section="", page_title="Accessibility statement",
+           page_description="How the Transient Fluid Mechanics Laboratory website supports accessibility, and whom to contact if something does not work for you.")
     render("404.html", "/404.html", page_id="404", section="", page_title="Page not found")
 
     # Standalone pages published verbatim (unlisted: not in navigation or sitemap)

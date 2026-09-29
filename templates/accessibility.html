@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<article class="article wrap article-narrow">
+  <h1>Accessibility statement</h1>
+  <p class="meta">Last updated 29 September 2026</p>
+  <div class="prose">
+    <p>The Transient Fluid Mechanics Laboratory wants this website to be usable by everyone, including people who rely on a screen reader, a keyboard, magnification or high contrast. We follow the Technion's accessibility policy and aim at level AA of Israeli Standard 5568, which is based on the international WCAG 2.0 guidelines.</p>
+
+    <h2>What has been done</h2>
+    <ul>
+      <li>Every page has a clear structure: one main heading, ordered sub-headings, and landmarks for the header, navigation, main content and footer, so screen readers can move around it.</li>
+      <li>A "Skip to content" link appears at the top of each page when you press Tab.</li>
+      <li>Everything can be operated from the keyboard, with a visible focus outline showing where you are.</li>
+      <li>Images carry text alternatives; purely decorative images are hidden from screen readers.</li>
+      <li>Links say where they lead; icons that decorate a link are ignored by assistive technology.</li>
+      <li>Text and layout scale with the browser's zoom and text-size settings, and the site works on phones and tablets.</li>
+      <li>Colours were checked for contrast against the AA threshold.</li>
+      <li>There is no flashing content. Animations stop when your device asks for reduced motion, and the one moving sequence on the home page only plays when you press its Play button and can be stopped at any time.</li>
+      <li>Forms have labels on every field and readable error messages.</li>
+      <li>The accessibility menu in the corner of every page lets you enlarge the text, switch to high contrast, underline all links and stop animations. Your choices are remembered on this device.</li>
+    </ul>
+
+    <h2>Known limitations</h2>
+    <ul>
+      <li>Many of our research figures (schlieren photographs, velocity fields, three-dimensional renderings) convey information visually. Their captions describe what they show, but not every detail can be put into words. If you need a particular figure explained, write to us.</li>
+      <li>Papers are linked to the publishers' websites, whose accessibility we do not control.</li>
+      <li>Fonts are loaded from Google Fonts; if that service is blocked, the site falls back to your system's fonts and remains readable.</li>
+    </ul>
+
+    <h2>Tell us if something doesn't work</h2>
+    <p>If any part of this site is difficult for you to use, or you need information from it in another form, please contact <strong>Omri Ram</strong>, head of the laboratory, at <a href="mailto:{{ site.contact.pi_email }}">{{ site.contact.pi_email }}</a>. Tell us which page you were on and what happened, and we will fix it or provide the information in a way that works for you.</p>
+
+    <h2>Technion accessibility</h2>
+    <p>Technion accessibility coordinator: Dikla Nachman, 073-378-1956, <a href="mailto:adminlogistic@technion.ac.il">adminlogistic@technion.ac.il</a>. The Technion's own <a href="https://www.technion.ac.il/en/accessaility-statement/">accessibility statement</a> and information on <a href="https://accessibility.net.technion.ac.il/">physical accessibility on campus</a> are on the Technion website.</p>
+  </div>
+</article>
+{% endblock %}
