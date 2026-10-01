@@ -29,6 +29,12 @@
   year: 2026
   status: under review
 
+- authors: Zuckerman, S., Jose, J. T., Levi, O. & Ram, O.
+  title: "Flow separation and turbulence production over trapezoidal protrusions"
+  venue: Experimental Thermal and Fluid Science
+  year: 2026
+  status: under review
+
 # ---------------------------- Accepted -------------------------------
 - authors: Heppner, R., Chandravamsi, H., Gichon, Y., Frankel, S. H. & Ram, O.
   title: "Shock propagation through a local constriction"
@@ -46,7 +52,6 @@
   year: 2026
   volume: 37(39)
   pages: "395302"
-  url: https://doi.org/10.1088/1361-6501/aea7c4
   url: https://doi.org/10.1088/1361-6501/aea7c4
   image: home/pub-ledm.jpg
   blurb: A reconstruction method that knows where the moving body is, so the measured flow obeys the surface it touches.
