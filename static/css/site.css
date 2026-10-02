@@ -837,12 +837,12 @@ html.a11y-contrast .lp-wake-section a, html.a11y-contrast .lp-footer a, html.a11
    News: featured story, card grid, post layout
    ========================================================================== */
 .news-featured { padding-bottom: clamp(2rem, 4vw, 3rem); }
-.news-feature-card { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0; color: var(--ink); text-decoration: none; background: var(--wash); overflow: hidden; }
-.news-feature-media img, .news-feature-media .news-ph { width: 100%; height: 100%; min-height: 320px; object-fit: cover; display: block; }
+.news-feature-card { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 0; width: 80%; margin-inline: auto; color: var(--ink); text-decoration: none; background: var(--wash); overflow: hidden; }
+.news-feature-media img, .news-feature-media .news-ph { width: 100%; height: 100%; min-height: 256px; object-fit: cover; display: block; }
 .news-ph { background: linear-gradient(135deg, var(--accent-wash), var(--wash)); }
-.news-feature-body { padding: clamp(1.5rem, 3vw, 2.75rem); display: flex; flex-direction: column; justify-content: center; }
-.news-feature-body h2 { font-size: var(--step-3); font-weight: 400; letter-spacing: -0.02em; line-height: 1.08; margin: .6rem 0 1rem; }
-.news-feature-body p { color: var(--ink-soft); font-size: var(--step-0); margin-bottom: 1.25rem; }
+.news-feature-body { padding: clamp(1.2rem, 2.4vw, 2.2rem); display: flex; flex-direction: column; justify-content: center; }
+.news-feature-body h2 { font-size: calc(var(--step-3) * .8); font-weight: 400; letter-spacing: -0.02em; line-height: 1.08; margin: .5rem 0 .8rem; }
+.news-feature-body p { color: var(--ink-soft); font-size: var(--step--1); margin-bottom: 1rem; }
 .news-read { font-family: var(--sans); font-size: var(--step--1); color: var(--accent); border-bottom: 1px solid currentColor; align-self: flex-start; }
 .news-feature-card:hover h2 { color: var(--accent); }
 .news-feature-card:hover img { opacity: .95; }
@@ -872,7 +872,7 @@ html.a11y-contrast .lp-wake-section a, html.a11y-contrast .lp-footer a, html.a11
 .post-more h2 { font-size: var(--step-2); font-weight: 400; margin-bottom: 1.5rem; }
 
 @media (max-width: 900px) {
-  .news-feature-card { grid-template-columns: 1fr; }
+  .news-feature-card { grid-template-columns: 1fr; width: 100%; }
   .news-feature-media img, .news-feature-media .news-ph { min-height: 0; aspect-ratio: 16 / 10; }
   .news-grid { grid-template-columns: 1fr 1fr; }
 }
